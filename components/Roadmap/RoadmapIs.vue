@@ -1,7 +1,7 @@
 <template>
   <div class="c-roadmap-is">
     <div class="container">
-      <h1 class="c-roadmap-is__title">The PKT Roadmap is</h1>
+      <h1 class="c-roadmap-is__title">The PKT Roadmap</h1>
       <ul class="c-roadmap-is__list">
         <li class="c-roadmap-is__item">
           <a href="#VPN Marketplace">Phase 1</a> - Build a VPN market where anyone can participate and the minimum price is free
