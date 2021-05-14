@@ -83,6 +83,9 @@
                 <li>
                   <a href="/roadmap">Roadmap</a>
                 </li>
+                <li>
+                  <a href="/origin-story">PKT Origin Story</a>
+                </li>
               </ul>
             </li>
             <li class="nav__menu-item">
