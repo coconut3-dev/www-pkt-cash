@@ -1,13 +1,13 @@
 <template>
   <div class="v-goodnews">
     <section class="v-main-section">
-      <h1 class="v-main-section__heading">Project<br /><span class="white">GOOD NEWS</span></h1>
-      <h2 class="v-main-section__subheading">Announcement 1 of 7</h2>
+      <h1 class="v-main-section__heading">{{ $t("goodnews.title_1") }}<br /><span class="white">{{ $t("goodnews.title_2") }}</span></h1>
+      <h2 class="v-main-section__subheading">{{ $t("goodnews.title_3") }}</h2>
       <div class="v-main-section__timer">
-        <span class="v-main-section__timer_el">{{ timerOutput_days }}<span class="v-main-section__timer_label">Days</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput_hours }}<span class="v-main-section__timer_label">Hours</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput_mins }}<span class="v-main-section__timer_label">Mins</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput_secs }}<span class="v-main-section__timer_label">Secs</span></span>
+        <span class="v-main-section__timer_el">{{ timerOutput_days }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_1") }}</span></span><span class="v-main-section__timer_div">:</span>
+        <span class="v-main-section__timer_el">{{ timerOutput_hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
+        <span class="v-main-section__timer_el">{{ timerOutput_mins }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_3") }}</span></span><span class="v-main-section__timer_div">:</span>
+        <span class="v-main-section__timer_el">{{ timerOutput_secs }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_4") }}</span></span>
       </div>
     </section>
   </div>
@@ -107,6 +107,9 @@ export default {
   }
   & .v-main-section {
     @extend %t-center;
+    @include for-width(-small-lg) {
+      margin-bottom:rem(150);
+    }
     &__heading {
       color:$black_blue;
       @extend %inter_black;
@@ -158,7 +161,7 @@ export default {
       margin-top:rem(50);
       color:$black_blue;
       @include for-width(-small-lg) {
-        margin-top:rem(35);
+        margin-top:rem(50);
       }
       &_el {
         @extend %inter_bold;

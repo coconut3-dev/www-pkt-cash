@@ -982,5 +982,15 @@ export default {
         specific_things: "Some specific things you should not do include",
         specific_item_1: "Don’t use PKT or wPKT wordmarks and logo in anything dishonest or fraudulent.",
         specific_item_2: "Don’t use PKT or wPKT wordmarks and logo to endorse products, groups, or services not associated with the PKT project.",
+    },
+    goodnews: {
+        good_news: "Project Good News",
+        title_1: "Project",
+        title_2: "GOOD NEWS",
+        title_3: "Announcement 1 of 7",
+        counter_1: "Days",
+        counter_2: "Hours",
+        counter_3: "Mins",
+        counter_4: "Secs",
     }
 }

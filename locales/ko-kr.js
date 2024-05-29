@@ -982,5 +982,15 @@ export default {
         specific_things: "하지 말아야 할 특정 사항들은 다음과 같습니다",
         specific_item_1: "불명예하거나 사기적인 것에 PKT 또는 wPKT 워드마크 및 로고를 사용하지 마십시오.",
         specific_item_2: "PKT 프로젝트와 관련되지 않은 제품, 그룹 또는 서비스를 보증하기 위해 PKT 또는 wPKT 워드마크 및 로고를 사용하지 마십시오.",
+    },
+    goodnews: {
+        good_news: "프로젝트 굿 뉴스",
+        title_1: "프로젝트",
+        title_2: "좋은 소식",
+        title_3: "공지사항 1 / 7",
+        counter_1: "일수",
+        counter_2: "시간",
+        counter_3: "분",
+        counter_4: "초",
     }
 }

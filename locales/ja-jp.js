@@ -976,5 +976,15 @@ export default {
         specific_things: "許容されない具体的な使用例には次のものが含まれます",
         specific_item_1: "PKTまたはwPKTのワードマークとロゴを不正行為または詐欺行為に使用しないでください。",
         specific_item_2: "PKTまたはwPKTのワードマークとロゴを、PKTプロジェクトと関連のない製品、団体、またはサービスを支持するために使用しないでください。",
+    },
+    goodnews: {
+        good_news: "プロジェクト・グッドニュース",
+        title_1: "プロジェクト",
+        title_2: "グッドニュース",
+        title_3: "お知らせ 1 / 7",
+        counter_1: "日数",
+        counter_2: "時間",
+        counter_3: "議事録",
+        counter_4: "秒",
     }
 }

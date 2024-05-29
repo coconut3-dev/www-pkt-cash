@@ -975,5 +975,15 @@ export default {
         specific_things: "您不应该做的一些具体事情包括",
         specific_item_1: "不要在任何不诚实或欺诈的事物中使用 PKT 或 wPKT 文字标志和徽标。",
         specific_item_2: "不要使用 PKT 或 wPKT 文字标志和徽标来背书与 PKT 项目无关的产品、团体或服务。"
+    },
+    goodnews: {
+        good_news: "好消息项目",
+        title_1: "项目",
+        title_2: "好消息",
+        title_3: "第 1 号公告，共 7 页",
+        counter_1: "天数",
+        counter_2: "小时数",
+        counter_3: "分钟",
+        counter_4: "秒数",
     }
 }

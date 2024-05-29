@@ -163,6 +163,10 @@ export default {
               route_link: "https://docsend.com/view/ayf5d3tz5rymn8fv",
               external: true
             },
+            {
+              name:"goodnews.good_news",
+              route_link: "/goodnews",
+            },
           ]
         },
         {

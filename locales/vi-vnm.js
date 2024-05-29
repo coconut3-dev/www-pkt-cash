@@ -979,5 +979,15 @@ export default {
         specific_things: "Một số điều cụ thể bạn không nên làm bao gồm",
         specific_item_1: "Không sử dụng biểu tượng và logo PKT hoặc wPKT trong bất kỳ thứ gì không trung thực hoặc lừa đảo.",
         specific_item_2: "Không sử dụng biểu tượng và logo PKT hoặc wPKT để ủng hộ sản phẩm, nhóm hoặc dịch vụ không liên quan đến dự án PKT.",
+    },
+    goodnews: {
+        good_news: "Dự án Tin Tốt",
+        title_1: "Dự án",
+        title_2: "TIN TỐT",
+        title_3: "Thông báo 1 trong 7",
+        counter_1: "Ngày",
+        counter_2: "Giờ",
+        counter_3: "Phút",
+        counter_4: "Giây",
     }
 }
