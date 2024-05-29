@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      countDownToTime : new Date("Jun 12, 2024 10:00:00").getTime(),
+      countDownToTime : new Date("Jun 12, 2024 11:00:00").getTime(),
       timerOutput_days:  null,
       timerOutput_hours:  null,
       timerOutput_mins:  null,
@@ -59,7 +59,7 @@ export default {
     }
   },
   mounted () {
-    document.body.classList.add('goodnews');
+    document.getElementById('__nuxt').classList.add('goodnews');
     setInterval(() => { this.startTimer() }, 1000);
   },
 };
