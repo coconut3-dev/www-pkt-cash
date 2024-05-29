@@ -67,7 +67,7 @@ export default {
 
 <style lang="scss">
 .goodnews {
-  overflow: hidden;
+  // overflow: hidden;
   & .c-header {
     & .nav__logo {
       background-image:url(/img/logo-new-dark.svg);
@@ -86,9 +86,6 @@ export default {
         }
       }
     }
-  }  
-  & .c-footer {
-    display:none;
   }
 }
 .v-goodnews {
