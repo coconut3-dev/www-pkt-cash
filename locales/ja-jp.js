@@ -981,7 +981,7 @@ export default {
         good_news: "プロジェクト・グッドニュース",
         title_1: "プロジェクト",
         title_2: "グッドニュース",
-        title_3: "お知らせ 1 / 7",
+        title_3: "お知らせ 2 / 7",
         counter_1: "日数",
         counter_2: "時間",
         counter_3: "議事録",

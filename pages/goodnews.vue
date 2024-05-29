@@ -18,7 +18,7 @@ export default {
   head() {
     return {
       title: "Project GOOD NEWS - PKT",
-      meta: [{ hid: "description", name: "description", content: "Announcement 1 of 7" }],
+      meta: [{ hid: "description", name: "description", content: "Announcement 2 of 7" }],
       link: [
         {
           rel: 'canonical',

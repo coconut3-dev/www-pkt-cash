@@ -980,7 +980,7 @@ export default {
         good_news: "好消息项目",
         title_1: "项目",
         title_2: "好消息",
-        title_3: "第 1 号公告，共 7 页",
+        title_3: "第 2 号公告，共 7 页",
         counter_1: "天数",
         counter_2: "小时数",
         counter_3: "分钟",

@@ -987,7 +987,7 @@ export default {
         good_news: "프로젝트 굿 뉴스",
         title_1: "프로젝트",
         title_2: "좋은 소식",
-        title_3: "공지사항 1 / 7",
+        title_3: "공지사항 2 / 7",
         counter_1: "일수",
         counter_2: "시간",
         counter_3: "분",

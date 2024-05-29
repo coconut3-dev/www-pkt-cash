@@ -987,7 +987,7 @@ export default {
         good_news: "Project Good News",
         title_1: "Project",
         title_2: "GOOD NEWS",
-        title_3: "Announcement 1 of 7",
+        title_3: "Announcement 2 of 7",
         counter_1: "Days",
         counter_2: "Hours",
         counter_3: "Mins",

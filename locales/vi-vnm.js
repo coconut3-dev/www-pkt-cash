@@ -984,7 +984,7 @@ export default {
         good_news: "Dự án Tin Tốt",
         title_1: "Dự án",
         title_2: "TIN TỐT",
-        title_3: "Thông báo 1 trong 7",
+        title_3: "Thông báo 2 trong 7",
         counter_1: "Ngày",
         counter_2: "Giờ",
         counter_3: "Phút",
