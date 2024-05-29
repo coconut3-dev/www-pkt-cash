@@ -125,7 +125,7 @@ export default {
       @include for-width(-small-lg) {
         font-size: rem(42);
         line-height: rem(52);
-        padding-top:rem(50);
+        padding-top:0;
       }
       & span {
         background-color:#F66020;
