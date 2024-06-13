@@ -8,10 +8,6 @@
         <span class="v-main-section__timer_el">{{ timerOutput_hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
         <span class="v-main-section__timer_el">{{ timerOutput_mins }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_3") }}</span></span><span class="v-main-section__timer_div">:</span>
         <span class="v-main-section__timer_el">{{ timerOutput_secs }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_4") }}</span></span>
-        <!-- <span class="v-main-section__timer_el">0<span class="v-main-section__timer_label">0</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">0<span class="v-main-section__timer_label">0</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">0<span class="v-main-section__timer_label">0</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">0<span class="v-main-section__timer_label">0</span></span> -->
       </div>
     </section>
   </div>
@@ -33,11 +29,11 @@ export default {
   },
   data() {
     return {
-      countDownToTime : new Date("Jun 13, 2024 11:00:00").getTime(),
-      timerOutput_days:  null,
-      timerOutput_hours:  null,
-      timerOutput_mins:  null,
-      timerOutput_secs:  null
+      countDownToTime : new Date("Jun 26, 2024 21:00:00").getTime(),
+      timerOutput_days:  0,
+      timerOutput_hours:  0,
+      timerOutput_mins:  0,
+      timerOutput_secs:  0
     }
   },
   methods: {
