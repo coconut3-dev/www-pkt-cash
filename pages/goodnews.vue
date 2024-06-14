@@ -189,7 +189,7 @@ export default {
       margin-top:rem(50);
       color:$black_blue;
       @include for-width(-small-lg) {
-        margin-top:rem(50);
+        margin-top:rem(15);
       }
       &_el {
         @extend %inter_bold;
