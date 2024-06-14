@@ -9,6 +9,9 @@
         <span class="v-main-section__timer_el">{{ timerOutput_mins }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_3") }}</span></span><span class="v-main-section__timer_div">:</span>
         <span class="v-main-section__timer_el">{{ timerOutput_secs }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_4") }}</span></span>
       </div>
+      <div class="v-main-section__roadmap">
+        <img src="/img/good_news/pkt-good-news-roadmap.svg" alt="Roadmap" width="800" height="475" />
+      </div>
     </section>
   </div>
 </template>
@@ -115,18 +118,25 @@ export default {
   background-size:cover;
   background-position:center center;
   width:100%;
-  height:100vh;
+  min-height:100vh;
+  height:auto;
+  padding:rem(150) 0 rem(75);
   @extend %df;
   @extend %jcc;
   @extend %fdc;
   @extend %aic;
+  @include for-width(-desktop-medium) {
+    padding:rem(100) 0 rem(50);
+  }
   @include for-width(-small-lg) {
     background-image:url(/img/goodnews-bg-mobile.webp);
+    height:100vh;
+    padding:0;
   }
   & .v-main-section {
     @extend %t-center;
     @include for-width(-small-lg) {
-      margin-bottom:rem(150);
+      margin-bottom:0;
     }
     &__heading {
       color:$black_blue;
@@ -216,6 +226,24 @@ export default {
         @include for-width(-small-lg) {
           font-size: rem(36);
           line-height: rem(36);
+        }
+      }
+    }
+    &__roadmap {
+      padding-top:rem(50);
+      @include for-width(-desktop-medium) {
+        padding-left: rem(40);
+        padding-right: rem(40);
+      }
+      @include for-width(-small-lg) {
+        padding:rem(40) rem(25) 0;
+      }
+      img {
+        width:rem(800);
+        height:rem(475);
+        @include for-width(-small-lg) {
+          width:100%;
+          height:auto;
         }
       }
     }
