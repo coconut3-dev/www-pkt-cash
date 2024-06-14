@@ -17,8 +17,29 @@
 export default {
   head() {
     return {
-      title: "Project GOOD NEWS - PKT",
-      meta: [{ hid: "description", name: "description", content: "Announcement 2 of 7" }],
+      title: "Project GOOD NEWS | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Announcement 3 of 7'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Project GOOD NEWS | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Announcement 3 of 7'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: '/img/featured_meta/pktcash-goodnews.jpeg'
+        }
+      ],
       link: [
         {
           rel: 'canonical',
