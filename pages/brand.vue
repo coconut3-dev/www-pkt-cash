@@ -21,8 +21,24 @@ export default {
   },
   head() {
     return {
-      title: this.$t("brand.meta_title"),
-      meta: [{ hid: "description", name: "description", content: this.$t("brand.meta_descr") }],
+      title: 'Media Kit | PKT Cash',
+	  meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t("brand.meta_descr")
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Media Kit | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.$t("brand.meta_descr")
+        }
+      ],
       link: [
         {
           rel: 'canonical',

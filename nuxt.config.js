@@ -33,7 +33,7 @@ export default {
       },
       {
         property: "og:site_name",
-        content: "PKT"
+        content: "PKT Cash"
       },
       {
         property: "og:description",

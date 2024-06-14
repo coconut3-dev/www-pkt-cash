@@ -91,8 +91,24 @@ export default {
   },
   head() {
     return {
-      title: "Mine - PKT",
-      meta: [{ hid: "description", name: "description", content: "The PKT Network is powered by miners who run PacketCrypt, the world’s first and only bandwidth-hard, proof of work, mining algorithm. PacketCrypt economically incentivizes miners to collaborate, operate and grow the fully decentralized PKT Network. Mining has never been easier. Get started today." }],
+      title: "Mine | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'The PKT Network is powered by miners who run PacketCrypt, the world’s first and only bandwidth-hard, proof of work, mining algorithm. PacketCrypt economically incentivizes miners to collaborate, operate and grow the fully decentralized PKT Network. Mining has never been easier. Get started today.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Mine | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'The PKT Network is powered by miners who run PacketCrypt, the world’s first and only bandwidth-hard, proof of work, mining algorithm. PacketCrypt economically incentivizes miners to collaborate, operate and grow the fully decentralized PKT Network. Mining has never been easier. Get started today.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

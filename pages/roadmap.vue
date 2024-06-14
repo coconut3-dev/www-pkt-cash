@@ -475,8 +475,24 @@ export default {
   },
   head() {
     return {
-      title: "Roadmap - PKT",
-      meta: [{ hid: "description", name: "description", content: "This roadmap provides an overview of the PKT ecosystem development, separated into four phases: Launch, Utility, Scale, and Innovate. Each phase defines an era of focus. Therefore, community developers and contributors have a guide for what tools, functionality and capabilities are needed and which relate to each era." }],
+      title: "Roadmap | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'This roadmap provides an overview of the PKT ecosystem development, separated into four phases: Launch, Utility, Scale, and Innovate. Each phase defines an era of focus. Therefore, community developers and contributors have a guide for what tools, functionality and capabilities are needed and which relate to each era.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Roadmap | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'This roadmap provides an overview of the PKT ecosystem development, separated into four phases: Launch, Utility, Scale, and Innovate. Each phase defines an era of focus. Therefore, community developers and contributors have a guide for what tools, functionality and capabilities are needed and which relate to each era.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

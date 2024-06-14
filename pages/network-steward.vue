@@ -95,8 +95,24 @@ export default {
   },
   head() {
     return {
-      title: "Network Steward",
-      meta: [{ hid: "description", name: "description", content: "The Network Steward is a wallet address that earns 20% from every mined block to fund the ongoing development of the PKT Network. The custodian of the Network Steward wallet is democratically elected weekly by proof-of-stake voting." }],
+      title: "Network Steward | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'The Network Steward is a wallet address that earns 20% from every mined block to fund the ongoing development of the PKT Network. The custodian of the Network Steward wallet is democratically elected weekly by proof-of-stake voting.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Network Steward | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'The Network Steward is a wallet address that earns 20% from every mined block to fund the ongoing development of the PKT Network. The custodian of the Network Steward wallet is democratically elected weekly by proof-of-stake voting.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

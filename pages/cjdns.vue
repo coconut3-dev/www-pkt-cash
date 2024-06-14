@@ -52,8 +52,24 @@ export default {
   },
   head() {
     return {
-      title: "Cjdns peer-to-peer mesh networking is powering the PKT Network - PKT",
-      meta: [{ hid: "description", name: "description", content: "PKT Network is a global mesh network leveraging cjdns to scale its decentralized infrastructure and the decentralized web. PKT Network nodes automatically discover and connect with their neighbors. This creates a dynamic and self-configuring network that is available exclusively peer-to-peer or through global internet browsers." }],
+      title: "Cjdns peer-to-peer mesh networking is powering the PKT Network | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'PKT Network is a global mesh network leveraging cjdns to scale its decentralized infrastructure and the decentralized web. PKT Network nodes automatically discover and connect with their neighbors. This creates a dynamic and self-configuring network that is available exclusively peer-to-peer or through global internet browsers.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Cjdns peer-to-peer mesh networking is powering the PKT Network | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'PKT Network is a global mesh network leveraging cjdns to scale its decentralized infrastructure and the decentralized web. PKT Network nodes automatically discover and connect with their neighbors. This creates a dynamic and self-configuring network that is available exclusively peer-to-peer or through global internet browsers.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

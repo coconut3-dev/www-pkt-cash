@@ -2,10 +2,10 @@
   <div class="v-devcenter">
     <section class="v-header-section">
       <SpotAInternal 
-      title="Developer Central"
-      text="PKT is a community project. All the technology in the ecosystem is developed by contributors and/or community member companies inspired by PKT’s mission. Here you will find all the documentation you need to begin building within the ecosystem." 
-      button_1="Get funding"
-      button_2="Read docs"
+      :title="this.$t('dev_central.title')"
+      :text="this.$t('dev_central.text')" 
+      :button_1="this.$t('dev_central.button_1')"
+      :button_2="this.$t('dev_central.button_2')"
       button_1_link="/network-steward"
       button_2_link="https://docs.pkt.cash/"
       button_2_target="_blank"  />
@@ -17,36 +17,36 @@
       <div class="container">
         <div class="v-block-links-section__inner">
           <div class="v-block-links-section__single orange_bg">
-            <div><h3 class="v-block-links-section__title">Install a cjdns node</h3>
-            <p class="v-block-links-section__descr">When you install cjdns you are adding core physical infrastructure to the VPN-based PKT Network.</p></div>
-            <a href="https://github.com/cjdelisle/cjdns" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>Install now</span></a>
+            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_1_title") }}</h3>
+            <p class="v-block-links-section__descr">{{ $t("dev_central.block_1_text") }}</p></div>
+            <a href="https://github.com/cjdelisle/cjdns" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_1") }}</span></a>
           </div>
           <div class="v-block-links-section__single blue_bg">
-            <div><h3 class="v-block-links-section__title">Begin mining PKT</h3>
-            <p class="v-block-links-section__descr">Mining can be done from any computer. The PKT World wallet has a miner built-in, so it’s easy to participate.</p></div>
-            <a href="https://pkt.world/mining" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>Get started</span></a>
+            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_2_title") }}</h3>
+            <p class="v-block-links-section__descr">{{ $t("dev_central.block_2_text") }}</p></div>
+            <a href="https://pkt.world/mining" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_2") }}</span></a>
           </div>
           <div class="v-block-links-section__single green_bg">
-            <div><h3 class="v-block-links-section__title">Setup a PKT mining pool</h3>
-            <p class="v-block-links-section__descr">PKT mining pools require skilled operators with substantial bandwidth and bare metal infrastructure.</p></div>
-            <a href="https://docs.pkt.cash/en/latest/mining/pool_setup_guide/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>Read docs</span></a>
+            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_3_title") }}</h3>
+            <p class="v-block-links-section__descr">{{ $t("dev_central.block_3_text") }}</p></div>
+            <a href="https://docs.pkt.cash/en/latest/mining/pool_setup_guide/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.button_2") }}</span></a>
           </div>
         </div>
         <div class="v-block-links-section__inner">
           <div class="v-block-links-section__single dark_blue_bg">
-            <div><h3 class="v-block-links-section__title">Run a PKT FullNode</h3>
-            <p class="v-block-links-section__descr">Each PKT FullNode validates the blocks and helps the wallets to receive and send PKT.</p></div>
-            <a href="https://docs.pkt.cash/en/latest/pktd/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>Install now</span></a>
+            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_4_title") }}</h3>
+            <p class="v-block-links-section__descr">{{ $t("dev_central.block_4_text") }}</p></div>
+            <a href="https://docs.pkt.cash/en/latest/pktd/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_1") }}</span></a>
           </div>
           <div class="v-block-links-section__single grey_bg">
-            <div><h3 class="v-block-links-section__title">PKT Lightning Network</h3>
-            <p class="v-block-links-section__descr">PKT Lightning Network is designed to fortify the speed and portability of transactions across the PKT Network.</p></div>
-            <a href="https://github.com/cjdelisle/PKT-Lightning-Wallet" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>Learn More</span></a>
+            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_5_title") }}</h3>
+            <p class="v-block-links-section__descr">{{ $t("dev_central.block_5_text") }}</p></div>
+            <a href="https://github.com/cjdelisle/PKT-Lightning-Wallet" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("common.learn_more") }}</span></a>
           </div>
           <div class="v-block-links-section__single rose_bg">
-            <div><h3 class="v-block-links-section__title">Build a website in PKT Network</h3>
-            <p class="v-block-links-section__descr">Get more information about building and hosting censorship-resistant websites in the PKT Network.</p></div>
-            <a href="https://docs.pkt.cash/en/latest/cjdns_websites/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>Learn more</span></a>
+            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_6_title") }}</h3>
+            <p class="v-block-links-section__descr">{{ $t("dev_central.block_6_text") }}</p></div>
+            <a href="https://docs.pkt.cash/en/latest/cjdns_websites/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("common.learn_more") }}</span></a>
           </div>
         </div>
       </div>
@@ -71,16 +71,32 @@ export default {
     return {
       simple_block: [
         {
-          single_title: "Get Started",
-          single_text: "PKT is permissionless, so everyone is empowered to develop the project. Get started by either mining PacketCrypt or installing a cjdns node. These efforts are the infrastructure of the PKT Network. PKT Network supports censorship-resistant websites. These sites can be reached peer-to-peer within the PKT Network, or from the global internet using a reverse VPN. If funding is needed, check out the Network Steward, which is a grant mechanism to fund PKT-related projects.",
+          single_title: this.$t("dev_central.block_button_2"),
+          single_text: this.$t("dev_central.simple_text"),
         }
       ]
     };
   },
   head() {
     return {
-      title: "Developer Central - PKT",
-      meta: [{ hid: "description", name: "description", content: "PKT is a community project. All the technology in the ecosystem is developed by contributors and/or community member companies inspired by PKT’s mission. Here you will find all the documentation you need to begin building within the ecosystem." }],
+      title: 'Developer Central | PKT Cash',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'PKT is a community project. All the technology in the ecosystem is developed by contributors and/or community member companies inspired by PKT’s mission. Here you will find all the documentation you need to begin building within the ecosystem.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Developer Central | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'PKT is a community project. All the technology in the ecosystem is developed by contributors and/or community member companies inspired by PKT’s mission. Here you will find all the documentation you need to begin building within the ecosystem.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

@@ -44,8 +44,24 @@ export default {
   },
   head() {
     return {
-      title: "Cryptoeconomics - PKT",
-      meta: [{ hid: "description", name: "description", content: "PKT is paid to PacketCrypt miners" }],
+      title: "Cryptoeconomics | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'PKT is paid to PacketCrypt miners'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Cryptoeconomics | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'PKT is paid to PacketCrypt miners'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

@@ -150,8 +150,24 @@ export default {
   },
   head() {
     return {
-      title: "Utility - PKT",
-      meta: [{ hid: "description", name: "description", content: "Building physical infrastructure with PKT." }],
+      title: "Utility | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Building physical infrastructure with PKT.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Utility | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Building physical infrastructure with PKT.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

@@ -215,8 +215,24 @@ export default {
   },
   head() {
     return {
-      title: "Ecosystem - PKT",
-      meta: [{ hid: "description", name: "description", content: "Explore the PKT Network" }],
+      title: "Ecosystem | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Explore the PKT Network'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Ecosystem | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Explore the PKT Network'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

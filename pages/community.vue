@@ -88,8 +88,24 @@ export default {
   },
   head() {
     return {
-      title: "Community - PKT",
-      meta: [{ hid: "description", name: "description", content: "PKT is a community-based project. There is no company, foundation or pre-mine. Join the community to connect with other Pkteers who believe in internet freedom and want to help get the next 1 billion people online." }],
+      title: "Community | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'PKT is a community-based project. There is no company, foundation or pre-mine. Join the community to connect with other Pkteers who believe in internet freedom and want to help get the next 1 billion people online.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Community | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'PKT is a community-based project. There is no company, foundation or pre-mine. Join the community to connect with other Pkteers who believe in internet freedom and want to help get the next 1 billion people online.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

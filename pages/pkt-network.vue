@@ -2,10 +2,10 @@
   <div class="v-network">
     <section class="v-header-section">
       <SpotAInternal 
-      title="Scaling the PKT Network"
-      text="PKT Network is a high speed, VPN-based network. The network’s decentralized physical infrastructure (DePIN) is designed to support open internet access and empower people to build websites where the web URL is also a PKT payment address." 
-      button_1="Ecosystem"
-      button_2="Roadmap"
+      :title="this.$t('pkt_network.title')"
+      :text="this.$t('pkt_network.text')" 
+      :button_1="this.$t('header.ecosystem')"
+      :button_2="this.$t('header.roadmap')"
       button_1_link="/ecosystem"
       button_2_link="/build" />
     </section>
@@ -18,7 +18,7 @@
     <section class="v-asymetrical-section">
       <div class="container">
         <div class="v-asymetrical-section__heading">
-          <h2>PKT’s Integrated Payment Rails</h2>
+          <h2>{{ $t("pkt_network.assym_title") }}</h2>
         </div>
         <div class="v-asymetrical-section__inner">
           <BlockAsymmetrical :listFirst="asymetrical_block_list" :listSecond="asymetrical_block_list_second" />
@@ -49,31 +49,31 @@ export default {
     return {
       simple_block: [
         {
-          single_title: "What is PKT Network?",
-          single_text: "PKT Network is an decentralized ecosystem powered by the people. Contributors are earn PKT 	cryptocurrency by connecting bandwidth and computer processing resources to power the network. The result is a secure, high speed, permissionless, user-operated web infrastructure. Websites built in the PKT Network are censorship-resistant, yet reachable from any web browser using a reverse VPN and payments can be paid directly to a web URL within the network.",
+          single_title: this.$t("pkt_network.simple_title"),
+          single_text: this.$t("pkt_network.simple_text"),
         }
       ],
       asymetrical_block_list: [
         {
-          single_title: "Peer-to-peer Payments",
-          single_descr: "Link a cjdns IPv6 address to a PKT wallet address and seamlessly receive payments without a third party payment processor.",
+          single_title: this.$t("pkt_network.assym_1_title"),
+          single_descr: this.$t("pkt_network.assym_1_text"),
           color: "blue_dot"
         },
         {
-          single_title: "No Fees",
-          single_descr: "Enjoy near-zero gas fees and no third party payment processor fees when using PKT’s payment rails.",
+          single_title: this.$t("pkt_network.assym_2_title"),
+          single_descr: this.$t("pkt_network.assym_2_text"),
           color: "green_dot"
         }
       ],
       asymetrical_block_list_second: [
         {
-          single_title: "Scalable",
-          single_descr: "Upon PKT Lightning Network launch, PKT will have near-infinite transactions per second for unlimited scalability.",
+          single_title: this.$t("pkt_network.assym_second_1_title"),
+          single_descr: this.$t("pkt_network.assym_second_1_text"),
           color: "green_dot"
         },
         {
-          single_title: "Layer-2 Payment Rails",
-          single_descr: "PKT Lighting Network  is a fork of Bitcoin’s layer-2 Lightning Network. Payments will soon process over PKT Lighting Network offering near-instant settlement.",
+          single_title: this.$t("pkt_network.assym_second_2_title"),
+          single_descr: this.$t("pkt_network.assym_second_2_text"),
           color: "blue_dot"
         }
       ],
@@ -81,8 +81,24 @@ export default {
   },
   head() {
     return {
-      title: "Scaling the PKT Network - PKT",
-      meta: [{ hid: "description", name: "description", content: "PKT Network is a high speed, peer-to-peer, VPN-based network. This decentralized infrastructure (DePIN) is expanding open internet access and powering the future of the decentralized web." }],
+      title: 'Scaling the PKT Network | PKT Cash',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'PKT Network is a high speed, VPN-based network. The network’s decentralized physical infrastructure (DePIN) is designed to support open internet access and empower people to build websites where the web URL is also a PKT payment address.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Scaling the PKT Network | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'PKT Network is a high speed, VPN-based network. The network’s decentralized physical infrastructure (DePIN) is designed to support open internet access and empower people to build websites where the web URL is also a PKT payment address.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',

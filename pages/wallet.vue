@@ -2,11 +2,11 @@
   <div class="v-wallets">
     <section class="v-header-section">
       <SpotAInternal 
-      title="PKT Wallets"
-      subtitle="Choose a wallet based on your use case"
-      text="Whether you’re mining PKT, holding PKT or transacting WPKT on Binance Smart Chain, select the wallet that works for you. Also install the Watchr app on mobile or desktop to easily view and track any PKT wallet address." 
-      button_1="View wallets" 
-      button_2="Install Watchr"
+      :title="this.$t('wallets.title')"
+      :subtitle="this.$t('wallets.subtitle')"
+      :text="this.$t('wallets.text')" 
+      :button_1="this.$t('wallets.button_1')" 
+      :button_2="this.$t('wallets.button_2')"
       button_1_link="#wallets"
       button_2_link="https://pkt.watch/watchr/"
       button_2_target="_blank" />
@@ -24,9 +24,9 @@
         </div>
         <div class="v-watchr-section_content">
           <img src="/img/wallets-watchr-logo.webp" title="Watchr" />
-          <h5>Watch any wallet on the <br />PKT blockchain</h5>
-          <p>Watchr enables you to get insights and track any wallet address using the mobile or desktop app.</p>
-          <a href="https://pkt.watch/watchr/" target="_blank" class="c-common-button c-common-button__white"><span>Install Watchr</span></a>
+          <h5>{{ $t("wallets.watchr_title_1") }} <br />{{ $t("wallets.watchr_title_2") }}</h5>
+          <p>{{ $t("wallets.watchr_text") }}</p>
+          <a href="https://pkt.watch/watchr/" target="_blank" class="c-common-button c-common-button__white"><span>{{ $t("wallets.button_2") }}</span></a>
         </div>
       </div>
     </section>
@@ -43,8 +43,24 @@ export default {
   },
   head() {
     return {
-      title: "PKT Wallets",
-      meta: [{ hid: "description", name: "description", content: "Choose a wallet based on your use case. Whether you are mining PKT, holding PKT or transacting wPKT on Binance Smart Chain, you can select that wallet that fits your needs. You can use the Watchr app to monitor any PKT wallet balance." }],
+      title: 'PKT Wallets',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t("wallets.subtitle")
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'PKT Wallets | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.$t("wallets.subtitle")
+        }
+      ],
       link: [
         {
           rel: 'canonical',
@@ -58,9 +74,9 @@ export default {
       pkt_wallets: [
         {
           bg_color: "background-color:#197CC7;background-image:url(/img/wallets-wallet-pkt-world.svg);background-size:23%;",
-          heading: "Desktop Wallet",
-          title: "PKT World Wallet",
-          content: "Windows and MacOS wallet with built-in PKT miner",
+          heading: this.$t("wallets.pkt_wallets_1_heading"),
+          title: this.$t("wallets.pkt_wallets_1_title"),
+          content: this.$t("wallets.pkt_wallets_1_content"),
           button_link: "https://pkt.world/wallet",
           // dropdown: true,
           // children: [
@@ -76,25 +92,25 @@ export default {
         },
         {
           bg_color: "background-color:#2B3991;background-image:url(/img/wallets-wallet-anode.svg);background-size:30%;",
-          heading: "iOS Mobile Wallet",
-          title: "Anode Mobile Wallet",
-          content: "Mobile wallet for iOS with PKT Lightning for micro-transactions",
+          heading: this.$t("wallets.pkt_wallets_2_heading"),
+          title: this.$t("wallets.pkt_wallets_2_title"),
+          content: this.$t("wallets.pkt_wallets_2_content"),
           button_link: "https://apps.apple.com/us/app/anode-wallet/id1609509719",
         },
         {
           bg_color: "background-color:#2B3991;background-image:url(/img/wallets-wallet-anode-vpn.svg);background-size:50%;",
-          heading: "Android Mobile Wallet",
-          title: "Anode VPN for Android",
-          content: "Android mobile wallet that includes built-in PKT VPN app",
+          heading: this.$t("wallets.pkt_wallets_3_heading"),
+          title: this.$t("wallets.pkt_wallets_3_title"),
+          content: this.$t("wallets.pkt_wallets_3_content"),
           button_link: "https://play.google.com/store/apps/details?id=co.anode.anodium.playstore&hl=en&gl=US",
         }
       ],
       mining_wallets: [
         {
           bg_color: "background-color:#197CC7;background-image:url(/img/wallets-wallet-pkt-world.svg);background-size:23%;",
-          heading: "PKT Mining Wallet",
-          title: "PKT World Wallet",
-          content: "Windows and MacOS wallet with built-in PKT miner",
+          heading: this.$t("wallets.mining_wallets_1_heading"),
+          title: this.$t("wallets.mining_wallets_1_title"),
+          content: this.$t("wallets.mining_wallets_1_content"),
           button_link: "https://pkt.world/wallet",
           // dropdown: true,
           // children: [
@@ -110,16 +126,16 @@ export default {
         },
         {
           bg_color: "background-image:url(/img/wallets-wallet-command-line.webp);background-size:cover;",
-          heading: "PKT Mining Wallet",
-          title: "Command Line PKT Wallet",
-          content: "This terminal-based wallet is a full node setup",
+          heading: this.$t("wallets.mining_wallets_2_heading"),
+          title: this.$t("wallets.mining_wallets_2_title"),
+          content: this.$t("wallets.mining_wallets_2_content"),
           button_link: "https://docs.pkt.cash/en/latest/pktd/pktwallet/",
         },
         {
           bg_color: "background-color:#FD9D2D;background-image:url(/img/wallets-wallet-metamask.svg);background-size:30%;",
-          heading: "WPKT Wallet",
-          title: "WPKT MetaMask",
-          content: "Use this wallet for WPKT only on web browser and mobile",
+          heading: this.$t("wallets.mining_wallets_3_heading"),
+          title: this.$t("wallets.mining_wallets_3_title"),
+          content: this.$t("wallets.mining_wallets_3_content"),
           button_link: "https://docs.pkt.cash/en/latest/wrapped_pkt/",
         },
       ],

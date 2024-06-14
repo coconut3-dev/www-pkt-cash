@@ -163,8 +163,24 @@ export default {
   // },
   head() {
     return {
-      title: "PKT Cash is currency for bandwidth - PKT",
-      meta: [{ hid: "description", name: "description", content: "PKT Cash is a proof-of-work mined community coin. Miners are paid in PKT when running PacketCrypt, which powers the physical infrastructure of the PKT Network. The PKT cryptocurrency is designed as payment rails for microtransactions with near-instant settlement and near-zero gas fees." }],
+      title: "PKT Cash is currency for bandwidth | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'PKT Cash is a proof-of-work mined community coin. Miners are paid in PKT when running PacketCrypt, which powers the physical infrastructure of the PKT Network. The PKT cryptocurrency is designed as payment rails for microtransactions with near-instant settlement and near-zero gas fees.'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'PKT Cash is currency for bandwidth | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'PKT Cash is a proof-of-work mined community coin. Miners are paid in PKT when running PacketCrypt, which powers the physical infrastructure of the PKT Network. The PKT cryptocurrency is designed as payment rails for microtransactions with near-instant settlement and near-zero gas fees.'
+        }
+      ],
       link: [
         {
           rel: 'canonical',
