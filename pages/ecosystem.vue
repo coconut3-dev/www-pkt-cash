@@ -167,7 +167,7 @@ export default {
           img_style: "width:80px;",
         },
         {
-          projects_link: "https://exchange.pkt.net/",
+          projects_link: "https://pkt.net/",
           img_url: "/img/ecosystem-pktnet.svg",
           title:this.$t("ecosystem.eco_pr_payment_3"),
           style: "background-color:#FF9039;",
