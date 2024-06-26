@@ -20,7 +20,7 @@
 export default {
   head() {
     return {
-      title: "Project GOOD NEWS | PKT Cash",
+      title: "Project Good News | PKT Cash",
       meta: [
         {
           hid: 'description',
@@ -30,7 +30,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: 'Project GOOD NEWS | PKT Cash'
+          content: 'Project Good News | PKT Cash'
         },
         {
           hid: 'og:description',
