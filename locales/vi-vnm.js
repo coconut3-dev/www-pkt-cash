@@ -70,6 +70,7 @@ export default {
         utility: "Tiện ích",
         pkt_cash: "PKT Cash",
         get_pkt: "Nhận PKT",
+        cjdns: "Cjdns",
     },
     footer: {
         quicklink: "Liên kết nhanh",

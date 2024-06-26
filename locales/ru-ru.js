@@ -70,6 +70,7 @@ export default {
         utility: "Утилита",
         pkt_cash: "PKT Cash",
         get_pkt: "Получить PKT",
+        cjdns: "Cjdns",
     },
     footer: {
         quicklink: "Быстрая ссылка",

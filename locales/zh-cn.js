@@ -70,6 +70,7 @@ export default {
         utility: "实用性",
         pkt_cash: "PKT现金",
         get_pkt: "获取PKT",
+        cjdns: "Cjdns",
     },
     footer: {
         quicklink: "快速链接",

@@ -69,7 +69,8 @@ export default {
         resources: "リソース",
         utility: "ユーティリティ",
         pkt_cash: "PKTキャッシュ",
-        get_pkt: "PKTを入手"
+        get_pkt: "PKTを入手",
+        cjdns: "Cjdns",
     },
     footer: {
         quicklink: "クイックリンク",

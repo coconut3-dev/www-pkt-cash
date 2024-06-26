@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      countDownToTime : new Date("Jun 26, 2024 21:00:00").getTime(),
+      countDownToTime : new Date("Jun 26, 2024 20:00:00").getTime(),
       timerOutput_days:  0,
       timerOutput_hours:  0,
       timerOutput_mins:  0,

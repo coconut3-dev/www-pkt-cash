@@ -159,7 +159,7 @@ export default {
               route_link: "/pkt-cash",
             },
             {
-              name:"PKT Deck",
+              name:"resources.heading_button_4",
               route_link: "https://docsend.com/view/ayf5d3tz5rymn8fv",
               external: true
             },
@@ -229,7 +229,7 @@ export default {
               route_link: "/cryptoeconomics",
             },
             {
-              name:"Cjdns",
+              name:"header.cjdns",
               route_link: "/cjdns",
             },
             // {

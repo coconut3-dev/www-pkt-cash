@@ -163,7 +163,7 @@ export default {
         //   route_link: "/faq",
         // },
         {
-          name: "PKT Deck",
+          name: "resources.heading_button_4",
           route_link: "https://docsend.com/view/ayf5d3tz5rymn8fv",
           external: true,
         }
@@ -183,7 +183,7 @@ export default {
         //   route_link: "/build#roadmap",
         // },
         {
-          name: "Yellowpaper",
+          name: "header_new.dev_yellowpaper",
           route_link: "https://pkt.cash/PacketCrypt-2020-09-04.pdf",
           external: true,
         },
@@ -212,7 +212,7 @@ export default {
           route_link: "/ecosystem",
         },
         {
-          name: "Cjdns",
+          name: "header.cjdns",
           route_link: "https://github.com/cjdelisle/cjdns",
           external: true,
         }

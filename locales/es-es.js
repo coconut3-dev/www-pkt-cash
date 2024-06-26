@@ -70,6 +70,7 @@ export default {
         utility: "Utilidad",
         pkt_cash: "PKT Cash",
         get_pkt: "Obtener PKT",
+        cjdns: "Cjdns",
     },
     footer: {
         quicklink: "Enlace rápido",

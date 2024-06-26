@@ -70,6 +70,7 @@ export default {
         utility: "유틸리티",
         pkt_cash: "PKT 캐시",
         get_pkt: "PKT 얻기",
+        cjdns: "Cjdns",
     },
     footer: {
         quicklink: "빠른 링크",
