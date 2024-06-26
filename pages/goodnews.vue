@@ -25,7 +25,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Announcement 3 of 7'
+          content: 'Announcement 4 of 7'
         },
         {
           hid: 'og:title',
@@ -35,7 +35,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: 'Announcement 3 of 7'
+          content: 'Announcement 4 of 7'
         },
         {
           hid: 'og:image',
@@ -58,7 +58,7 @@ export default {
       timerOutput_hours:  0,
       timerOutput_mins:  0,
       timerOutput_secs:  0,
-      ann_number: 'Announcement 3 of 7',
+      ann_number: 'Announcement 4 of 7',
     }
   },
   methods: {
