@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      countDownToTime : new Date("Jun 26, 2024 20:00:00").getTime(),
+      countDownToTime : new Date("Jun 26, 2024 10:00:00").getTime(),
       timerOutput_days:  0,
       timerOutput_hours:  0,
       timerOutput_mins:  0,
@@ -90,7 +90,7 @@ export default {
     },
 
     getNewCountDownTime: function() {
-      const newTime = new Date("Jul 10, 2024 20:00:00").getTime();
+      const newTime = new Date("Jul 10, 2024 10:00:00").getTime();
       this.ann_number = 'Announcement 4 of 7';
       return newTime;
     },
@@ -99,7 +99,7 @@ export default {
   mounted () {
     this.timer = setInterval(this.startTimer, 1000);
     document.getElementById('__nuxt').classList.add('goodnews');
-    setInterval(() => { this.startTimer() }, 1000);
+    // setInterval(() => { this.startTimer() }, 1000);
   },
   beforeDestroy() {
     clearInterval(this.timer);
