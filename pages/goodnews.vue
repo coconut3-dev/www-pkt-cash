@@ -2,7 +2,7 @@
   <div class="v-goodnews">
     <section class="v-main-section">
       <h1 class="v-main-section__heading">{{ $t("goodnews.title_1") }}<br /><span class="white">{{ $t("goodnews.title_2") }}</span></h1>
-      <h2 class="v-main-section__subheading">{{ $t("goodnews.title_3") }}</h2>
+      <h2 class="v-main-section__subheading">{{ ann_number }}</h2>
       <div class="v-main-section__timer">
         <span class="v-main-section__timer_el">{{ timerOutput_days }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_1") }}</span></span><span class="v-main-section__timer_div">:</span>
         <span class="v-main-section__timer_el">{{ timerOutput_hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
@@ -57,13 +57,20 @@ export default {
       timerOutput_days:  0,
       timerOutput_hours:  0,
       timerOutput_mins:  0,
-      timerOutput_secs:  0
+      timerOutput_secs:  0,
+      ann_number: 'Announcement 3 of 7',
     }
   },
   methods: {
     startTimer: function() {
       const timeNow = new Date().getTime();
       const timeDifference = this.countDownToTime - timeNow;
+
+      if (timeDifference <= 0) {
+        this.countDownToTime = this.getNewCountDownTime();
+        timeDifference = this.countDownToTime - timeNow;
+      }
+
       const millisecondsInOneSecond = 1000;
       const millisecondsInOneMinute = millisecondsInOneSecond * 60;
       const millisecondsInOneHour = millisecondsInOneMinute * 60;
@@ -80,12 +87,23 @@ export default {
       this.timerOutput_hours = remainingHours;
       this.timerOutput_mins = remainingMinutes;
       this.timerOutput_secs = remainingSeconds;
-    }
+    },
+
+    getNewCountDownTime: function() {
+      const newTime = new Date("Jul 10, 2024 20:00:00").getTime();
+      this.ann_number = 'Announcement 4 of 7';
+      return newTime;
+    },
+
   },
   mounted () {
+    this.timer = setInterval(this.startTimer, 1000);
     document.getElementById('__nuxt').classList.add('goodnews');
     setInterval(() => { this.startTimer() }, 1000);
   },
+  beforeDestroy() {
+    clearInterval(this.timer);
+  }
 };
 </script>
 
