@@ -45,7 +45,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: '/img/featured_meta/pktcash-goodnews.jpeg'
+          content: '/img/featured_meta/pktcash-goodnews.jpg'
         }
       ],
       link: [
