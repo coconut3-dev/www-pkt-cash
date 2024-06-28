@@ -2,7 +2,8 @@
   <div class="v-goodnews">
     <section class="v-main-section">
       <h1 class="v-main-section__heading">{{ $t("goodnews.title_1") }}<br /><span class="white">{{ $t("goodnews.title_2") }}</span></h1>
-      <h2 class="v-main-section__subheading">{{ ann_number }}</h2>
+      <!-- <h2 class="v-main-section__subheading">{{ ann_number }}</h2> -->
+      <h2 class="v-main-section__subheading">{{ $t("goodnews.title_3") }}</h2>
       <div class="v-main-section__timer">
         <span class="v-main-section__timer_el">{{ timerOutput_days }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_1") }}</span></span><span class="v-main-section__timer_div">:</span>
         <span class="v-main-section__timer_el">{{ timerOutput_hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
@@ -11,6 +12,10 @@
       </div>
       <div class="v-main-section__roadmap">
         <img src="/img/good_news/pkt-good-news-roadmap.svg" alt="Roadmap" width="800" height="475" />
+      </div>
+      <h2 class="v-main-section__comingtitle">{{ $t("goodnews.title_4") }}</h2>
+      <div class="v-main-section__coming_soon">
+        <img src="/img/good_news/pkt-good-news-coming-soon.webp" alt="Coming Soon" width="800" height="475" />
       </div>
     </section>
   </div>
@@ -58,7 +63,7 @@ export default {
       timerOutput_hours:  0,
       timerOutput_mins:  0,
       timerOutput_secs:  0,
-      ann_number: 'Announcement 4 of 7',
+      // ann_number: 'Announcement 4 of 7',
     }
   },
   methods: {
@@ -91,15 +96,14 @@ export default {
 
     getNewCountDownTime: function() {
       const newTime = new Date("Jul 10, 2024 10:00:00").getTime();
-      this.ann_number = 'Announcement 4 of 7';
+      // this.ann_number = 'Announcement 4 of 7';
       return newTime;
     },
 
   },
   mounted () {
-    this.timer = setInterval(this.startTimer, 1000);
+    this.timer = setInterval(this.startTimer, 100);
     document.getElementById('__nuxt').classList.add('goodnews');
-    // setInterval(() => { this.startTimer() }, 1000);
   },
   beforeDestroy() {
     clearInterval(this.timer);
@@ -135,6 +139,7 @@ export default {
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center center;
+  background-attachment: fixed;
   width:100%;
   min-height:100vh;
   height:auto;
@@ -148,8 +153,7 @@ export default {
   }
   @include for-width(-small-lg) {
     background-image:url(/img/goodnews-bg-mobile.webp);
-    height:100vh;
-    padding:0;
+    padding:rem(100) 0 rem(75);
   }
   & .v-main-section {
     @extend %t-center;
@@ -201,6 +205,21 @@ export default {
       @include for-width(-small-lg) {
         font-size: rem(24);
         line-height: rem(70);
+      }
+    }
+    &__comingtitle {
+      color:$black_blue;
+      @extend %inter_medium;
+      font-size: rem(46);
+      line-height: rem(80);
+      padding-top:rem(50);
+      @include for-width(-desktop-medium) {
+        font-size: rem(40);
+      }
+      @include for-width(-small-lg) {
+        font-size: rem(24);
+        line-height: rem(70);
+        padding-top:rem(5);
       }
     }
     &__timer {
@@ -258,6 +277,24 @@ export default {
       }
       img {
         width:rem(800);
+        height:rem(475);
+        @include for-width(-small-lg) {
+          width:100%;
+          height:auto;
+        }
+      }
+    }
+    &__coming_soon {
+      padding-top:rem(25);
+      @include for-width(-desktop-medium) {
+        padding-left: rem(40);
+        padding-right: rem(40);
+      }
+      @include for-width(-small-lg) {
+        padding:0 rem(20) 0;
+      }
+      img {
+        width:rem(820);
         height:rem(475);
         @include for-width(-small-lg) {
           width:100%;
