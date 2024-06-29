@@ -58,56 +58,69 @@ export default {
   },
   data() {
     return {
-      countDownToTime : new Date("Jun 26, 2024 10:00:00").getTime(),
+      targetTime: "2024-07-10T10:00:00",
+      timeZone: 'America/Los_Angeles',
       timerOutput_days:  0,
       timerOutput_hours:  0,
       timerOutput_mins:  0,
       timerOutput_secs:  0,
-      // ann_number: 'Announcement 4 of 7',
     }
   },
   methods: {
-    startTimer: function() {
-      const timeNow = new Date().getTime();
-      const timeDifference = this.countDownToTime - timeNow;
+    startTimer() {
+      const targetDate = this.convertToTimeZone(new Date(this.targetTime), this.timeZone);
+      const now = new Date();
+
+      let timeDifference = targetDate - now;
 
       if (timeDifference <= 0) {
-        this.countDownToTime = this.getNewCountDownTime();
-        timeDifference = this.countDownToTime - timeNow;
+        // Handle countdown completion
+        this.targetTime = this.getNewTargetTime();
+        timeDifference = new Date(this.targetTime) - now;
       }
 
       const millisecondsInOneSecond = 1000;
       const millisecondsInOneMinute = millisecondsInOneSecond * 60;
       const millisecondsInOneHour = millisecondsInOneMinute * 60;
       const millisecondsInOneDay = millisecondsInOneHour * 24;
-      const differenceInDays = timeDifference / millisecondsInOneDay;
-      const remainderDifferenceInHours = (timeDifference % millisecondsInOneDay) / millisecondsInOneHour;
-      const remainderDifferenceInMinutes = (timeDifference % millisecondsInOneHour) / millisecondsInOneMinute;
-      const remainderDifferenceInSeconds = (timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond;
-      const remainingDays = Math.floor(differenceInDays);
-      const remainingHours = Math.floor(remainderDifferenceInHours);
-      const remainingMinutes = Math.floor(remainderDifferenceInMinutes);
-      const remainingSeconds =Math.floor(remainderDifferenceInSeconds);
-      this.timerOutput_days = remainingDays;
-      this.timerOutput_hours = remainingHours;
-      this.timerOutput_mins = remainingMinutes;
-      this.timerOutput_secs = remainingSeconds;
-    },
 
-    getNewCountDownTime: function() {
-      const newTime = new Date("Jul 10, 2024 10:00:00").getTime();
-      // this.ann_number = 'Announcement 4 of 7';
-      return newTime;
+      this.timerOutput_days = Math.floor(timeDifference / millisecondsInOneDay);
+      this.timerOutput_hours = Math.floor((timeDifference % millisecondsInOneDay) / millisecondsInOneHour);
+      this.timerOutput_mins = Math.floor((timeDifference % millisecondsInOneHour) / millisecondsInOneMinute);
+      this.timerOutput_secs = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
     },
+    convertToTimeZone(date, timeZone) {
+      // Convert the date to the target time zone using Intl.DateTimeFormat
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      });
 
+      const parts = formatter.formatToParts(date);
+      const values = {};
+      parts.forEach(({ type, value }) => {
+        values[type] = value;
+      });
+
+      return new Date(`${values.year}-${values.month}-${values.day}T${values.hour}:${values.minute}:${values.second}`);
+    },
+    getNewTargetTime() {
+      // Define new target time here
+      return "2024-07-24T10:00:00";
+    },
   },
-  mounted () {
-    this.timer = setInterval(this.startTimer, 100);
-    document.getElementById('__nuxt').classList.add('goodnews');
+  mounted() {
+    this.timer = setInterval(this.startTimer, 1000);
   },
   beforeDestroy() {
     clearInterval(this.timer);
-  }
+  },
 };
 </script>
 
