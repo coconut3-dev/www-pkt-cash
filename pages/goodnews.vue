@@ -58,7 +58,7 @@ export default {
   },
   data() {
     return {
-      targetDate: '2024-07-10T20:00:00', // Target date and time in UTC
+      targetDate: '2024-07-10T10:00:00',
       timerOutput: {
         days: 0,
         hours: 0,
@@ -66,27 +66,25 @@ export default {
         seconds: 0
       },
       ann_number: 'Announcement 4 of 7',
-      targetTimeZone: 'America/Los_Angeles', // Target time zone
-      timerInterval: null // Interval reference for timer
+      targetTimeZone: 'America/Los_Angeles',
+      timerInterval: null
     };
   },
   methods: {
-    // Initialize the countdown timer
     initializeTimer() {
       const countdown = () => {
-        const targetDateTime = new Date(this.targetDate).getTime(); // Target date in UTC
-        const now = new Date(); // Current date/time
+        const targetDateTime = new Date(this.targetDate);
+        const now = new Date();
+        const nowInTargetTimeZone = new Date(now.toLocaleString('en-US', { timeZone: this.targetTimeZone }));
 
-        // Calculate time difference in milliseconds
-        let timeDifference = targetDateTime - now.getTime();
+        let timeDifference = targetDateTime.getTime() - nowInTargetTimeZone.getTime();
 
         if (timeDifference <= 0) {
-          clearInterval(this.timerInterval); // Stop the timer when countdown completes
+          clearInterval(this.timerInterval);
           this.handleCountdownCompletion();
           return;
         }
 
-        // Convert time difference to days, hours, minutes, and seconds
         const millisecondsInOneSecond = 1000;
         const millisecondsInOneMinute = millisecondsInOneSecond * 60;
         const millisecondsInOneHour = millisecondsInOneMinute * 60;
@@ -97,27 +95,21 @@ export default {
         this.timerOutput.minutes = Math.floor((timeDifference % millisecondsInOneHour) / millisecondsInOneMinute);
         this.timerOutput.seconds = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
       };
-
-      // Call countdown immediately to initialize values
       countdown();
 
-      // Set interval to update countdown every second
       this.timerInterval = setInterval(countdown, 1000);
     },
-    // Function to handle completion of the countdown
     handleCountdownCompletion() {
-      this.ann_number = 'Announcement 5 of 7'; // Update announcement number or perform other actions
-      // Example: Reset timer to a new target date if needed
-      this.targetDate = '2024-07-24T20:00:00';
-      // Restart timer
+      this.ann_number = 'Announcement 5 of 7';
+      this.targetDate = '2024-07-24T10:00:00';
       this.initializeTimer();
     }
   },
   mounted() {
-    this.initializeTimer(); // Initialize the countdown timer on component mount
+    this.initializeTimer();
   },
   beforeDestroy() {
-    clearInterval(this.timerInterval); // Clear interval to stop the countdown timer on component destroy
+    clearInterval(this.timerInterval);
   }
 };
 </script>
