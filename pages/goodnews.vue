@@ -2,8 +2,8 @@
   <div class="v-goodnews">
     <section class="v-main-section">
       <h1 class="v-main-section__heading">{{ $t("goodnews.title_1") }}<br /><span class="white">{{ $t("goodnews.title_2") }}</span></h1>
-      <!-- <h2 class="v-main-section__subheading">{{ ann_number }}</h2> -->
-      <h2 class="v-main-section__subheading">{{ $t("goodnews.title_3") }}</h2>
+      <h2 class="v-main-section__subheading">{{ ann_number }}</h2>
+      <!-- <h2 class="v-main-section__subheading">{{ $t("goodnews.title_3") }}</h2> -->
       <div class="v-main-section__timer">
         <span class="v-main-section__timer_el">{{ timerOutput_days }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_1") }}</span></span><span class="v-main-section__timer_div">:</span>
         <span class="v-main-section__timer_el">{{ timerOutput_hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
@@ -58,25 +58,46 @@ export default {
   },
   data() {
     return {
-      targetTime: "2024-07-10T10:00:00",
-      timeZone: 'America/Los_Angeles',
+      countDownToTime: this.convertToTimeZone('2024-07-10T10:00:00', 'America/Los_Angeles'),
       timerOutput_days:  0,
       timerOutput_hours:  0,
       timerOutput_mins:  0,
       timerOutput_secs:  0,
+      ann_number: 'Announcement 4 of 7',
     }
   },
   methods: {
-    startTimer() {
-      const targetDate = this.convertToTimeZone(new Date(this.targetTime), this.timeZone);
-      const now = new Date();
+    convertToTimeZone(dateString, timeZone) {
+      const date = new Date(dateString);
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      });
 
-      let timeDifference = targetDate - now;
+      const [
+        { value: month },,
+        { value: day },,
+        { value: year },,
+        { value: hour },,
+        { value: minute },,
+        { value: second }
+      ] = formatter.formatToParts(date);
+
+      return new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`).getTime();
+    },
+    startTimer() {
+      const timeNow = new Date().getTime();
+      let timeDifference = this.countDownToTime - timeNow;
 
       if (timeDifference <= 0) {
-        // Handle countdown completion
-        this.targetTime = this.getNewTargetTime();
-        timeDifference = new Date(this.targetTime) - now;
+        this.handleCountdownCompletion();
+        timeDifference = this.countDownToTime - timeNow;
       }
 
       const millisecondsInOneSecond = 1000;
@@ -89,34 +110,14 @@ export default {
       this.timerOutput_mins = Math.floor((timeDifference % millisecondsInOneHour) / millisecondsInOneMinute);
       this.timerOutput_secs = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
     },
-    convertToTimeZone(date, timeZone) {
-      // Convert the date to the target time zone using Intl.DateTimeFormat
-      const formatter = new Intl.DateTimeFormat('en-US', {
-        timeZone,
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-      });
-
-      const parts = formatter.formatToParts(date);
-      const values = {};
-      parts.forEach(({ type, value }) => {
-        values[type] = value;
-      });
-
-      return new Date(`${values.year}-${values.month}-${values.day}T${values.hour}:${values.minute}:${values.second}`);
-    },
-    getNewTargetTime() {
-      // Define new target time here
-      return "2024-07-24T10:00:00";
+    handleCountdownCompletion() {
+      const newDate = '2024-07-24T20:00:00';
+      this.countDownToTime = this.convertToTimeZone(newDate, 'America/Los_Angeles');
+      this.ann_number = 'Announcement 5 of 7';
     },
   },
   mounted() {
-    this.timer = setInterval(this.startTimer, 1000);
+    this.timer = setInterval(this.startTimer, 100);
   },
   beforeDestroy() {
     clearInterval(this.timer);
