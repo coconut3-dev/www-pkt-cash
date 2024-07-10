@@ -5,10 +5,10 @@
       <h2 class="v-main-section__subheading">{{ ann_number }}</h2>
       <!-- <h2 class="v-main-section__subheading">{{ $t("goodnews.title_3") }}</h2> -->
       <div class="v-main-section__timer">
-        <span class="v-main-section__timer_el">{{ timerOutput_days }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_1") }}</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput_hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput_mins }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_3") }}</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput_secs }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_4") }}</span></span>
+        <span class="v-main-section__timer_el">{{ timerOutput.days }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_1") }}</span></span><span class="v-main-section__timer_div">:</span>
+        <span class="v-main-section__timer_el">{{ timerOutput.hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
+        <span class="v-main-section__timer_el">{{ timerOutput.minutes }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_3") }}</span></span><span class="v-main-section__timer_div">:</span>
+        <span class="v-main-section__timer_el">{{ timerOutput.seconds }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_4") }}</span></span>
       </div>
       <div class="v-main-section__roadmap">
         <img src="/img/good_news/pkt-good-news-roadmap.svg" alt="Roadmap" width="800" height="475" />
@@ -58,70 +58,67 @@ export default {
   },
   data() {
     return {
-      countDownToTime: this.convertToTimeZone('2024-07-10T10:00:00', 'America/Los_Angeles'),
-      timerOutput_days:  0,
-      timerOutput_hours:  0,
-      timerOutput_mins:  0,
-      timerOutput_secs:  0,
+      targetDate: '2024-07-10T20:00:00', // Target date and time in UTC
+      timerOutput: {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      },
       ann_number: 'Announcement 4 of 7',
-    }
+      targetTimeZone: 'America/Los_Angeles', // Target time zone
+      timerInterval: null // Interval reference for timer
+    };
   },
   methods: {
-    convertToTimeZone(dateString, timeZone) {
-      const date = new Date(dateString);
-      const formatter = new Intl.DateTimeFormat('en-US', {
-        timeZone,
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-      });
+    // Initialize the countdown timer
+    initializeTimer() {
+      const countdown = () => {
+        const targetDateTime = new Date(this.targetDate).getTime(); // Target date in UTC
+        const now = new Date(); // Current date/time
 
-      const [
-        { value: month },,
-        { value: day },,
-        { value: year },,
-        { value: hour },,
-        { value: minute },,
-        { value: second }
-      ] = formatter.formatToParts(date);
+        // Calculate time difference in milliseconds
+        let timeDifference = targetDateTime - now.getTime();
 
-      return new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`).getTime();
+        if (timeDifference <= 0) {
+          clearInterval(this.timerInterval); // Stop the timer when countdown completes
+          this.handleCountdownCompletion();
+          return;
+        }
+
+        // Convert time difference to days, hours, minutes, and seconds
+        const millisecondsInOneSecond = 1000;
+        const millisecondsInOneMinute = millisecondsInOneSecond * 60;
+        const millisecondsInOneHour = millisecondsInOneMinute * 60;
+        const millisecondsInOneDay = millisecondsInOneHour * 24;
+
+        this.timerOutput.days = Math.floor(timeDifference / millisecondsInOneDay);
+        this.timerOutput.hours = Math.floor((timeDifference % millisecondsInOneDay) / millisecondsInOneHour);
+        this.timerOutput.minutes = Math.floor((timeDifference % millisecondsInOneHour) / millisecondsInOneMinute);
+        this.timerOutput.seconds = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
+      };
+
+      // Call countdown immediately to initialize values
+      countdown();
+
+      // Set interval to update countdown every second
+      this.timerInterval = setInterval(countdown, 1000);
     },
-    startTimer() {
-      const timeNow = new Date().getTime();
-      let timeDifference = this.countDownToTime - timeNow;
-
-      if (timeDifference <= 0) {
-        this.handleCountdownCompletion();
-        timeDifference = this.countDownToTime - timeNow;
-      }
-
-      const millisecondsInOneSecond = 1000;
-      const millisecondsInOneMinute = millisecondsInOneSecond * 60;
-      const millisecondsInOneHour = millisecondsInOneMinute * 60;
-      const millisecondsInOneDay = millisecondsInOneHour * 24;
-
-      this.timerOutput_days = Math.floor(timeDifference / millisecondsInOneDay);
-      this.timerOutput_hours = Math.floor((timeDifference % millisecondsInOneDay) / millisecondsInOneHour);
-      this.timerOutput_mins = Math.floor((timeDifference % millisecondsInOneHour) / millisecondsInOneMinute);
-      this.timerOutput_secs = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
-    },
+    // Function to handle completion of the countdown
     handleCountdownCompletion() {
-      const newDate = '2024-07-24T20:00:00';
-      this.countDownToTime = this.convertToTimeZone(newDate, 'America/Los_Angeles');
-      this.ann_number = 'Announcement 5 of 7';
-    },
+      this.ann_number = 'Announcement 5 of 7'; // Update announcement number or perform other actions
+      // Example: Reset timer to a new target date if needed
+      this.targetDate = '2024-07-24T20:00:00';
+      // Restart timer
+      this.initializeTimer();
+    }
   },
   mounted() {
-    this.timer = setInterval(this.startTimer, 100);
+    this.initializeTimer(); // Initialize the countdown timer on component mount
   },
   beforeDestroy() {
-    clearInterval(this.timer);
-  },
+    clearInterval(this.timerInterval); // Clear interval to stop the countdown timer on component destroy
+  }
 };
 </script>
 
