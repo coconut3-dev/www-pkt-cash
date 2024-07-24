@@ -30,7 +30,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Announcement 4 of 7'
+          content: 'Announcement 5 of 7'
         },
         {
           hid: 'og:title',
@@ -40,7 +40,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: 'Announcement 4 of 7'
+          content: 'Announcement 5 of 7'
         },
         {
           hid: 'og:image',
@@ -58,14 +58,14 @@ export default {
   },
   data() {
     return {
-      targetDate: '2024-07-10T10:00:00',
+      targetDate: '2024-07-24T10:00:00',
       timerOutput: {
         days: 0,
         hours: 0,
         minutes: 0,
         seconds: 0
       },
-      ann_number: 'Announcement 4 of 7',
+      ann_number: 'Announcement 5 of 7',
       targetTimeZone: 'America/Los_Angeles',
       timerInterval: null
     };
@@ -100,8 +100,8 @@ export default {
       this.timerInterval = setInterval(countdown, 1000);
     },
     handleCountdownCompletion() {
-      this.ann_number = 'Announcement 5 of 7';
-      this.targetDate = '2024-07-24T10:00:00';
+      this.ann_number = 'Announcement 6 of 7';
+      this.targetDate = '2024-08-07T10:00:00';
       this.initializeTimer();
     }
   },
