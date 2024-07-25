@@ -17,8 +17,8 @@
       <div class="v-main-section__coming_soon">
         <img src="/img/good_news/pkt-good-news-coming-soon.webp" alt="Coming Soon" width="800" height="475" />
       </div>
-      <div class="v-main-section__coming_soon">
-        <img src="/img/good_news/pkt-good-news-coming-soon-1.webp" alt="Coming Soon" width="800" height="475" style="border-radius:15px;" />
+      <div class="v-main-section__coming_soon v-main-section__coming_soon_2">
+        <img src="/img/good_news/pkt-good-news-coming-soon-1.webp" alt="Coming Soon" width="800" height="475" />
       </div>
     </section>
   </div>
@@ -305,6 +305,21 @@ export default {
         @include for-width(-small-lg) {
           width:100%;
           height:auto;
+        }
+      }
+    }
+    &__coming_soon_2 {
+      @include for-width(-small-lg) {
+        padding-right:rem(25);
+      }
+      img {
+        width:rem(800);
+        height:rem(475);
+        border-radius:15px;
+        @include for-width(-small-lg) {
+          width:100%;
+          height:auto;
+          border-radius:rem(10);
         }
       }
     }
