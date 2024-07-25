@@ -17,6 +17,9 @@
       <div class="v-main-section__coming_soon">
         <img src="/img/good_news/pkt-good-news-coming-soon.webp" alt="Coming Soon" width="800" height="475" />
       </div>
+      <div class="v-main-section__coming_soon">
+        <img src="/img/good_news/pkt-good-news-coming-soon-1.webp" alt="Coming Soon" width="800" height="475" style="border-radius:15px;" />
+      </div>
     </section>
   </div>
 </template>
@@ -30,7 +33,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Announcement 5 of 7'
+          content: 'Announcement 6 of 7'
         },
         {
           hid: 'og:title',
@@ -40,7 +43,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: 'Announcement 5 of 7'
+          content: 'Announcement 6 of 7'
         },
         {
           hid: 'og:image',
