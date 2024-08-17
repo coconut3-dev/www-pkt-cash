@@ -11,7 +11,7 @@
         <span class="v-main-section__timer_el">{{ timerOutput.seconds }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_4") }}</span></span>
       </div>
       <div class="v-main-section__roadmap">
-        <img src="/img/good_news/pkt-good-news-roadmap.svg" alt="Roadmap" width="800" height="475" />
+        <img src="/img/good_news/pkt-good-news-roadmap-new.svg" alt="Roadmap" width="800" height="475" />
       </div>
       <h2 class="v-main-section__comingtitle">{{ $t("goodnews.title_4") }}</h2>
       <div class="v-main-section__coming_soon">
