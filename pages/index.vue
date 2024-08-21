@@ -127,37 +127,37 @@ export default {
       ],
       solutions_img_list: [
         {
-          img_url: "/img/home/home-solutions-1.svg",
+          img_url: "/img/home/home-powered-1.svg",
           single_alt: "Base",
           img_width: 92,
           img_height: 24
         },
         {
-          img_url: "/img/home/home-solutions-2.svg",
+          img_url: "/img/home/home-powered-2.svg",
           single_alt: "Coinbase",
           img_width: 144,
           img_height: 26
         },
         {
-          img_url: "/img/home/home-solutions-3.svg",
+          img_url: "/img/home/home-powered-3.svg",
           single_alt: "Akash",
           img_width: 132,
           img_height: 26
         },
         {
-          img_url: "/img/home/home-solutions-4.svg",
+          img_url: "/img/home/home-powered-4.svg",
           single_alt: "Uniswap",
           img_width: 140,
           img_height: 41
         },
         {
-          img_url: "/img/home/home-solutions-5.svg",
+          img_url: "/img/home/home-powered-5.svg",
           single_alt: "Anode",
           img_width: 88,
           img_height: 24
         },
         {
-          img_url: "/img/home/home-solutions-6.svg",
+          img_url: "/img/home/home-powered-6.svg",
           single_alt: "Routie",
           img_width: 110,
           img_height: 30
