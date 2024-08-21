@@ -2,8 +2,8 @@
   <div class="v-cash">
     <section class="v-header-section">
       <SpotAInternal 
-      :title="this.$t('pkt_cash.cash_title')"
-      :text="this.$t('pkt_cash.cash_text')"
+      title="PKT Cash is the currency for content"
+      text="PKT Cash is a stake-to-earn community coin on the Base Blockchain. As the community stakes PKT, they must pair it with one or more infrastructure nodes for daily rewards. Infrastructure staking rewards help build the PKT Network and attract the network’s audience. PKT Cash both compensates infrastructure providers and can be used to pay for content. Additionally, PKT Cash leverages the L2 Base Blockchain smart contracts, which are used to enable micropayments to content creators and bandwidth trading markets."
        />
     </section>
     <!-- <section class="v-analytics-section">
@@ -65,52 +65,52 @@ export default {
       //timeout: null,
       simple_block: [
         {
-          single_title: this.$t("pkt_cash.cash_simple_title"),
-          single_text: this.$t("pkt_cash.cash_simple_text"),
+          single_title: "PKT Cash is a utility coin",
+          single_text: "PKT Cash is the fuel powering the PKT ecosystem. Utility includes stake-to-earn, payments for content, high speed VPN and e-commerce use cases, including smart contracts for ease of payment. Website and platform operators can build on the PKT Network and receive PKT payments directly to their IPv6 website URL. This eliminates the need for third party payment processors.",
         }
       ],
       chess_list: [
         {
           text_direction: "text_left",
-          single_title: this.$t("pkt_cash.cash_chess_title_1"),
-          single_descr: this.$t("pkt_cash.cash_chess_descr_1"),
-          single_url: "https://play.google.com/store/apps/details?id=co.anode.anodium.playstore",
+          single_title: "Stake-to-Earn",
+          single_descr: "PKT makes it easy to earn money from an internet connection. Simply stake PKT tokens for a period of time and pair with an infrastructure node to generate daily yields. Yields are based on competition within each node category. The longer the duration of the stake the higher the yields, with up to 4X yields.",
+          single_url: "https://docs.pkt.cash/stake/stake-earn",
           single_link: this.$t("common.learn_more"),
           external: true,
           single_img: "/img/pkt-cash-1.webp",
         },
         {
           text_direction: "text_right",
-          single_title: this.$t("pkt_cash.cash_chess_title_2"),
-          single_descr: this.$t("pkt_cash.cash_chess_descr_2"),
-          single_url: "https://docs.pkt.cash/en/latest/cjdns_websites/",
+          single_title: "Community Liquidity",
+          single_descr: "Community members can stake liquidity on Uniswap with equal parts PKT and ETH on Base. A 1 million PKT per day bonus is split between those who provide liquidity. Liquidity providers can also farm LP tokens for increased yields. The longer the lockup duration, the higher the rewards, with up to  4X yields.",
+          single_url: "https://docs.pkt.cash/stake/stake-earn",
           external: true,
           single_link: this.$t("common.learn_more"),
           single_img: "/img/pkt-cash-2.webp",
         },
         {
           text_direction: "text_left",
-          single_title: this.$t("pkt_cash.cash_chess_title_3"),
-          single_descr: this.$t("pkt_cash.cash_chess_descr_3"),
-          single_url: "https://pkt.cash/PacketCrypt-2020-09-04.pdf",
+          single_title: "Content & Media",
+          single_descr: "The PKT Network is built for worldwide content and media distribution. PKT Cash is the currency that powers the network. The network benefits from low cost transactions and smart contracts based on Base's Ethereum L2 design. Smart contracts also ensure revenue transparency and real-time royalty splits for content creators.",
+          single_url: "https://docs.pkt.cash/utility",
           external: true,
           single_link: this.$t("header_new.dev_yellowpaper"),
           single_img: "/img/pkt-cash-3.webp",
         },
         {
           text_direction: "text_right",
-          single_title: this.$t("pkt_cash.cash_chess_title_4"),
-          single_descr: this.$t("pkt_cash.cash_chess_descr_4"),
-          single_url: "https://pkt.cash/PKT_Network_v1.0_2021.02.01.pdf",
+          single_title: "PKT VPN",
+          single_descr: "PKT VPN uses peer-to-peer mesh network technology. This ensures a fully decentralized service, featuring end-to-end encryption and decentralized connectivity. Leveraging the strengths of cjdns and its compact source routing, PKT VPN offers a free, high speed, trustless alternative to traditional VPN services.",
+          single_url: "https://docs.pkt.cash/infra/infrastructure",
           external: true,
           single_link: this.$t("common.learn_more"),
           single_img: "/img/pkt-cash-4.webp",
         },
         {
           text_direction: "text_left",
-          single_title: this.$t("pkt_cash.cash_chess_title_5"),
-          single_descr: this.$t("pkt_cash.cash_chess_descr_5"),
-          single_url: "https://pkt.cash/PKT_Network_v1.0_2021.02.01.pdf",
+          single_title: "Bandwidth Markets",
+          single_descr: "PKT roadmap development includes a DEX-like marketplace where decentralized internet operators (Cloud ISPs) can buy and sell tokenized bandwidth-leases. Cloud ISPs will acquire bandwidth leases and stitch together internet service infrastructure. Contributors (Edge Points) will sell bandwidth leases to their monetize bandwidth.",
+          single_url: "https://docs.pkt.cash/utility",
           external: true,
           single_link: this.$t("header.whitepaper"),
           single_img: "/img/pkt-cash-1.webp",
@@ -242,14 +242,20 @@ export default {
     position:relative;
   }
   & .c-spot-a-internal {
+    padding:rem(165) 0 rem(110);
     @include for-width(-small-lg) {
-      padding:rem(120) 0 rem(70);
+      padding:rem(120) 0 rem(30);
+    }
+    &__title {
+      @include for-width(-small-lg) {
+        max-width:rem(275);
+      }
     }
   }
   & .v-simple-section {
     & .c-common-simple {
       & .container {
-        padding: rem(54) rem(115) rem(60);
+        padding: rem(54) rem(175) rem(60);
         @include for-width(-laptop) {
           padding: rem(35) rem(100) rem(40);
         }

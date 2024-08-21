@@ -2,57 +2,25 @@
   <div class="v-ecosystem">
     <section class="v-header-section">
       <SpotAInternal 
-      :title="this.$t('ecosystem.eco_title')"
-      :text="this.$t('ecosystem.eco_text')"
+      title="Explore what’s built on and using PKT Network"
+      text="PKT Network is a permissionless network ecosystem where entrepreneurs and developers can build next gen applications, websites and digital products for worldwide access. All content is globally accessible without geofencing and purchasable using any fiat or digital currency."
        />
     </section>
-    <section class="v-networks">
-      <div class="container v-network_inner">
-        <div class="v-network_inner_single v-network_inner_single_anode">
-          <div class="v-network_inner_single__img"><img src="/img/ecosystem-anode.webp" :alt="this.$t('ecosystem.eco_net_single_1_title')" /></div>
-          <div class="v-network_inner_single__content">
-            <a href="https://anode.co/" target="_blank" class="white"><img src="/img/ecosystem-anode-logo.webp" :alt="this.$t('ecosystem.eco_net_single_1_title')" /></a>
-            <div class="v-network_inner_single__content_text">
-              <h4><a href="https://anode.co/" target="_blank" class="white">{{ $t("ecosystem.eco_net_single_1_title") }}</a></h4>
-              <p><a href="https://anode.co/" target="_blank" class="white">{{ $t("ecosystem.eco_net_single_1_descr") }}</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="v-network_inner_single v-network_inner_single_pkt_watch">
-          <div class="v-network_inner_single__img"><img src="/img/ecosystem-pktwatch.svg" :alt="this.$t('ecosystem.eco_net_single_2_title')" /></div>
-          <div class="v-network_inner_single__content">
-            <a href="https://pkt.watch/" target="_blank" class="white"><img src="/img/ecosystem-pktwatch-logo.svg" :alt="this.$t('ecosystem.eco_net_single_2_title')" /></a>
-            <div class="v-network_inner_single__content_text">
-              <h4><a href="https://pkt.watch/" target="_blank" class="white">{{ $t("ecosystem.eco_net_single_2_title") }}</a></h4>
-              <p><a href="https://pkt.watch/" target="_blank" class="white">{{ $t("ecosystem.eco_net_single_2_descr") }}</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section class="v-built">
+      <ImgSection :list="network_list" />
     </section>
-    <section class="v-new-projects">
-      <div class="container">
-        <h2 class="v-new-projects__heading">{{ $t("ecosystem.eco_title_1") }}</h2>
-        <ProjectBlock :list="projects" />
-      </div>
+    <section class="v-networks">
+      <CompanyPreview :list="company_list" />
     </section>
     <section class="v-projects-eco">
       <div class="container">
         <div class="v-projects-eco_inner">
-          <h3 class="v-projects-eco_inner__heading">{{ $t("ecosystem.eco_title_2") }}</h3>
-          <ProjectSBlock :list="projects_infra" />
+          <h3 class="v-projects-eco_inner__heading">Partnerships</h3>
+          <ProjectSBlock :list="projects_partnerships" />
         </div>
         <div class="v-projects-eco_inner">
-          <h3 class="v-projects-eco_inner__heading">{{ $t("ecosystem.eco_title_3") }}</h3>
-          <ProjectSBlock :list="projects_payments" />
-        </div>
-        <div class="v-projects-eco_inner">
-          <h3 class="v-projects-eco_inner__heading">{{ $t("ecosystem.eco_title_4") }}</h3>
-          <ProjectSBlock :list="projects_consumer" />
-        </div>
-        <div class="v-projects-eco_inner">
-          <h3 class="v-projects-eco_inner__heading">{{ $t("ecosystem.eco_title_5") }}</h3>
-          <ProjectSBlock :list="projects_defi" />
+          <h3 class="v-projects-eco_inner__heading">Wallets</h3>
+          <ProjectSBlock :list="projects_wallets" />
         </div>
       </div>
     </section>
@@ -62,155 +30,158 @@
 <script>
 import SpotAInternal from "~/components/Common/SpotAInternal";
 import ProjectBlock from "~/components/Common/ProjectBlock";
+import ImgSection from "~/components/Common/ImgSection";
+import CompanyPreview from "~/components/Common/CompanyPreview";
 export default {
   components: {
     SpotAInternal,
-    ProjectBlock
+    ProjectBlock,
+    ImgSection,
+    CompanyPreview
   },
   data() {
     return {
-      projects: [
+      company_list: [
         {
-          img_style:"background-color:#FF007A;",
-          img_url:"/img/ecosystem-new-watchr.svg",
-          title:this.$t("ecosystem.eco_pr_new_1_title"),
-          descr:this.$t("ecosystem.eco_pr_new_1_descr"),
-          project_link: "https://pkt.watch/watchr/"
+          unique_class: "anode",
+          company_img: "/img/ecosystem/company-overview-anode.webp",
+          company_logo_square: "/img/ecosystem/company-overview-logo-anode.svg",
+          company_title: "Anode VPN",
+          company_descr: "Free VPN access, powered by cjdns",
+          company_link: "https://anode.co/#/",
         },
         {
-          img_style:"background-color:#8F33D5;",
-          img_url:"/img/ecosystem-new-minr.svg",
-          title:this.$t("ecosystem.eco_pr_new_2_title"),
-          descr:this.$t("ecosystem.eco_pr_new_2_descr"),
-          project_link: "https://pkt.watch/minr/"
+          unique_class: "pkt_watch",
+          company_img: "/img/ecosystem/company-overview-pktwatch.webp",
+          company_logo_square: "/img/ecosystem/company-overview-logo-pktwatch.svg",
+          company_title: "PKT Watch",
+          company_descr: "A collection of free tools and resources",
+          company_link: "https://pkt.watch",
         },
         {
-          img_style:"background-color:#3CADEF;",
-          img_url:"/img/ecosystem-new-pktworld.svg",
-          title:this.$t("ecosystem.eco_pr_new_3_title"),
-          descr:this.$t("ecosystem.eco_pr_new_3_descr"),
-          project_link: "https://www.pkt.world/wallet"
+          unique_class: "pkt_net",
+          company_img: "/img/ecosystem/company-overview-pktnet.webp",
+          company_logo_square: "/img/ecosystem/company-overview-logo-pktnet.svg",
+          company_title: "PKT.Net",
+          company_descr: "Building technology for PKT Network",
+          company_link: "https://pkt.net",
         },
         {
-          img_style:"background-color:#0D4AE7;",
-          img_url:"/img/ecosystem-new-routie.svg",
-          title:this.$t("ecosystem.eco_pr_new_4_title"),
-          descr:this.$t("ecosystem.eco_pr_new_4_descr"),
-          project_link: "https://routie.io/"
-        },
-        {
-          img_style:"background-color:#2B3991;",
-          img_url:"/img/ecosystem-new-anode.svg",
-          title:this.$t("ecosystem.eco_pr_new_5_title"),
-          descr:this.$t("ecosystem.eco_pr_new_5_descr"),
-          project_link: "https://anode.co"
-        },
-        {
-          img_style:"background-color:#fff;",
-          img_url:"/img/ecosystem-new-odapp.svg",
-          title:this.$t("ecosystem.eco_pr_new_6_title"),
-          descr:this.$t("ecosystem.eco_pr_new_6_descr"),
-          project_link: "https://odapp.io/"
+          unique_class: "akash",
+          company_img: "/img/ecosystem/company-overview-akash.webp",
+          company_logo_square: "/img/ecosystem/company-overview-logo-akash.svg",
+          company_title: "Akash Network",
+          company_descr: "A decentralized compute marketplace",
+          company_link: "https://akash.network",
         }
       ],
-      projects_infra:  [
+      network_list: [
         {
-          projects_link: "https://docs.pkt.cash/en/latest/mining/pool_setup_guide/",
+          single_title: "The future of streaming",
+          single_descr: "BIA is a streaming platform that pays its audience to power the network. Audiences can then use their income pay for content. BIA uses the PKT Network for infrastructure and payments.",
+          single_url: "#",
+          single_link: "Learn more",
+          single_img: "/img/ecosystem/ecosystem-network-bia-img.webp",
+          external: true,
+          logo_img: "/img/ecosystem/ecosystem-network-bia.svg",
+          logo_title: "BIA",
+          bg_color: "background-color:#0D4AE7;",
+          unique_class: "bia_block"
+        },
+        {
+          single_title: "Guest wifi for businesses",
+          single_descr: "Routie is a hardware and software company that offers guest wifi solutions for hospitality businesses. Their networking and VPN solutions are built using the PKT Network.",
+          single_url: "https://routie.io/",
+          single_link: "Visit Routie",
+          single_img: "/img/ecosystem/ecosystem-network-routie-img.webp",
+          external: true,
+          logo_img: "/img/ecosystem/ecosystem-network-routie.svg",
+          logo_title: "Routie",
+          bg_color: "background-color:#C4C4C4;",
+          unique_class: "routie_block"
+        },
+        {
+          single_title: "Powering the PKT Network",
+          single_descr: "PKT Pal offers turnkey hardware solutions that power infrastructure for the PKT Network. Each device comes pre-loaded so every user earns 4x Stake-and-Earn daily yields.",
+          single_url: "https://pktpal.com/",
+          single_link: "Visit PKT Pal",
+          single_img: "/img/ecosystem/ecosystem-network-pktpal-img.webp",
+          external: true,
+          logo_img: "/img/ecosystem/ecosystem-network-pktpal.svg",
+          logo_title: "PKT Pal",
+          bg_color: "background-color:#4174DB;",
+          unique_class: "pktpal_block"
+        }
+      ],
+      projects_partnerships:  [
+        {
+          projects_link: "https://www.allora.network",
           img_url: "/img/ecosystem-zetahash.svg",
-          title:this.$t("ecosystem.eco_pr_infra_1"),
-          style: "background-color:#F43939;",
-        },
-        {
-          projects_link: "https://www.pkt.world",
-          img_url: "/img/ecosystem-new-pktworld.svg",
-          title:this.$t("ecosystem.eco_pr_infra_2"),
-          style: "background-color:#3CADEF;",
-        },
-        {
-          projects_link: "https://docs.pkt.cash/en/latest/mining/pool_setup_guide/",
-          img_url: "/img/ecosystem-new-pkt-pool.svg",
-          title:this.$t("ecosystem.eco_pr_infra_3"),
-          style: "background-color:#2F36A1;",
-        },
-        {
-          projects_link: "https://github.com/pkteer",
-          img_url: "/img/ecosystem-pkteer.svg",
-          title:this.$t("ecosystem.eco_pr_infra_4"),
-          style: "background-color:#FFFFFF;",
-          img_style: "width:80px;",
-        },
-        {
-          projects_link: "https://pkt.watch/minr/",
-          img_url: "/img/ecosystem-new-minr.svg",
-          title:this.$t("ecosystem.eco_pr_infra_5"),
-          style: "background-color:#8F33D5;",
+          title:"Allora AI",
+          style: "background-color:#000000;",
         },
         {
           projects_link: "https://akash.network/",
           img_url: "/img/ecosystem-akash.svg",
-          title:this.$t("ecosystem.eco_pr_infra_6"),
+          title:"Akash",
           style: "background-color:#FFFFFF;",
         },
-      ],
-      projects_payments:  [
         {
-          projects_link: "https://www.pkt.world/wallet",
+          projects_link: "https://www.pkt.world",
           img_url: "/img/ecosystem-new-pktworld.svg",
-          title:this.$t("ecosystem.eco_pr_payment_1"),
+          title:"PKT World",
           style: "background-color:#3CADEF;",
         },
         {
-          projects_link: "https://anode.co",
-          img_url: "/img/ecosystem-new-anode.svg",
-          title:this.$t("ecosystem.eco_pr_payment_2"),
-          style: "background-color:#2B3991;",
+          projects_link: "https://github.com/pkteer",
+          img_url: "/img/ecosystem-pkteer.svg",
+          title:"Pkteer",
+          style: "background-color:#C4C4C4;",
           img_style: "width:80px;",
         },
         {
-          projects_link: "https://pkt.net/",
-          img_url: "/img/ecosystem-pktnet.svg",
-          title:this.$t("ecosystem.eco_pr_payment_3"),
-          style: "background-color:#FF9039;",
-          img_style: "width:100px;",
+          projects_link: "https://docs.pkt.cash/en/latest/mining/pool_setup_guide/",
+          img_url: "/img/ecosystem-zetahash.svg",
+          title:"Zetahash",
+          style: "background-color:#F43939;",
+        },
+        {
+          projects_link: "https://docs.pkt.cash/en/latest/mining/pool_setup_guide/",
+          img_url: "/img/ecosystem-new-pkt-pool.svg",
+          title:"PKT Pool",
+          style: "background-color:#2F36A1;",
         },
       ],
-      projects_consumer:  [
+      projects_wallets:  [
         {
-          projects_link: "https://pkt.watch/watchr/",
-          img_url: "/img/ecosystem-new-watchr.svg",
-          title:this.$t("ecosystem.eco_pr_cons_1"),
-          style: "background-color:#FF007A;",
-          img_style: "width:54px;",
+          projects_link: "https://www.coinbase.com/wallet",
+          img_url: "/img/ecosystem-coinmarketcap.svg",
+          title:"Coinbase Wallet",
+          style: "background-color:#ffffff;",
+          img_style: "width:70px;",
         },
         {
-          projects_link: "https://routie.io/",
-          img_url: "/img/ecosystem-new-routie.svg",
-          title:this.$t("ecosystem.eco_pr_cons_2"),
-          style: "background-color:#0D4AE7;",
+          projects_link: "https://metamask.io",
+          img_url: "/img/ecosystem-metamask.svg",
+          title:"MetaMask",
+          style: "background-color:#ffffff;",
+          img_style: "width:80px;",
         },
         {
-          projects_link: "https://pkt.watch",
-          img_url: "/img/ecosystem-pkt-watch.svg",
-          title:this.$t("ecosystem.eco_pr_cons_3"),
-          style: "background-color:#FFFFFF;",
-          img_style: "width:52px;",
+          projects_link: "https://edge.app",
+          img_url: "/img/ecosystem-edge-wallet.svg",
+          title:"Edge Wallet",
+          style: "background-color:#ffffff;",
+          img_style: "width:65px;",
         },
         {
-          projects_link: "https://packetscan.io",
-          img_url: "/img/ecosystem-packetscan.svg",
-          title:this.$t("ecosystem.eco_pr_cons_4"),
-          style: "background-color:#FFFFFF;",
-          img_style: "width:54px;",
+          projects_link: "https://www.ledger.com",
+          img_url: "/img/ecosystem-ledger.svg",
+          title:"Ledger",
+          style: "background-color:#ffffff;",
+          img_style: "width:66px;",
         },
-      ],
-      projects_defi:  [
-        {
-          projects_link: "https://odapp.io/",
-          img_url: "/img/ecosystem-new-odapp.svg",
-          title:this.$t("ecosystem.eco_pr_defi_1"),
-          style: "background-color:#FFFFFF;",
-        },
-      ],
+      ]
     };
   },
   head() {
@@ -308,115 +279,119 @@ export default {
     position:relative;
   }
   & .c-spot-a-internal {
-    padding:rem(165) 0 rem(55);
+    padding:rem(165) 0 rem(105);
     @include for-width(-small-lg) {
-      padding:rem(90) 0 rem(50);
+      padding:rem(100) 0 rem(50);
+    }
+  }
+  & .v-built {
+    & .c-img_text-block {
+      &_inner_single_descr {
+        padding-right:rem(25);
+        @include for-width(-small-lg) {
+          padding-right:0;
+        }
+      }
+      & .bia_block {
+        justify-content: flex-end;
+        & .c-img_text-block_inner_single_img {
+          position:absolute;
+          @include for-width(-tablet) {
+            position:relative;
+          }
+          & img {
+            position:absolute;
+            left:-400px;
+            top:-285px;
+            max-width:rem(635);
+            @include for-width(-desktop-lg) {
+              max-width:rem(600);
+              left:-450px;
+              top:-265px;
+            }
+            @include for-width(-desktop-medium) {
+              left:-500px;
+            }
+            @include for-width(-tablet) {
+              position:relative;
+              left:0;
+              top:-25px;
+              max-width:80%;
+            }
+            @include for-width(-small-lg) {
+              top:0;
+              max-width:100%;
+            }
+          }
+        }
+        & .c-img_text-block_inner_single {
+          padding-left:rem(15);
+          & img {
+            max-width:rem(165);
+            @include for-width(-small-lg) {
+              max-width:rem(100);
+            }
+          }
+          & .c-common-button {
+            border-color: #fff;
+            background-color: #fff;
+            color: #0D4AE7;
+          }
+        }
+      }
+      & .routie_block {
+        & .c-img_text-block_inner_single_img {
+          padding-right:rem(10);
+          @include for-width(-small-lg) {
+            padding:0;
+          }
+        }
+        & .c-img_text-block_inner_single {
+          &_title {
+            color:#0D4AE7;
+          }
+          &_descr {
+            color:#0D4AE7;
+          }
+          & img {
+            max-width:rem(345);
+            @include for-width(-small-lg) {
+              max-width:rem(200);
+            }
+          }
+          & .c-common-button {
+            border-color: #fff;
+            background-color: #fff;
+            color: #0D4AE7;
+          }
+        }
+      }
+      & .pktpal_block {
+        & .c-img_text-block_inner_single_img {
+          & img {
+            margin-left:-10%;
+          }
+        }
+        & .c-img_text-block_inner_single {
+          & img {
+            max-width:rem(244);
+            @include for-width(-small-lg) {
+              max-width:rem(175);
+            }
+          }
+          &_title {
+            margin-top:rem(10);
+          }
+        }
+      }
     }
   }
   & .v-networks {
-    & .v-network_inner {
-      display: -ms-grid;
-      display: grid;
-      -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 0 rem(40);
-      @include for-width(-small-lg) {
-        display:block;
-      }
-      &_single {
-        border-radius:rem(20);
-        background-color:rgba(255,255,255,0.15);
-        @include for-width(-small-lg) {
-          margin-bottom:rem(60);
-        }
-        &__img {
-          border-top-left-radius:rem(20);
-          border-top-right-radius:rem(20);
-          height:rem(200);
-          @include for-width(-small-lg) {
-            height:rem(160);
-          }
-          & img {
-            border-top-left-radius:rem(20);
-            border-top-right-radius:rem(20);
-          }
-        }
-        &__content {
-          padding:rem(30);
-          @extend %df;
-          @extend %jcs;
-          @extend %aic;
-          & img {
-            width:rem(80);
-            margin-right:rem(20);
-          }
-          &_text {
-            @include for-width(-small-lg) {
-              padding-left:rem(20);
-            }
-            & h4 {
-              @extend %p-big-common-bold;
-              @include for-width(-small-lg) {
-                margin-bottom:rem(5);
-              }
-            }
-            & p {
-              @extend %p-common;
-              @include for-width(-tablet) {
-                line-height: rem(20);
-              }
-              @include for-width(-small-lg) {
-                line-height: rem(24);
-              }
-            }
-          }
-        }
-      }
-      &_single_anode {
-        & .v-network_inner_single__img {
-          & img {
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            object-position:center;
-          }
-        }
-      }
-      &_single_pkt_watch {
-        & .v-network_inner_single__img {
-          background-color:$dark_black;
-          @extend %df;
-          @extend %jcc;
-          @extend %aic;
-          & img {
-            height:rem(60);
-            object-fit:contain;
-            object-position:center;
-          }
-        }
-      }
-    }
-  }
-  .v-new-projects {
-    padding:rem(60) 0 rem(80);
-    @include for-width(-small-lg) {
-      padding:0 0 rem(60);
-    }
-    & .container {
-      @include for-width(-small-lg) {
-        padding:0;
-      }
-    }
-    &__heading {
-      @extend %p-big-common-bold;
-      padding-bottom:rem(25);
-      @include for-width(-small-lg) {
-        padding:0 rem(20) rem(18);
-      }
-    }
+    padding-top:rem(80);
   }
   .v-projects-eco {
     padding-bottom:rem(95);
+    padding-top:rem(52);
     @include for-width(-small-lg) {
       padding-bottom:rem(40);
     }
@@ -432,6 +407,9 @@ export default {
       @include for-width(-small-lg) {
         border:0;
         padding:0 0 rem(60);
+      }
+      &:last-child {
+        border-bottom:1px solid rgba(255,255,255,.2);
       }
       &__heading {
         @extend %p-big-common-bold;

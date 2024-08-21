@@ -25,14 +25,15 @@ export default {
 <style lang="scss">
 .c-images {
 	@extend %df;
-	@extend %jcc;
+	@extend %jcsb;
 	@extend %aic;
-	@include for-width(-tablet) {
+	@include for-width(-small-lg) {
 		display:block;
 	}
 	&-single {
-		@include for-width(-tablet) {
+		@include for-width(-small-lg) {
 			display:inline-block;
+			vertical-align:middle;
 		}
 		& img {
 			width:100%;

@@ -1,12 +1,12 @@
 <template>
 	<div class="container">
 	<template v-for="item of list">
-		<div class="c-community-blocks_single" :style="item.bg_img" :class="item.align_side">
+		<div class="c-community-blocks_single">
+			<a :href="item.block_url" target="_blank" :title="item.block_title" class="c-community-blocks_single_link"></a>
 			<div class="c-community-blocks_single_inner">
+				<div class="c-community-blocks_single_inner__icon" :style="item.bg_img"></div>
 				<h4 class="c-community-blocks_single_inner__title">{{ item.block_title }}</h4>
-				<p class="c-community-blocks_single_inner__descr">{{ item.block_descr }}</p>
 			</div>
-			<a :href="item.block_url" target="_blank" class="c-community-blocks_single__url c-common-button c-common-button__filled">{{ $t("common.learn_more") }}</a>
 		</div>
 	</template>
 	</div>
@@ -23,53 +23,64 @@ export default {
 
 <style lang="scss">
 .c-community-blocks_single {
-	@extend %df;
-	@extend %jcsb;
-	@extend %aic;
+	display:block;
 	background-color:$black_blue_light;
 	border-radius:rem(20);
-	background-position:left center;
-    background-size:contain;
-    background-repeat:no-repeat;
-	padding:rem(35) rem(30) rem(30) rem(50);
+	padding:rem(12) rem(25);
+	position:relative;
 	@include for-width(-desktop-medium) {
-		padding:rem(25) rem(20) rem(25) rem(35);
+		// padding:rem(25) rem(20) rem(25) rem(35);
 	}
 	@include for-width(-tablet) {
 		margin-bottom:rem(20);
 	}
 	@include for-width(-small-lg) {
-		display:block;
-		padding:rem(30) rem(35);
-		text-align:center;
-		background-size:25%;
+		padding:rem(15) rem(5);
+		margin-bottom:0;
 	}
 	&_inner {
-		width:rem(300);
-		@include for-width(-laptop) {
-			max-width:60%;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 0 rem(15);
+		@include for-width(-tablet) {
+			display:block;
+			text-align:center;
 		}
 		@include for-width(-small-lg) {
 			width:100%;
 			max-width:100%;
 		}
+		&__icon {
+			background-size:contain;
+			background-position:center center;
+			background-repeat:no-repeat;
+			height:rem(100);
+			@include for-width(-small-lg) {
+				height:rem(44);
+			}
+		}
 		&__title {
 			@extend %p-big-common-thick;
-		}
-		&__descr {
-			@extend %p-common-thick;
+			padding-top:rem(13);
+			text-align:left;
+			@include for-width(-tablet) {
+				text-align:center;
+			}
 			@include for-width(-small-lg) {
-				color:$white_50;
-				margin-top:rem(5);
+				font-size:12px;
 			}
 		}
 	}
-	&__url {
-		width:rem(150);
-		@include for-width(-small-lg) {
-			margin-top:rem(25);
-			width:rem(160);
-		}
+	&_link {
+		position:absolute;
+		width:100%;
+		height:100%;
+		display:block;
+		z-index:1;
+		top:0;
+		left:0;
 	}
 }
 </style>

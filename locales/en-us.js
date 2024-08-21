@@ -14,9 +14,9 @@ export default {
         wallets: "Wallets",
     },
     home_new: {
-        top_heading_1:"The Future",
-        top_heading_2:"of Internet Access",
-        top_descr:"PKT is a decentralized physical infrastructure (DePIN) ecosystem supporting open internet access and powering the decentralized web.",
+        top_heading_1:"The Media Network",
+        top_heading_2:"of the Future",
+        top_descr:"PKT is a media network built on Base and powered by the people. Stake to earn PKT and get paid to power the network.",
         solutions_title: "Powering solutions around the world",
         indexes_1: "Overview",
         indexes_2: "of the network",

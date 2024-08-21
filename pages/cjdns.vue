@@ -2,11 +2,11 @@
   <div class="v-cjdns">
     <section class="v-header-section">
       <SpotAInternal 
-      title="Cjdns peer-to-peer mesh networking is powering the PKT Network"
-      text="PKT Network is a global mesh network leveraging cjdns to scale its decentralized infrastructure and the decentralized web. PKT Network nodes automatically discover and connect with their neighbors. This creates a dynamic and self-configuring network that is available exclusively peer-to-peer or through global internet browsers." 
+      title="Cjdns peer-to-peer mesh networking routes PKT Network"
+      text="PKT Network is a global mesh network. It leverages a peer-to-peer protocol called cjdns to route high speed traffic around the world. PKT Network nodes automatically discover and connect with their neighbors. This creates a dynamic and self-configuring network that can avert firewalls and is available globally without geofencing." 
       button_1="Install cjdns"
       button_2="Read docs"
-      button_1_link="https://github.com/cjdelisle/cjdns"
+      button_1_link="https://docs.pkt.cash/governance"
       button_2_link="https://docs.pkt.cash/"
       button_1_target="_blank"
       button_2_target="_blank" />
@@ -22,9 +22,10 @@
             <h2>Hyperboria<span> x </span>PKT Network</h2>
           </div>
           <div class="v-hyperboria-section__inner_right">
-            <p>PKT Network uses the cjdns protocol and Hyperboria to power a decentralized, peer-to-peer mesh network. Each node in Hyperboria is identified by a unique IPv6 address generated from the node's public key. This enables users to communicate securely using end-to-end encryption, ensuring a high level of security and privacy.</p>
-            <p>Hyperboria is the encompassing open, secure, user-controlled ecosystem called PKT Network. PKT Network mitigates concerns about centralization, censorship, and internet privacy, demonstrating the practical application of mesh networking. The result is a sovereign, resilient, peer-to-peer network that bypasses traditional ISPs, and centralized control.</p>
-            <p>PKT Network also has payment rails built into the network layer. By linking a PKT payment address with a cjdns IPv6 address, websites built in the PKT Network can receive PKT payments without any friction from a third party payment gateway. This capability enables broad use cases for e-commerce, content distribution and beyond.</p>
+            <p>Cjdns was invented by PKT lead developer Caleb James DeLisle in 2011. Due to it security and resilient against adversarial ISPs and firewalls, cjdns was incorporated into Bitcoin Core version 23.0 in April 2022.</p>
+            <p>PKT Network uses the cjdns protocol and its interconnected network called Hyperboria to power a decentralized, peer-to-peer mesh network. Each node in Hyperboria is identified by a unique IPv6 address generated from the node's public key. This enables users to communicate securely using end-to-end encryption, ensuring a high level of security and privacy.</p>
+            <p>Hyperboria supports the open, secure, user-controlled ecosystem called PKT Network. The result is a sovereign, resilient, peer-to-peer network that bypasses traditional ISPs and centralized control.</p>
+            <p>PKT Network has payment rails built into the network layer. By linking a PKT payment address with a cjdns IPv6 web URL, websites built in the PKT Network can receive PKT payments without requiring a third party payment gateway. This capability enables broad use cases for e-commerce, content distribution and beyond.</p>
           </div>
         </div>
       </div>
@@ -97,7 +98,7 @@ export default {
   }
   & .c-spot-a-internal {
     @include for-width(-small-lg) {
-      padding:rem(90) 0 rem(80);
+      padding:rem(100) 0 rem(80);
     }
     &__wrap {
       max-width:rem(820);

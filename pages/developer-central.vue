@@ -3,7 +3,7 @@
     <section class="v-header-section">
       <SpotAInternal 
       :title="this.$t('dev_central.title')"
-      :text="this.$t('dev_central.text')" 
+      text="PKT is a community project. The PKT Network is powered by the people. The content in the ecosystem is developed by contributors and/or community-member-companies that are inspired by PKT’s mission. Here you will find all the documentation you need to each yields while staking or building within the ecosystem." 
       :button_1="this.$t('dev_central.button_1')"
       :button_2="this.$t('dev_central.button_2')"
       button_1_link="/network-steward"
@@ -17,36 +17,37 @@
       <div class="container">
         <div class="v-block-links-section__inner">
           <div class="v-block-links-section__single orange_bg">
-            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_1_title") }}</h3>
-            <p class="v-block-links-section__descr">{{ $t("dev_central.block_1_text") }}</p></div>
-            <a href="https://github.com/cjdelisle/cjdns" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_1") }}</span></a>
+            <div><h3 class="v-block-links-section__title">Earn from a cjdns Node</h3>
+            <p class="v-block-links-section__descr">Setup a cjdns node with an open port and public peering credentials to earn a share of 40% of all yields.</p></div>
+            <a href="https://docs.pkt.cash/infra/infrastructure" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_1") }}</span></a>
           </div>
           <div class="v-block-links-section__single blue_bg">
-            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_2_title") }}</h3>
-            <p class="v-block-links-section__descr">{{ $t("dev_central.block_2_text") }}</p></div>
-            <a href="https://pkt.world/mining" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_2") }}</span></a>
+            <div><h3 class="v-block-links-section__title">Earn from a PKT VPN Exit</h3>
+            <p class="v-block-links-section__descr">Setup a PKT VPN exit node to bridge between the traditional Internet and the PKT Network for a share of 30% of all yields.</p></div>
+            <a href="https://docs.pkt.cash/infra/infrastructure" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_2") }}</span></a>
           </div>
           <div class="v-block-links-section__single green_bg">
-            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_3_title") }}</h3>
-            <p class="v-block-links-section__descr">{{ $t("dev_central.block_3_text") }}</p></div>
-            <a href="https://docs.pkt.cash/en/latest/mining/pool_setup_guide/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.button_2") }}</span></a>
+            <div><h3 class="v-block-links-section__title">Earn from a PKT Domain</h3>
+            <p class="v-block-links-section__descr">Pair a PKT domain, such as any pkt.any TLD with unlimited stake for a share in 15% of all yields.</p></div>
+            <a href="https://docs.pkt.cash/infra/infrastructure" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_2") }}</span></a>
           </div>
         </div>
         <div class="v-block-links-section__inner">
           <div class="v-block-links-section__single dark_blue_bg">
-            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_4_title") }}</h3>
-            <p class="v-block-links-section__descr">{{ $t("dev_central.block_4_text") }}</p></div>
-            <a href="https://docs.pkt.cash/en/latest/pktd/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_1") }}</span></a>
+            <div><h3 class="v-block-links-section__title">Earn from a PKT Nameserver</h3>
+            <p class="v-block-links-section__descr">If you own a pkt domain, setup a nameserver with unlimited stake to earn a share of 10% of all yields.</p></div>
+            <a href="https://docs.pkt.cash/infra/infrastructure" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_1") }}</span></a>
           </div>
           <div class="v-block-links-section__single grey_bg">
-            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_5_title") }}</h3>
-            <p class="v-block-links-section__descr">{{ $t("dev_central.block_5_text") }}</p></div>
-            <a href="https://github.com/cjdelisle/PKT-Lightning-Wallet" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("common.learn_more") }}</span></a>
+            <div><h3 class="v-block-links-section__title">Earn from a Route Server</h3>
+            <p class="v-block-links-section__descr">If you have all node types, setup a route server with unlimited stake to earn 5% of all yields.</p></div>
+            <a href="https://docs.pkt.cash/infra/infrastructure" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>Setup now</span></a>
           </div>
           <div class="v-block-links-section__single rose_bg">
-            <div><h3 class="v-block-links-section__title">{{ $t("dev_central.block_6_title") }}</h3>
-            <p class="v-block-links-section__descr">{{ $t("dev_central.block_6_text") }}</p></div>
-            <a href="https://docs.pkt.cash/en/latest/cjdns_websites/" target="_blank" class="c-common-button c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("common.learn_more") }}</span></a>
+            <div><h3 class="v-block-links-section__title">Build a Website in PKT Network</h3>
+            <p class="v-block-links-section__descr">Get more information about building and hosting censorship-resistant websites in the PKT Network.</p></div>
+            <div><a href="https://docs.pkt.cash/infra/infrastructure" target="_blank" class="c-common-button c-common-button-2 c-common-button__bordered c-common-button__dark_blue"><span>{{ $t("dev_central.block_button_2") }}</span></a>
+            <a href="https://docs.pkt.cash/infra/infrastructure" target="_blank" class="c-common-button c-common-button-2 c-common-button__bordered c-common-button__dark_blue"><span>Rent a VPS</span></a></div>
           </div>
         </div>
       </div>
@@ -72,7 +73,7 @@ export default {
       simple_block: [
         {
           single_title: this.$t("dev_central.block_button_2"),
-          single_text: this.$t("dev_central.simple_text"),
+          single_text: "Get started by setting up PKT infrastructure on a computer and stake-to-earn. Staking efforts are the foundation the PKT Network. It’s also easy to build applications and websites on the network. PKT Network websites and applications can be reached globally without geofencing by search engines. If you need funding, check out the Network Steward page, which is a grant mechanism that is paid out weekly to fund PKT-related projects.",
         }
       ]
     };
@@ -115,11 +116,11 @@ export default {
   background-position:right top;
   background-size:rem(600);
   background-repeat:no-repeat;
-  @include for-width(-desktop-med) {
+  @include for-width(-desktop-medium-default) {
     background-size:rem(550);
   }
   @include for-width(-desktop-med) {
-    background-size:rem(550);
+    background-size:rem(500);
   }
   @include for-width(-tablet) {
     background-size:rem(450);
@@ -168,7 +169,10 @@ export default {
   }
   & .c-spot-a-internal {
     @include for-width(-small-lg) {
-      padding:rem(120) 0 rem(70);
+      padding:rem(100) 0 rem(80);
+    }
+    &__wrap {
+      max-width:rem(815);
     }
     &__title {
       max-width:rem(475);
@@ -180,7 +184,7 @@ export default {
   .v-simple-section {
     .c-common-simple {
       & .container {
-        padding: rem(54) rem(105) rem(60);
+        padding: rem(54) rem(110) rem(60);
         @include for-width(-laptop) {
           padding: rem(35) rem(100) rem(40);
         }
@@ -214,7 +218,7 @@ export default {
     &__single {
       width:31.5%;
       border-radius:rem(20);
-      padding:rem(20) rem(30) rem(40);
+      padding:rem(20) rem(27) rem(40) rem(27);
       @extend %df;
       @extend %jcsb;
       @extend %fdc;
@@ -252,6 +256,9 @@ export default {
         font-size: rem(16);
         line-height: rem(24);
       }
+    }
+    & .c-common-button-2 {
+      width:rem(150);
     }
   }
 }

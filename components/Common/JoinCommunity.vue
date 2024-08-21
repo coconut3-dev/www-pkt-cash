@@ -6,6 +6,9 @@
         <a class="c-common-button c-common-button__bordered" href="https://discord.gg/pktcash" target="_blank">
           <span>PKT Discord</span>
         </a>
+        <a class="c-common-button c-common-button__bordered" href="https://x.com/pktcash" target="_blank">
+          <span>PKT Twitter</span>
+        </a>
         <a class="c-common-button c-common-button__bordered" href="https://t.me/pkt_cash" target="_blank">
           <span>PKT Telegram</span>
         </a>
@@ -23,7 +26,7 @@ export default {
 <style lang="scss">
 .c-common-join {
   padding:rem(150) 0 rem(130);
-  @include for-width(-tablet-lg) {
+  @include for-width(-desktop-med) {
     padding:rem(125) rem(30);
   }
   @include for-width(-tablet) {
@@ -58,25 +61,26 @@ export default {
   }
   &__links {
     @include for-width(-small-lg) {
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      justify-content: space-between;
-      -ms-align-items: center;
-      align-items: center;
+      // display: -webkit-flex;
+      // display: -moz-flex;
+      // display: -ms-flex;
+      // display: -o-flex;
+      // display: flex;
+      // justify-content: space-between;
+      // -ms-align-items: center;
+      // align-items: center;
     }
     .c-common-button {
       @extend %db;
+      margin-top:rem(20);
       @include for-width(-small-lg) {
-        margin:0 rem(5);
+        margin:rem(20) auto 0;
       }
       &:first-child {
-        margin-bottom:rem(20);
-        @include for-width(-small-lg) {
-          margin-bottom:0;
-        }
+        margin-top:0;
+        // @include for-width(-small-lg) {
+        //   margin-top:0;
+        // }
       }
     }
   }

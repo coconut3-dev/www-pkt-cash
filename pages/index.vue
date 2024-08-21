@@ -3,19 +3,19 @@
     <section class="v-top-section">
       <div class="container">
         <h1 class="v-top-section__heading">{{ $t("home_new.top_heading_1") }} <br />{{ $t("home_new.top_heading_2") }}</h1>
-        <p class="v-top-section__description">{{ $t("home_new.top_descr") }}</p>
+        <p class="v-top-section__description">PKT is a media network built on Base and powered by the people. <br />Stake to earn PKT and get paid to power the network.</p>
         <div class="v-top-section__links">
-          <a href="https://www.mexc.com/exchange/PKT_USDT" target="_blank" class="c-common-button c-common-button__filled">
-            <span>{{ $t("header.get_pkt") }}</span>
+          <a href="https://uniswap.org/" target="_blank" class="c-common-button c-common-button__filled">
+            <span>Buy PKT</span>
           </a>
-          <nuxt-link class="c-common-button c-common-button__bordered" to="/roadmap">
-            <span>{{ $t("header.roadmap") }}</span>
-          </nuxt-link>
+          <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__bordered">
+            <span>Stake PKT</span>
+          </a>
         </div>
       </div>
       <div class="v-top-section__solutions">
         <div class="container">
-          <p>{{ $t("home_new.solutions_title") }}</p>
+          <p>Built on Base and powered by the people.</p>
           <div class="v-top-section__solutions_carousel">
             <ImgBlock :list="solutions_img_list" />
           </div>
@@ -33,10 +33,10 @@
     <section class="v-asymetrical-section">
       <div class="container">
         <div class="v-asymetrical-section__heading">
-          <h2>{{ $t("home_new.asymetrical_heading") }}</h2>
-          <nuxt-link class="c-common-button c-common-button__filled" to="/developer-central">
+          <h2>A Next Gen Network</h2>
+          <a href="https://docs.pkt.cash/utility" target="_blank" class="c-common-button c-common-button__filled">
             <span>{{ $t("common.learn_more") }}</span>
-          </nuxt-link>
+          </a>
         </div>
         <div class="v-asymetrical-section__inner">
           <BlockAsymmetrical :listFirst="asymetrical_block_list" :listSecond="asymetrical_block_list_second" />
@@ -48,7 +48,7 @@
     </section>
     <section class="v-powering-section">
       <div class="container">
-        <h2 class="v-powering-section__heading">{{ $t("home_new.powering_heading") }}</h2>
+        <h2 class="v-powering-section__heading">The Three Pillars of PKT</h2>
         <div class="v-powering-section__inner">
           <CardsCommon :list="cards_list" />
         </div>
@@ -83,138 +83,107 @@ export default {
     return {
       asymetrical_block_list: [
         {
-          single_title: this.$t("home_new.asymetrical_title_1"),
-          single_descr: this.$t("home_new.asymetrical_descr_1"),
+          single_title: "Decentralized Physical Infrastructure",
+          single_descr: "PKT is a globally accessible media network with no central infrastructure. Pkteers like you are economically incentivized to build the network.",
           color: "orange_dot"
         },
         {
-          single_title: this.$t("home_new.asymetrical_title_2"),
-          single_descr: this.$t("home_new.asymetrical_descr_2"),
+          single_title: "Global Networking",
+          single_descr: "All content is accessible globally peer-to-peer and through traditional browsers without geofencing.",
           color: "green_dot"
         }
       ],
       asymetrical_block_list_second: [
         {
-          single_title: this.$t("home_new.asymetrical_title_3"),
-          single_descr: this.$t("home_new.asymetrical_descr_3"),
+          single_title: "Stake to Earn",
+          single_descr: "Earn daily yields by staking PKT and assigning it to infrastructure that powers the network.",
           color: "green_dot"
         },
         {
-          single_title: this.$t("home_new.asymetrical_title_4"),
-          single_descr: this.$t("home_new.asymetrical_descr_4"),
+          single_title: "Safe and Secure",
+          single_descr: "The PKT Network backbone is supported by cjdns, which is a high speed, permissionless, encrypted mesh network.",
           color: "orange_dot"
         }
       ],
       blocks_list: [
         {
           text_direction: "text_right",
-          single_title: this.$t("home_new.block_list_title_1"),
-          single_descr: this.$t("home_new.block_list_descr_1"),
-          single_url: "/letter",
+          single_title: "Governance",
+          single_descr: "Twenty percent of all daily yields are allocated into a treasury that to fund the project roadmap. Every week the community elects a Network Steward who campaigns on how to allocate resources the available funds to the growth of the network.",
+          single_url: "https://docs.pkt.cash/governance",
           single_link: this.$t("common.learn_more"),
           single_img: "/img/home/chess-1.webp",
+          external: true
         },
         {
           text_direction: "text_left",
           single_title: this.$t("home_new.block_list_title_2"),
-          single_descr: this.$t("home_new.block_list_descr_2"),
-          single_url: "/getpkt",
-          single_link: this.$t("common.learn_more"),
+          single_descr: "PKT is now live on Base! Buy now from Uniswap. PKT will  relaunch soon on MEXC and BitMart. Previous holders of Packetcrypt can claim their first airdrop by following the directions on the Docs.",
+          single_url: "https://docs.pkt.cash/buy-pkt",
+          single_link: "Buy now",
           single_img: "/img/home/chess-2.webp",
+          external: true
         }
       ],
       solutions_img_list: [
         {
           img_url: "/img/home/home-solutions-1.svg",
-          single_alt: "Anode",
-          img_width: 162,
-          img_height: 43
+          single_alt: "Base",
+          img_width: 92,
+          img_height: 24
         },
         {
           img_url: "/img/home/home-solutions-2.svg",
-          single_alt: "Routie",
-          img_width: 192,
-          img_height: 48
+          single_alt: "Coinbase",
+          img_width: 144,
+          img_height: 26
         },
         {
           img_url: "/img/home/home-solutions-3.svg",
-          single_alt: "Pkteer",
-          img_width: 124,
-          img_height: 36
+          single_alt: "Akash",
+          img_width: 132,
+          img_height: 26
         },
         {
           img_url: "/img/home/home-solutions-4.svg",
-          single_alt: "Minr",
-          img_width: 125,
-          img_height: 46
+          single_alt: "Uniswap",
+          img_width: 140,
+          img_height: 41
         },
         {
           img_url: "/img/home/home-solutions-5.svg",
-          single_alt: "ODApp",
-          img_width: 200,
-          img_height: 50
+          single_alt: "Anode",
+          img_width: 88,
+          img_height: 24
         },
         {
           img_url: "/img/home/home-solutions-6.svg",
-          single_alt: "Packetscan",
-          img_width: 230,
-          img_height: 48
+          single_alt: "Routie",
+          img_width: 110,
+          img_height: 30
         },
-        {
-          img_url: "/img/home/home-solutions-7.svg",
-          single_alt: "Watchr",
-          img_width: 200,
-          img_height: 55
-        },
-        {
-          img_url: "/img/home/home-solutions-8.svg",
-          single_alt: "PKTWatch",
-          img_width: 204,
-          img_height: 44
-        },
-        {
-          img_url: "/img/home/home-solutions-9.svg",
-          single_alt: "pkt.world",
-          img_width: 204,
-          img_height: 40
-        },
-        {
-          img_url: "/img/home/home-solutions-11.svg",
-          single_alt: "pktpool",
-          img_width: 210,
-          img_height: 40
-        },
-        {
-          img_url: "/img/home/home-solutions-12.svg",
-          single_alt: "zetahash",
-          img_width: 210,
-          img_height: 45
-        },
-        {
-          img_url: "/img/home/home-solutions-13.svg",
-          single_alt: "pkt.nets",
-          img_width: 185,
-          img_height: 60
-        }
       ],
       cards_list: [
         {
-          single_title: this.$t("home_new.powering_title_1"),
-          single_descr: this.$t("home_new.powering_descr_1"),
-          single_url: "/origin-story",
-          single_link: this.$t("common.learn_more")
+          single_title: "Media",
+          single_descr: "PKT Network is a fully decentralized media network. Anyone can distribute media content with global accessibility, censorship-resistance and built-in payments.",
+          single_url: "https://docs.pkt.cash/utility",
+          single_link: this.$t("common.learn_more"),
+          external: true
         },
         {
-          single_title: this.$t("home_new.powering_title_2"),
-          single_descr: this.$t("home_new.powering_descr_2"),
-          single_url: "/network-steward",
-          single_link: this.$t("common.learn_more")
+          single_title: "Infrastructure",
+          single_descr: "Participants are paid to power the network by staking the PKT cryptocurrency and operating nodes. This supports the network’s connectivity and traffic routing.",
+          single_url: "https://docs.pkt.cash/utility",
+          single_link: this.$t("common.learn_more"),
+          external: true
         },
         {
-          single_title: this.$t("home_new.powering_title_3"),
-          single_descr: this.$t("home_new.powering_descr_3"),
-          single_url: "/mine",
-          single_link: this.$t("common.learn_more")
+          single_title: "Payments Transparency",
+          single_descr: "Built-in blockchain payments and smart contracts provide the revenue transparency and automated payment processing that is desperately needed in media distribution.",
+          single_url: "https://docs.pkt.cash/utility",
+          single_link: this.$t("common.learn_more"),
+          external: true
         },
       ],
     };
@@ -246,13 +215,17 @@ export default {
     content:'';
     background-image:url(/img/home/home-assets.webp);
     position:absolute;
-    top:15%;
+    top:10%;
     left:0;
     width:100%;
     height:70%;
     background-position:center center;
     background-size:cover;
     z-index:1;
+    @include for-width(-small-lg) {
+      background-size:auto;
+      background-position:left center;
+    }
   }
   & > section {
     z-index:3;
@@ -274,7 +247,7 @@ export default {
       background-size: cover;
     }
     @include for-width(-small-lg) {
-      padding:rem(180) 0 rem(100);
+      padding:rem(180) 0 rem(60);
       background-position: top 0 left -75px;
       background-size: 200%;
     }
@@ -312,11 +285,15 @@ export default {
       @include for-width(-desktop-medium) {
         margin-top:10vh;
       }
+      @include for-width(-desktop-med) {
+        padding:0 rem(30);
+      }
       @include for-width(-tablet) {
         margin-top:8vh;
       }
       @include for-width(-small-lg) {
         margin-top:rem(95);
+        padding:0;
       }
       & p {
         @extend %p-common;
@@ -332,20 +309,23 @@ export default {
         width:100%;
         border-radius: 20px;
         background-color:$black_blue_light;
-        padding:rem(15) 0 rem(12);
+        padding:rem(15) rem(68) rem(12);
+        @include for-width(-tablet) {
+          padding:rem(15) rem(15) rem(12);
+        }
         @include for-width(-small-lg) {
           border-radius: 0;
-          padding:rem(10) 0;
+          padding:rem(24) rem(14);
         }
         & .c-images-single {
           margin:0 rem(10);
           @include for-width(-tablet) {
-            margin:rem(7) 2%;
+            margin:rem(7) 1%;
             max-width:16%;
           }
           @include for-width(-small-lg) {
-            margin:rem(15) 2%;
-            max-width:21%;
+            margin:rem(6) rem(8);
+            max-width:50%;
           }
         }
       }
@@ -357,7 +337,7 @@ export default {
       padding-bottom::10vh;
     }
     @include for-width(-small-lg) {
-      padding-bottom::rem(100);
+      padding-bottom::rem(70);
     }
     & .container {
       @extend %df;
@@ -402,6 +382,33 @@ export default {
           margin-top:rem(25);
         }
       }
+      & .c-asymetrical-block {
+        @include for-width(-small-lg) {
+          width:90%;
+        }
+        & .first {
+          width:45%;
+          padding-right:rem(40);
+          @include for-width(-small-lg) {
+            padding-top:0;
+            width:100%;
+            padding-right:0;
+          }
+        }
+        & .second {
+          width:55%;
+          @include for-width(-small-lg) {
+            width:100%;
+          }
+        }
+        & .second > div {
+          padding-left:0;
+          padding-right:rem(175);
+          @include for-width(-small-lg) {
+            padding-right:0;
+          }
+        }
+      }
     }
     &__heading {
       & h2 {
@@ -443,6 +450,7 @@ export default {
       }
       @include for-width(-small-lg) {
         padding-bottom:rem(15);
+        width:rem(250);
       }
     }
   }

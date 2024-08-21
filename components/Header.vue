@@ -53,6 +53,9 @@
               <nuxt-link :click="$i18n.setLocaleCookie(locale)" v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code) + '/'">{{ locale.name }}</nuxt-link>
             </p>
           </div>
+          <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__filled">
+            <span>Dashboard</span>
+          </a>
         </div>
         <div class="nav__menu_mobile">
           <div class="nav__burger" @click="showMenu()" ref="navbar"></div>
@@ -108,6 +111,9 @@
                   </p>
                 </div>
               </li>
+              <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__filled">
+                <span>Dashboard</span>
+              </a>
             </ul>
         </div>
     </nav>
@@ -139,8 +145,8 @@ export default {
           dropdown: true,
           children: [
             {
-              name:"header.mine",
-              route_link: "/mine",
+              name:"Stake",
+              route_link: "/stake",
             },
             {
               name:"header.utility",
@@ -208,10 +214,14 @@ export default {
           ]
         },
         {
-          name: "footer_new.menu_3_title",
-          route_link: "/mine",
+          name: "Network",
+          route_link: "/stake",
           dropdown: true,
           children: [
+            {
+              name:"Infrastructure",
+              route_link: "/infrastructure",
+            },
             {
               name:"header.network_st",
               route_link: "/network-steward",
@@ -258,8 +268,8 @@ export default {
               external: true
             },
             {
-              name:"header_new.explore_kit",
-              route_link: "/brand",
+              name:"Media",
+              route_link: "/media",
             }
           ]
         }
@@ -357,7 +367,7 @@ export default {
   left:0;
   width:100%;
   z-index:10;
-  @include for-width(-small-lg) {
+  @include for-width(-tablet) {
     background: rgba(0, 5, 47, 0.5);
     backdrop-filter: blur(5px);
   }
@@ -486,6 +496,7 @@ export default {
           font-size: rem(16);
           text-transform:uppercase;
           padding:rem(20) rem(30);
+          margin-right:rem(16);
           @include for-width(-desktop-medium) {
             padding:rem(16) rem(30);
           }
@@ -520,6 +531,12 @@ export default {
                 font-size: rem(14);
               }
             }
+          }
+        }
+        & .c-common-button {
+          padding:rem(13.75) rem(23);
+          @include for-width(-desktop-medium) {
+            padding:rem(9.75) rem(23);
           }
         }
       }
@@ -667,6 +684,7 @@ export default {
         }
         & .nav_languages {
           padding-top:rem(20);
+          padding-bottom:rem(20);
           @extend %t-center;
           & .nav__menu-lang_switch_trigger {
             color:$white;

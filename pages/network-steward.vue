@@ -3,7 +3,7 @@
     <section class="v-header-section">
       <SpotAInternal 
       :title="this.$t('steward.steward_title')"
-      :text="this.$t('steward.steward_text')"
+      text="The Network Steward is a wallet address that receives 20% of all daily yields to fund the ongoing development of the PKT Network. A new custodian of the Network Steward wallet is democratically elected weekly by proof-of-stake voting."
       :button_1="this.$t('steward.steward_button_1')"
       :button_2="this.$t('steward.steward_button_2')"
       button_1_link="https://packetscan.io/election"
@@ -45,13 +45,12 @@
       <div class="container">
         <div class="v-charter-section__inner">
           <div class="v-charter-section__inner_left">
-            <h2>{{ $t("steward.steward_charter_title") }}</h2>
-            <a href="https://github.com/pkt-cash/ns-projects" target="_blank" class="c-common-button c-common-button__filled"><span>{{ $t("common.learn_more") }}</span></a>
+            <h2>Network Steward Charter</h2>
+            <a href="https://docs.pkt.cash/governance" target="_blank" class="c-common-button c-common-button__filled"><span>{{ $t("common.learn_more") }}</span></a>
           </div>
           <div class="v-charter-section__inner_right">
-            <p>{{ $t("steward.steward_charter_inner_1") }}</p>
-            <p>{{ $t("steward.steward_charter_inner_2") }}</p>
-            <a href="https://github.com/pkt-cash/ns-projects" target="_blank" class="c-common-button c-common-button__filled"><span>{{ $t("common.learn_more") }}</span></a>
+            <p>The Network Steward is designed to give all PKT community members a say in the network governance. Using a proof-of-stake voting system, a weekly election determines the Network Steward. In order for a candidate to remain the Network Steward, they must be re-elected every week. PKT must be staked in a lockup in order to vote. This governance mechanism is in live beta.</p>
+            <p>The objective of the Network Steward is for the network to self fund the development of the roadmap, network maintenance and community growth. The community should elect candidates that are motivated to benefit the project and whose agenda is deemed beneficial by the majority of the electorate. This governance system ensures the Network Steward funds are purposefully deployed to support the PKT project and network.</p>
           </div>
         </div>
       </div>
@@ -62,21 +61,21 @@
         <div class="v-grants-section__inner">
           <div class="v-grants-section_data">
             <img class="v-grants-section_data__img" src="/img/common/icons/pkt-vpn.svg" alt="PKT x VPN" />
-            <h5 class="v-grants-section_data__title">{{ $t("steward.steward_grants_data_title_1") }}</h5>
-            <p class="v-grants-section_data__text">{{ $t("steward.steward_grants_data_text_1") }}</p>
+            <h5 class="v-grants-section_data__title">PKT x VPN</h5>
+            <p class="v-grants-section_data__text">This project was to build the VPN infrastructure that powers the PKT Network and leverages cjdns exit nodes for VPN access points.</p>
           </div>
           <div class="v-grants-section_data">
-            <img class="v-grants-section_data__img" src="/img/common/icons/pkt-ts.svg" alt="PKT x TokenStrike" />
-            <h5 class="v-grants-section_data__title">{{ $t("steward.steward_grants_data_title_2") }}</h5>
-            <p class="v-grants-section_data__text">{{ $t("steward.steward_grants_data_text_2") }}</p>
+            <img class="v-grants-section_data__img" src="/img/common/icons/pkt-ts.svg" alt="PKT x Community" />
+            <h5 class="v-grants-section_data__title">PKT x Community</h5>
+            <p class="v-grants-section_data__text">This project was a team effort to create the website, text translations, documentation, community socials, and educational materials for PKT.</p>
           </div>
           <div class="v-grants-section_data">
             <img class="v-grants-section_data__img" src="/img/common/icons/pkt-nlnet.svg" alt="PKT x NLnet" />
-            <h5 class="v-grants-section_data__title">{{ $t("steward.steward_grants_data_title_3") }}</h5>
-            <p class="v-grants-section_data__text">{{ $t("steward.steward_grants_data_text_3") }}</p>
+            <h5 class="v-grants-section_data__title">PKT x NLnet</h5>
+            <p class="v-grants-section_data__text">NLnet is a not-for-profit philanthropic organization providing micro-grants towards projects deemed relevant for the PKT ecosystem.</p>
           </div>
         </div>
-        <a href="https://github.com/pkt-cash/ns-projects" target="_blank" class="c-common-button c-common-button__filled"><span>{{ $t("steward.steward_grants_link") }}</span></a>
+        <!-- <a href="https://github.com/pkt-cash/ns-projects" target="_blank" class="c-common-button c-common-button__filled"><span>{{ $t("steward.steward_grants_link") }}</span></a> -->
       </div>
     </section>
     <section class="v-simple-section">
@@ -125,8 +124,11 @@ export default {
     return {
       governance: [
         {
-          single_title: this.$t("steward.steward_governance_title"),
-          single_text: this.$t("steward.steward_governance_text"),
+          single_title: "Governance By the Community",
+          single_text: "It is the belief of the PKT founding community members that any unaccountable authority, no matter how benevolent, will eventually fall victim to corruption, inefficiency or simple failure to innovate. To solve this, PKT holders elect the Network Steward on a weekly basis. Voters can choose to delegate their vote so another party votes on their behalf.",
+          button_1: "Learn more",
+          button_1_link: "https://docs.pkt.cash/governance",
+          button_1_target: "_blank",
         }
       ],
     };
@@ -194,6 +196,11 @@ export default {
     &__wrap {
       max-width:rem(820);
     }
+    &__title {
+      @include for-width(-small-lg) {
+        max-width:rem(250);
+      }
+    }
   }
   & .v-indicators-section {
     &__inner {
@@ -242,10 +249,10 @@ export default {
     // padding:rem(225) 0 rem(70);
     padding: rem(50) 0 rem(70);
     @include for-width(-tablet) {
-      padding:rem(150) 0 rem(70);
+      padding:0 0 rem(70);
     }
     @include for-width(-small-lg) {
-      padding:rem(100) 0;
+      padding:0;
     }
     &__inner {
       @extend %dg;
@@ -262,6 +269,9 @@ export default {
           @extend %h2-common;
           max-width:rem(450);
           margin-bottom:rem(15);
+          @include for-width(-small-lg) {
+            max-width:rem(250);
+          }
         }
         & .c-common-button {
           @include for-width(-small-lg) {
@@ -286,8 +296,12 @@ export default {
   & .v-grants-section {
     @extend %t-center;
     padding-bottom:rem(130);
+    @include for-width(-tablet) {
+      padding-bottom:rem(80);
+    }
     @include for-width(-small-lg) {
-      padding-bottom:rem(110);
+      padding-bottom:rem(70);
+      padding-top:rem(90);
     }
     & h2 {
       @extend %h2-common;
@@ -330,7 +344,7 @@ export default {
   & .v-simple-section {
     padding-bottom:rem(120);
     @include for-width(-small-lg) {
-      padding-bottom:rem(110);
+      padding-bottom:rem(80);
     }
     .c-common-simple {
       & .container {

@@ -4,7 +4,8 @@
 			<div class="c-cards-single">
 				<h4 class="c-cards-single_title">{{ item.single_title }}</h4>
 				<p class="c-cards-single_descr">{{ item.single_descr }}</p>
-				<nuxt-link class="c-common-button c-common-button__filled" :to="item.single_url">
+				<a :href="item.single_url" target="_blank" class="c-common-button c-common-button__filled" v-if="item.single_link && item.external === true"><span>{{ item.single_link }}</span></a>
+				<nuxt-link class="c-common-button c-common-button__filled" :to="item.single_url" v-if="item.single_link && item.external === false">
 					<span>{{ item.single_link }}</span>
 				</nuxt-link>
 			</div>
@@ -17,6 +18,7 @@ export default {
   name: "CardsCommon",
   props: {
     list: Array,
+	external: Boolean,
   },
   computed: {
     is_mobile() {
@@ -31,9 +33,9 @@ export default {
 	@extend %df;
     @extend %jcsb;
     @extend %fw;
-	@include for-width(-tablet) {
-		justify-content: center;
-	}
+	// @include for-width(-tablet) {
+	// 	justify-content: center;
+	// }
 	@include for-width(-small-lg) {
 		display:block;
 	}
@@ -43,12 +45,16 @@ export default {
 		border-radius: 20px;
 		background-color:$black_blue_light;
 		@extend %t-center;
+		@extend %df;
+		@extend %fdc;
+		@extend %jcsb;
+		@extend %aic;
 		@include for-width(-laptop) {
 			padding:rem(25) rem(25) rem(30);
 		}
 		@include for-width(-tablet) {
-			width:48%;
-			margin:1%;
+			width:32%;
+			padding:rem(35) rem(15) rem(20);
 		}
 		@include for-width(-small-lg) {
 			width:100%;

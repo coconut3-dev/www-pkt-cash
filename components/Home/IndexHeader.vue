@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div class="c-index-header">
     <div class="c-index-header_data">
       <h3 class="c-index-header_data__title">{{ $t("home_new.network_1") }}</h3>
@@ -8,8 +8,8 @@
       </template>
     </div>
     <div class="c-index-header_data">
-      <h3 class="c-index-header_data__title">{{ $t("home_new.network_2") }}</h3>
-      <p class="c-index-header_data__value blue">{{ (bitsPerSecond / 1024 / 1024 / 1024).toFixed(2) }}Gb</p>
+      <h3 class="c-index-header_data__title">Total Staked PKT</h3>
+      <p class="c-index-header_data__value blue">{{ staked_pkt | displayed_staked_total }} PKT</p>
     </div>
     <div class="c-index-header_data">
       <h3 class="c-index-header_data__title">{{ $t("home_new.network_3") }}</h3>
@@ -29,7 +29,8 @@ export default {
       "encryptionsPerSecond",
       "pkt_price",
       "pkt_cp_logins",
-      "loading"
+      "loading",
+      "staked_pkt"
     ]),
     is_mobile() {
       return process.client && window.innerWidth < 1100;
@@ -64,6 +65,15 @@ export default {
     commafy(value) {
       return ("" + value).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
+    displayed_staked_total(value) {
+      try {
+        const coinsBigInt = BigInt(value);
+        const normalizedValue = coinsBigInt / (10n ** 18n);
+        return normalizedValue.toString();
+      } catch (error) {
+        return "1.724B";
+      }
+    }
   },
   mounted() {
     if (process.client) {

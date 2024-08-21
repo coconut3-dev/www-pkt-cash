@@ -13,7 +13,8 @@ const STATE = immutableMap({
   encryptionsPerSecond: null,
   pkt_price: null,
   pkt_cp_logins: null,
-  loading: true
+  loading: true,
+  staked_pkt: null
 });
 
 export const state = () => STATE.toJS();
@@ -42,6 +43,7 @@ export const actions = {
       const stats = await this.$axios.$get(`${EXPLORER_API}/api/v1/PKT/pkt/packetcrypt/stats/1/`)
       const pkt_price_fetch = await this.$axios.$get("https://pkt.cash/api/cmc-price")
       const pkt_cp_logins_fetch = await this.$axios.$get("https://pkt.cash/api/community-stats/pktpal")
+      const staked_pkt = await this.$axios.$get("https://pkt.cash/app_dot_pkt/api/v1/stats")
       console.log('load function')
       
       commit('updateField', { path: 'already_mined', value: data.alreadyMined })
@@ -52,6 +54,7 @@ export const actions = {
       commit('updateField', { path: 'encryptionsPerSecond', value: stats.results[0].encryptionsPerSecond })
       commit('updateField', { path: 'pkt_price', value: pkt_price_fetch.data.PKT.quote.USD.price })
       commit('updateField', { path: 'pkt_cp_logins', value: pkt_cp_logins_fetch[0].all_cp_logins })
+      commit('updateField', { path: 'staked_pkt', value: staked_pkt.lockbox_coins })
       this.loading = false;
 
     } catch (e) {
@@ -68,6 +71,7 @@ export const actions = {
       const stats = await this.$axios.$get(`${EXPLORER_API}/api/v1/PKT/pkt/packetcrypt/stats/1/`)
       const pkt_price_fetch = await this.$axios.$get("https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=PKT", { headers })
       const pkt_cp_logins_fetch = await this.$axios.$get("https://pkt.cash/api/community-stats/pktpal")
+      const staked_pkt = await this.$axios.$get("https://pkt.cash/app_dot_pkt/api/v1/stats")
       console.log(data, '/stats/coins')
       console.log(difficulty, '/chain/down/1')
       console.log(stats, '/packetcrypt/stats/1/')
@@ -80,6 +84,7 @@ export const actions = {
       commit('updateField', { path: 'encryptionsPerSecond', value: stats.results[0].encryptionsPerSecond * 1000000 })
       commit('updateField', { path: 'pkt_price', value: pkt_price_fetch.data.PKT.quote.USD.price })
       commit('updateField', { path: 'pkt_cp_logins', value: pkt_cp_logins_fetch[0].all_cp_logins })
+      commit('updateField', { path: 'staked_pkt', value: staked_pkt.lockbox_coins })
       this.loading = false;
     } catch (e) {
       this.loading = false;

@@ -5,6 +5,9 @@
 		<div class="c-chess-block_inner" :class="item.text_direction">
 			<div class="c-chess-block_inner_single">
 				<h4 class="c-chess-block_inner_single_title">{{ item.single_title }}</h4>
+				<template v-if="item.single_mobile_order">
+					<img :src="item.single_img" :alt="item.single_title" class="c-chess-block_inner_single_mobile_order" />
+				</template>
 				<template v-if="item.single_subtitle">
 					<p class="c-chess-block_inner_single_subtitle green">{{ item.single_subtitle }}</p>
 				</template>
@@ -29,6 +32,7 @@ export default {
   props: {
     list: Array,
 	external: Boolean,
+	single_mobile_order: Boolean
   },
   computed: {
     is_mobile() {
@@ -73,6 +77,14 @@ export default {
 				@extend %p-big-common;
 				margin-bottom:rem(25);
 				color:$white;	
+			}
+			&_mobile_order {
+				display:none;
+				border-radius:rem(20);
+				@include for-width(-tablet) {
+					display:block;
+					margin-bottom:rem(20);
+				}
 			}
 		}
 		&_single_img {

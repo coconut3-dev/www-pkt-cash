@@ -2,150 +2,119 @@
   <div class="v-utility">
     <section class="v-header-section">
       <SpotAInternal 
-      :title="this.$t('utility.u_title')"
-      :text="this.$t('utility.u_text')"
-     />
+      title="A Utility Network"
+      text="PKT functions as a versatile utility network built on the Base blockchain. The Base blockchain is a L2 that delivers fast, low cost payments using the Ethereum network. The PKT Network delivers a digital foundation for apps, products and platforms to access and service global customers."
+      button_1="Learn more"
+      button_2="Read docs"
+      button_1_link="ecosystem"
+      button_2_link="https://docs.pkt.cash/"
+      button_2_target="_blank" />
     </section>
     <section class="v-asymetrical-section">
       <div class="container">
         <div class="v-asymetrical-section__heading">
-          <h2>{{ $t("utility.u_assym_title") }}</h2>
+          <h2>An Open Ecosystem</h2>
+          <a href="https://docs.pkt.cash/network/what-is-network" target="_blank" class="c-common-button c-common-button__filled"><span>{{ $t("common.learn_more") }}</span></a>
         </div>
         <div class="v-asymetrical-section__inner">
           <BlockAsymmetrical :listFirst="asymetrical_block_list" :listSecond="asymetrical_block_list_second" />
         </div>
       </div>
     </section>
+    <section class="v-powering-section">
+      <div class="container">
+        <h2 class="v-powering-section__heading">Utility for the Future of Media</h2>
+        <div class="v-powering-section__inner">
+          <CardsCommon :list="cards_list" />
+        </div>
+      </div>
+    </section>
     <section class="v-chess-section">
       <BlocksChessCommon :list="chess_list" />
     </section>
-    <section class="v-simple-section">
-      <SimpleText :list="simple_block" />
-    </section>
-    <section class="v-comparison-section">
-      <div class="container">
-        <h2>{{ $t("utility.u_compar_title") }}</h2>
-        <div class="v-comparison-section_table_wrap">
-          <table class="v-comparison-section_table">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="pkt"><img src="/img/utility-comprasion-1.svg" title="PKT" /></th>
-                <th><img src="/img/utility-comprasion-2.svg" title="Helium" /></th>
-                <th><img src="/img/utility-comprasion-3.svg" title="NKN" /></th>
-                <th><img src="/img/utility-comprasion-4.svg" title="Orchid" /></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="row in rows">
-                <td>{{row.compare}}</td>
-                <td class="pkt">{{row.pkt}}</td>
-                <td>{{row.helium}}</td>
-                <td>{{row.nkn}}</td>
-                <td>{{row.orchid}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <section class="v-index-section">
+      <JoinCommunity />
     </section>
   </div>
 </template>
 
 <script>
 import SpotAInternal from "~/components/Common/SpotAInternal";
+import CardsCommon from "~/components/Home/CardsCommon";
 import BlocksChessCommon from "~/components/Common/BlocksChessCommon";
 import BlockAsymmetrical from "~/components/Common/BlockAsymmetrical";
-import SimpleText from "~/components/Common/SimpleText";
+import JoinCommunity from "~/components/Common/JoinCommunity";
 export default {
   components: {
     SpotAInternal,
+    CardsCommon,
     BlocksChessCommon,
     BlockAsymmetrical,
-    SimpleText,
+    JoinCommunity
   },
   data() {
     return {
       chess_list: [
         {
           text_direction: "text_right",
-          single_title: this.$t("utility.u_chess_title_1"),
-          single_descr: this.$t("utility.u_chess_descr_1"),
-          single_url: "/pkt-network",
-          external: false,
-          single_link: this.$t("common.learn_more"),
-          single_img: "/img/utility-1.webp",
+          single_title: "BIA - A New Home For Media Entertainment",
+          single_descr: "BIA is a streaming platform built on the PKT Network. It designed to revolutionize how content is distributed, discovered and the way content creators are compensated. Audiences get paid to power the network and can cash-out or use their earnings to pay for content.",
+          single_img: "/img/utility/utility-1.webp",
         },
         {
           text_direction: "text_left",
-          single_title: this.$t("utility.u_chess_title_2"),
-          single_descr: this.$t("utility.u_chess_descr_2"),
-          single_url: "https://github.com/cjdelisle/cjdns",
-          external: true,
-          single_link: this.$t("common.learn_more"),
-          single_img: "/img/utility-2.webp",
-        },
-        {
-          text_direction: "text_right",
-          single_title: this.$t("utility.u_chess_title_3"),
-          single_descr: this.$t("utility.u_chess_descr_3"),
-          single_url: "https://docs.pkt.cash/en/latest/cjdns_websites/",
-          external: true,
-          single_link: this.$t("common.learn_more"),
-          single_img: "/img/utility-3.webp",
-        },
-        {
-          text_direction: "text_left",
-          single_title: this.$t("utility.u_chess_title_4"),
-          single_descr: this.$t("utility.u_chess_descr_4"),
-          single_url: "/developer-central",
-          external: false,
-          single_link: this.$t("common.learn_more"),
-          single_img: "/img/utility-4.webp",
+          single_title: "Base Blockchain",
+          single_descr: "Base is an Ethereum L2, powered by Coinbase. Base provides a deployable, stable, EVM codebase for building on onchain apps, using smart contracts and using next gen wallet technologies.",
+          single_img: "/img/utility/utility-2.webp",
         }
       ],
       asymetrical_block_list: [
         {
-          single_title: this.$t("utility.u_assym_title_1"),
-          single_descr: this.$t("utility.u_assym_descr_1"),
+          single_title: "No Central Party",
+          single_descr: "The PKT Network is permissionless and globally accessible without geofencing. Anyone can launch, publish and transact content via applications, platforms, or websites on the network.",
           color: "orange_dot"
         },
         {
-          single_title: this.$t("utility.u_assym_title_2"),
-          single_descr: this.$t("utility.u_assym_descr_2"),
+          single_title: "Built-in Payments",
+          single_descr: "Payment processing is fundamental for any network. Each web URL in the PKT Network is also a PKT payment address. This enables seamless, built-in payment processing without requiring a third party payment processor.",
           color: "green_dot"
         }
       ],
       asymetrical_block_list_second: [
         {
-          single_title: this.$t("utility.u_assym_title_3"),
-          single_descr: this.$t("utility.u_assym_descr_3"),
+          single_title: "Scalable",
+          single_descr: "Using Base’s L2 blockchain provides PKT Network access to programmable payments using smart contracts. This delivers scalable, low cost, near-instant payment settlement.",
           color: "green_dot"
         },
         {
-          single_title: this.$t("utility.u_assym_title_4"),
-          single_descr: this.$t("utility.u_assym_descr_4"),
+          single_title: "Wallet Innovation",
+          single_descr: "PKT Network is build on the Base blockchain. This enables access to top-tier, non-custodial wallets like Coinbase Wallet, MetaMask and Ledger, as well as multi-sig solutions for ease of storage, utility, and peace of mind security.",
           color: "orange_dot"
         }
       ],
-      simple_block: [
+      cards_list: [
         {
-          single_title: this.$t("utility.u_simple_title"),
-          single_text: this.$t("utility.u_simple_text"),
-        }
+          single_title: "Streaming",
+          single_descr: "PKT Network is open for anyone to build and host streaming platforms. The first platform built on PKT is BIA - a streaming hub that reimagines the way content is distributed, discovered and compensated.",
+          single_url: "https://docs.pkt.cash/utility",
+          single_link: this.$t("common.learn_more"),
+          external: true
+        },
+        {
+          single_title: "Ecommerce",
+          single_descr: "Anyone to host and launch a censorship-resistant website on PKT. Each website’s web URL can be used as a PKT payment address, without requiring a third party payment processor.",
+          single_url: "https://docs.pkt.cash/utility",
+          single_link: this.$t("common.learn_more"),
+          external: true
+        },
+        {
+          single_title: "Bandwidth Markets",
+          single_descr: "It’s now possible to tokenize access rights to bandwidth using real world assets (RWAs). These RWA’s can be traded in a decentralized bandwidth marketplace using AI price models.",
+          single_url: "https://docs.pkt.cash/utility",
+          single_link: this.$t("common.learn_more"),
+          external: true
+        },
       ],
-      rows: [
-        { compare: this.$t("utility.u_table_th_1"), pkt: "2019", helium: '2013', nkn: '2019', orchid: '2017' },
-        { compare: this.$t("utility.u_table_th_2"), pkt: this.$t("utility.u_table_td_2_1"), helium: this.$t("utility.u_table_td_2_2"), nkn: this.$t("utility.u_table_td_2_2"), orchid: this.$t("utility.u_table_td_2_2") },
-        { compare: this.$t("utility.u_table_th_3"), pkt: this.$t("utility.u_table_td_3_1"), helium: this.$t("utility.u_table_td_3_2"), nkn: this.$t("utility.u_table_td_3_2"), orchid: this.$t("utility.u_table_td_3_2") },
-        { compare: this.$t("utility.u_table_th_4"), pkt: this.$t("utility.u_table_td_4_1"), helium: this.$t("utility.u_table_td_4_2"), nkn: this.$t("utility.u_table_td_4_3"), orchid: this.$t("utility.u_table_td_4_4") },
-        { compare: this.$t("utility.u_table_th_5"), pkt: this.$t("utility.u_table_td_3_1"), helium: this.$t("utility.u_table_td_3_2"), nkn: this.$t("utility.u_table_td_3_2"), orchid: this.$t("utility.u_table_td_3_2") },
-        { compare: this.$t("utility.u_table_th_6"), pkt: "0%", helium: '35%', nkn: '50%', orchid: '48.90%' },
-        { compare: this.$t("utility.u_table_th_7"), pkt: this.$t("utility.u_table_td_7_1"), helium: this.$t("utility.u_table_td_7_2"), nkn: this.$t("utility.u_table_td_7_3"), orchid: this.$t("utility.u_table_td_7_4") },
-        { compare: this.$t("utility.u_table_th_8"), pkt: "PKT", helium: 'HNT', nkn: 'NKN', orchid: 'OXT' },
-        { compare: this.$t("utility.u_table_th_9"), pkt: "6,000,000,000", helium: '223,000,000,000', nkn: '754,831,000', orchid: '979,379,000' },
-        { compare: this.$t("utility.u_table_th_10"), pkt: "4,826,573,824", helium: '160,875,442', nkn: '754,831,362', orchid: '979,779,108' }
-      ]
     };
   },
   head() {
@@ -183,7 +152,7 @@ export default {
   background-color:$black_blue;
   position:relative;
   background-image:url(/img/utility/utility-top-asset.webp);
-  background-size:rem(900);
+  background-size:rem(1150);
   background-position:top right;
   background-repeat:no-repeat;
   @include for-width(-desktop-medium-default) {
@@ -229,27 +198,40 @@ export default {
   }
   & .c-spot-a-internal {
     @include for-width(-small-lg) {
-      padding:rem(145) 0 rem(100);
+      padding:rem(100) 0 rem(90);
+    }
+    &__title {
+      max-width: rem(300);
+      @include for-width(-small-lg) {
+        
+      }
     }
   }
   .v-chess-section {
-    padding-top:rem(50);
-    @include for-width(-laptop) {
-      padding-top:0;
-    }
     & .c-chess-block_inner_single_img {
       & img {
         border-radius:rem(20);
+        @include for-width(-small-lg) {
+          margin-top:0;
+        }
+      }
+    }
+    & .text_right {
+      & .c-chess-block_inner_single {
+        padding-right:rem(30);
+        @include for-width(-tablet) {
+          padding-right:0;
+        }
       }
     }
   }
   .v-asymetrical-section {
-    padding-bottom:rem(100);
-    @include for-width(-laptop) {
-      padding-top:rem(100);
+    padding-bottom:0;
+    @include for-width(-desktop-med) {
+      padding:0 rem(30);
     }
     @include for-width(-small-lg) {
-      padding:rem(80) rem(20) rem(80);
+      padding:0 rem(20);
     }
     & .container {
       @extend %df;
@@ -289,7 +271,7 @@ export default {
           padding-bottom:0;
         }
       }
-      width:35%;
+      width:25%;
       @include for-width(-tablet) {
         width:100%;
         padding-bottom:rem(35);
@@ -308,87 +290,22 @@ export default {
       }
     }
   }
-  .v-simple-section {
-    padding:rem(155) 0 rem(200);
-    @include for-width(-laptop) {
-      padding:rem(100) 0 rem(150);
+  & .v-powering-section {
+    padding:rem(135) 0 rem(180);
+    @include for-width(-tablet) {
+      padding:10vh 0;
     }
     @include for-width(-small-lg) {
-      padding:rem(95) 0 rem(110);
+      padding:rem(100) 0;
     }
-  }
-  .v-comparison-section {
-    padding-bottom:rem(120);
-    @include for-width(-small-lg) {
-      padding-bottom:rem(80);
-    }
-    & h2 {
+    &__heading {
       @extend %h2-common;
-      padding-bottom:rem(30);
-      margin-bottom:rem(55);
-      @include for-width(-laptop) {
-        margin-bottom:rem(25);
+      padding-bottom:rem(50);
+      @include for-width(-tablet) {
+        padding-bottom:rem(35);
       }
-    }
-    &_table_wrap {
-      width: 100%;
       @include for-width(-small-lg) {
-        overflow-x: scroll;
-      }
-    }
-    &_table {
-      width: 100%;
-      height: fit-content;
-      border-collapse: separate;
-      @include for-width(-small-lg) {
-        min-width: rem(850);
-        padding-bottom:rem(20);
-      }
-      & thead tr {
-        & th {
-          padding:rem(25) rem(22) rem(20);
-          @extend %t-left;
-          &.pkt {
-            border:2px solid $blue;
-            border-top-left-radius:rem(20);
-            border-top-right-radius:rem(20);
-            border-bottom:0;
-          }
-        }
-      }
-      & tbody tr {
-        & td {
-          font-size: rem(16);
-          line-height: rem(60);
-          @extend %inter_medium;
-          color:$white_50;
-          @extend %t-left;
-          padding:0 rem(22) 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.2);
-          @include for-width(-tablet) {
-            padding:0 rem(10) 0;
-            line-height: rem(24);
-          }
-          @include for-width(-small-lg) {
-            padding:0 rem(20) 0;
-            line-height: rem(60);
-            font-size: rem(14);
-          }
-          &.pkt {
-            @extend %inter_bold;
-            color:$white;
-            border-left:2px solid $blue;
-            border-right:2px solid $blue;
-          }
-        }
-        &:last-child td {
-          padding-bottom:rem(12);
-        }
-        &:last-child .pkt {
-          border-bottom:2px solid $blue;
-          border-bottom-left-radius:rem(20);
-          border-bottom-right-radius:rem(20);
-        }
+        padding-bottom:rem(15);
       }
     }
   }

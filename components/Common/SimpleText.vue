@@ -4,6 +4,7 @@
       <template v-for="item of list">
         <h3 class="c-common-simple_title">{{ item.single_title }}</h3>
         <p class="c-common-simple_text">{{ item.single_text }}</p>
+        <a :href="item.button_1_link" :target="item.button_1_target" class="c-common-button c-common-button__filled" v-if="item.button_1"><span>{{ item.button_1 }}</span></a>
       </template>
     </div>
   </div>
@@ -14,13 +15,16 @@ export default {
   name: "SimpleText",
   props: {
     list: Array,
+    button_1: String,
+    button_1_link: String,
+    button_1_target: String
   }
 };
 </script>
 
 <style lang="scss">
 .c-common-simple {
-  @include for-width(-tablet-lg) {
+  @include for-width(-desktop-med) {
     padding:0 rem(30);
   }
   @include for-width(-small-lg) {
@@ -53,6 +57,9 @@ export default {
   }
   &_text {
     @extend %p-big-common;
+  }
+  & .c-common-button {
+    margin-top:rem(35);
   }
 }
 </style>

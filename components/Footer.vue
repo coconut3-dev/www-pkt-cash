@@ -13,6 +13,7 @@
               </a>
             </li>
           </ul>
+          <p class="c-footer__logo__ca">CA: 0x917f39bb33b2483dd19546b1e8d2f09ce481ee44</p>
           <div class="c-footer__text">
             <span class="c-footer__text-light">
               <a href="https://github.com/cjdelisle/CJDNS-contact" target="_blank" class="c-footer__menu-link">
@@ -144,19 +145,14 @@ export default {
           name: "Dextools",
           route_link: "https://www.dextools.io/app/en/base/pair-explorer/0x6183e613dda1fa146c90be6e1757aef15bacad9d",
           img: "/img/common/icons/dextools.svg",
-        },
-        {
-          name: "Dextools",
-          route_link: "https://www.dextools.io/app/en/base/pair-explorer/0x917f39bb33b2483dd19546b1e8d2f09ce481ee44",
-          img: "/img/common/icons/dextools.svg",
         }
       ],
       learn_links: [
         {
-          name: "header.mine",
-          route_link: "/mine",
-          // name: "Stake",
-          // route_link: "/stake",
+          // name: "header.mine",
+          // route_link: "/mine",
+          name: "Stake",
+          route_link: "/stake",
         },
         {
           name: "header.utility",
@@ -248,10 +244,10 @@ export default {
         //   route_link: "/",
         // },
         {
-          name: "footer.brand",
-          route_link: "/brand",
-          // name: "Media",
-          // route_link: "/media",
+          // name: "footer.brand",
+          // route_link: "/brand",
+          name: "Media",
+          route_link: "/media",
         },
       ]
     };
@@ -300,32 +296,20 @@ export default {
       }
     }
     &_social {
-      display: -ms-grid;
-      display: grid;
-      -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: rem(15) rem(10);
+      @extend %df;
+      @extend %jcsb;
+      @extend %aic;
       padding:rem(45) 0 rem(52);
       @include for-width(-laptop_small) {
         padding-bottom:rem(64);
       }
       @include for-width(-tablet) {
         padding:rem(15) 0 rem(15);
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        -ms-align-items: center;
-        align-items: center;
         justify-content: center;
       }
       @include for-width(-small-lg) {
         padding:rem(25) 0 rem(10);
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: rem(15) rem(10);
+        justify-content: flex-start;
       }
       & .c-footer__menu-text {
         width: 40px;
@@ -333,14 +317,14 @@ export default {
         line-height: 40px;
         @extend %db;
         @extend %t-center;
-        // margin-right:rem(20);
+        margin-right:rem(20);
         background-color:rgba(255,255,255,.15);
         border-radius:rem(50);
         @include for-width(-laptop_small) {
           width: rem(36);
           height: rem(36);
           line-height: rem(36);
-          // margin-right:rem(12);
+          margin-right:rem(12);
         }
         @include for-width(-small-lg) {
           width: 40px;
@@ -362,6 +346,13 @@ export default {
             height: 20px;
           }
         }
+      }
+    }
+    &__ca {
+      @include for-width(-small-lg)  {
+        font-size:rem(13);
+        text-align:center;
+        margin:rem(5) 0 0;
       }
     }
   }
