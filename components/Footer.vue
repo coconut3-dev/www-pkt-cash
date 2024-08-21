@@ -139,12 +139,19 @@ export default {
           name: "Github",
           route_link: "https://github.com/pkt-cash/",
           img: "/img/common/icons/github.svg",
+        },
+        {
+          name: "Dextools",
+          route_link: "https://www.dextools.io/app/en/base/pair-explorer/0x6183e613dda1fa146c90be6e1757aef15bacad9d?t=1724261491923",
+          img: "/img/common/icons/dextools.svg",
         }
       ],
       learn_links: [
         {
           name: "header.mine",
           route_link: "/mine",
+          // name: "Stake",
+          // route_link: "/stake",
         },
         {
           name: "header.utility",
@@ -158,10 +165,6 @@ export default {
           name: "header.pkt_cash",
           route_link: "/pkt-cash",
         },
-        // {
-        //   name: "FAQ",
-        //   route_link: "/faq",
-        // },
         {
           name: "resources.heading_button_4",
           route_link: "https://docsend.com/view/ayf5d3tz5rymn8fv",
@@ -227,6 +230,10 @@ export default {
           route_link: "https://crypto.pkt.cash",
           external: true,
         },
+        // {
+        //   name: "FAQ",
+        //   route_link: "/faq",
+        // },
         {
           name: "footer.trademark",
           route_link: "/trademark",
@@ -238,6 +245,8 @@ export default {
         {
           name: "footer.brand",
           route_link: "/brand",
+          // name: "Media",
+          // route_link: "/media",
         },
       ]
     };
