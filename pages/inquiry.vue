@@ -2,7 +2,20 @@
   <div class="v-inquiry">
     <section id="inquiry" class="v-form-section">
       <div class="container">
-        <script type="text/javascript" src="https://form.jotform.com/jsform/242325523108044"></script>
+        <iframe
+          id="JotFormIFrame-242325523108044"
+          title="PKT Airdrop Inquiry Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen"
+          src="https://form.jotform.com/242325523108044"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        >
+        </iframe>
+        <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-242325523108044']", "https://form.jotform.com/")</script>
       </div>
     </section>
   </div>
@@ -49,9 +62,7 @@ export default {
     }
     & iframe {
       overflow:auto !important;
-      @include for-width(-small-lg) {
-        height:rem(2100) !important;
-      }
+      height:rem(2100) !important;
     }
   }
 }
