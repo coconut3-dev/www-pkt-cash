@@ -235,8 +235,9 @@ export default {
               route_link: "/ecosystem",
             },
             {
-              name:"header.cryptoeconomics",
-              route_link: "/cryptoeconomics",
+              name:"Tokenomics",
+              route_link: "https://docs.pkt.cash/tokenomics/initial-distribution/",
+              external: true
             },
             {
               name:"header.cjdns",

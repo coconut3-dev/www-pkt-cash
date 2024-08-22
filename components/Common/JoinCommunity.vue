@@ -9,7 +9,7 @@
         <a class="c-common-button c-common-button__bordered" href="https://x.com/pktcash" target="_blank">
           <span>PKT Twitter</span>
         </a>
-        <a class="c-common-button c-common-button__bordered" href="https://t.me/pkt_cash" target="_blank">
+        <a class="c-common-button c-common-button__bordered" href="https://t.me/pktcash" target="_blank">
           <span>PKT Telegram</span>
         </a>
       </div>

@@ -26,7 +26,7 @@ export default {
         {
           bg_img: "background-image:url(/img/community/community-telegram.svg)",
           block_title: "Telegram",
-          block_url: "https://t.me/pkt_cash",
+          block_url: "https://t.me/pktcash",
         },
         {
           bg_img: "background-image:url(/img/community/community-discord.svg)",
