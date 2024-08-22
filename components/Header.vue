@@ -236,7 +236,7 @@ export default {
             },
             {
               name:"Tokenomics",
-              route_link: "https://docs.pkt.cash/tokenomics/initial-distribution/",
+              route_link: "https://docs.pkt.cash/tokenomics/tokenomics",
               external: true
             },
             {
