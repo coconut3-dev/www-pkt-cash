@@ -1,7 +1,9 @@
 <template>
   <div class="v-trademark">
-    <section class="v-trademark-section-top">
-      <SimpleHeader mobile_img="" :title="this.$t('trademark.heading')" subtitle="" bg="" />
+    <section class="v-header-section">
+      <SpotAInternal 
+      :title="this.$t('trademark.heading')"
+       />
     </section>
     <section class="v-trademark-section">
 		<div class="container">
@@ -40,16 +42,31 @@
 </template>
 
 <script>
-import SimpleHeader from "~/components/Base/SimpleHeader";
-
+import SpotAInternal from "~/components/Common/SpotAInternal";
 export default {
   components: {
-    SimpleHeader,
+    SpotAInternal,
   },
   head() {
     return {
-      title: this.$t("trademark.meta_title"),
-      meta: [{ hid: "description", name: "description", content: this.$t("home.meta_descr") }],
+      title: "Trademark | PKT Cash",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t("trademark.meta_title")
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Trademark | PKT Cash'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.$t("trademark.meta_title")
+        }
+      ],
       link: [
         {
           rel: 'canonical',
@@ -60,71 +77,85 @@ export default {
   },
 };
 </script>
-
 <style lang="scss">
-.v-trademark-section-top {
-	& .c-simple-header {
-		padding: rem(150) 0 rem(50);
-		min-height: 1px;
-		@include for-width(-tablet-lg) {
-			padding: rem(75) 0 rem(50);
-		}
-		@include for-width(-small-lg) {
-			padding: rem(60) 0 rem(25);
-			height: auto;
-		}
-		& .container {
-			max-width: rem(1217);
-			padding: 0;
-			@include for-width(-tablet-lg) {
-			  padding: 0 rem(30);
-			}
-		}
-		&__title {
-			color: #191944;
-			text-align: center;
-			max-width: rem(865);
-			margin: 0 auto;
-		}
+.v-trademark {
+  background-color:$black_blue;
+  position:relative;
+  background-image:url(/img/media-top-asset.webp);
+  background-size:rem(750);
+  background-position:top right;
+  background-repeat:no-repeat;
+  @include for-width(-desktop-lg) {
+    background-size:rem(600);
+  }
+  @include for-width(-small-lg) {
+    background-size:rem(300);
+    background-position:top 50px right -50px;
+  }
+  & > section {
+    z-index:3;
+    position:relative;
+  }
+  & .c-spot-a-internal {
+	@include for-width(-tablet) {
+		padding-bottom:rem(50);
 	}
-}
-.v-trademark-section {
-	& .container {
-		width: 100%;
-		max-width: rem(1217);
-		margin: 0 auto rem(100);
-		@include for-width(-tablet-lg) {
-			padding: 0 rem(30);
-		}
+    @include for-width(-small-lg) {
+      padding-top:rem(100);
+	  padding-bottom:rem(10);
+    }
+  }
+  & .v-trademark-section {
+	padding-bottom:rem(100);
+	@include for-width(-small-lg) {
+		padding-bottom:rem(50);
 	}
 	&__text {
-		@extend %text-main;
-		color: $dark_blue;
-		margin-bottom: rem(20);
+		@extend %p-big-common;
+		margin-bottom:rem(25);
+		color:$white;
 		@include for-width(-tablet) {
 		  margin-bottom: rem(10);
 		}
 	}
+	& a {
+		color:$green;
+		&:hover {
+			color:$green;
+		}
+		&:focus {
+			color:$green;
+		}
+		&:visited {
+			color:$green;
+		}
+	}
 	&__list-title {
-		@extend %h2-title;
-		  margin-bottom: rem(30);
-		  @include for-width(-tablet) {
-			margin-bottom: rem(15);
-			@include font_sizes(16, 26);
-		  }
+		font-size: rem(20);
+		line-height: rem(30);
+		@extend %inter_bold;
+		color:$white;
+		@include for-width(-small-lg) {
+			font-size: rem(18);
+			line-height: rem(24);
+			margin-bottom:rem(25);
+		}
 	}
 	&__list-subtitle {
-		@extend %h3-title;
-		  margin-bottom: rem(10);
-		  @include for-width(-tablet) {
-			margin-bottom: rem(5);
-			@include font_sizes(16, 26);
-		  }
+		font-size: rem(20);
+		line-height: rem(30);
+		@extend %inter_bold;
+		color:$white;
+		@include for-width(-small-lg) {
+			font-size: rem(18);
+			line-height: rem(24);
+			margin-bottom:rem(25);
+		}
 	}
 	& ol,& ul {
 		padding-left: rem(50);
-		@extend %text-main;
-		color: $dark_blue;
+		@extend %p-big-common;
+		color:$white;
 		margin-bottom: rem(20);
 	}
 	& ol li {
@@ -138,5 +169,6 @@ export default {
 	& ul ul li {
 		list-style-type: circle;
 	}
+  }
 }
 </style>

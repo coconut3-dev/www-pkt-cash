@@ -182,10 +182,6 @@ export default {
           name: "header.roadmap",
           route_link: "/roadmap",
         },
-        // {
-        //   name: "header.roadmap",
-        //   route_link: "/build#roadmap",
-        // },
         {
           name: "header_new.dev_yellowpaper",
           route_link: "https://pkt.cash/PacketCrypt-2020-09-04.pdf",
@@ -217,8 +213,7 @@ export default {
         },
         {
           name: "header.cjdns",
-          route_link: "https://github.com/cjdelisle/cjdns",
-          external: true,
+          route_link: "/cjdns",
         }
       ],
       explore_links: [
@@ -239,15 +234,13 @@ export default {
           name: "footer.trademark",
           route_link: "/trademark",
         },
-        // {
-        //   name: "Press",
-        //   route_link: "/",
-        // },
         {
-          // name: "footer.brand",
-          // route_link: "/brand",
           name: "Media",
           route_link: "/media",
+        },
+        {
+          name: "footer.brand",
+          route_link: "/brand",
         },
       ]
     };
