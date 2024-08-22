@@ -1,34 +1,86 @@
 <template>
   <div class="v-goodnews">
     <section class="v-main-section">
-      <h1 class="v-main-section__heading">{{ $t("goodnews.title_1") }}<br /><span class="white">{{ $t("goodnews.title_2") }}</span></h1>
-      <h2 class="v-main-section__subheading">{{ ann_number }}</h2>
-      <!-- <h2 class="v-main-section__subheading">{{ $t("goodnews.title_3") }}</h2> -->
-      <div class="v-main-section__timer">
-        <span class="v-main-section__timer_el">{{ timerOutput.days }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_1") }}</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput.hours }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_2") }}</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput.minutes }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_3") }}</span></span><span class="v-main-section__timer_div">:</span>
-        <span class="v-main-section__timer_el">{{ timerOutput.seconds }}<span class="v-main-section__timer_label">{{ $t("goodnews.counter_4") }}</span></span>
+      <div class="container">
+        <h1 class="v-main-section__heading">{{ $t("goodnews.title_1") }}<br /><span class="white">{{ $t("goodnews.title_2") }}</span></h1>
+        <h2 class="v-main-section__subheading">Final Reveal</h2>
+        <img src="/img/good_news/final_reveal/pkt-x-base.svg" alt="PKT x Base" class="v-main-section__img" />
       </div>
-      <div class="v-main-section__roadmap">
-        <img src="/img/good_news/pkt-good-news-roadmap-new.svg" alt="Roadmap" width="800" height="475" />
+    </section>
+    <section class="v-content-section">
+      <div class="container">
+        <h2 class="v-content-section__heading">PKT Migrates to Base</h2>
       </div>
-      <h2 class="v-main-section__comingtitle">{{ $t("goodnews.title_4") }}</h2>
-      <div class="v-main-section__coming_soon">
-        <img src="/img/good_news/pkt-good-news-coming-soon.webp" alt="Coming Soon" width="800" height="475" />
-      </div>
-      <div class="v-main-section__coming_soon v-main-section__coming_soon_2">
-        <img src="/img/good_news/pkt-good-news-coming-soon-1.webp" alt="Coming Soon" width="800" height="475" />
-      </div>
-      <div class="v-main-section__coming_soon v-main-section__coming_soon_2 v-main-section__coming_soon_3">
-        <img src="/img/good_news/pkt-good-news-coming-soon-2.webp" alt="Coming Soon" width="800" height="475" />
-      </div>
+      <BlocksChessCommon :list="blocks_list" />
+    </section>
+    <section class="v-join-section">
+      <JoinCommunity />
     </section>
   </div>
 </template>
 
 <script>
+import BlocksChessCommon from "~/components/Common/BlocksChessCommon";
+import JoinCommunity from "~/components/Common/JoinCommunity";
 export default {
+  components: {
+    BlocksChessCommon,
+    JoinCommunity
+  },
+  data() {
+    return {
+      blocks_list: [
+        {
+          text_direction: "text_left",
+          single_title: "Summary",
+          single_descr: "PKT has migrated to the Base blockchain, marking a significant technology and wallet upgrade. The move changes the project from proof-of-work to an innovative Stake-to-Earn protocol. Anyone can stake PKT into the dashboard and earn daily rewards. Beginning on October 30, 2024 is Infrastructure Day, when each stake must be paired with a DePIN node that powers the network for daily yields.",
+          single_img: "/img/good_news/final_reveal/pkt-migration-1.webp",
+          single_url: "https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview",
+          single_link: "View Dashboard",
+          external: true,
+          single_mobile_order: true
+        },
+        {
+          text_direction: "text_right",
+          single_title: "Buy/Sell",
+          single_descr: "PKT has been difficult for new buyers to buy due to the inability to access the asset in decentralized way. Now that PKT has a liquidity depth on Uniswap, anyone can buy/sell PKT directly from their Web3 wallet, such as MetaMask and Coinbase Wallet. Base is an Ethereum L2, so transactions are near-instant and gas fees are negligible. This instantly paves the way for TokenStrike.",
+          single_img: "/img/good_news/final_reveal/pkt-migration-2.webp",
+          single_mobile_order: true
+        },
+        {
+          text_direction: "text_left",
+          single_title: "Liquidity Pool",
+          single_descr: "With PKT  trading on a decentralized exchange, there is automatic market making liquidity to ensure users can transact. This will also anchor the price on CEX as well. The Stake-to-Earn protocol specifically incentivizes community members who contribute PKT/ETH liquidity to the liquidity pool with a 1 million PKT per day divided between liquidity providers. There are also yield multipliers, up to 4x, to incentivize long term liquidity lockups.",
+          single_img: "/img/good_news/final_reveal/pkt-migration-3.webp",
+          single_mobile_order: true
+        },
+        {
+          text_direction: "text_right",
+          single_title: "Staking",
+          single_descr: "PKT’s Stake-to-Earn protocol is designed to reward people that operate infrastructure nodes that power the PKT Network. Rather than wasteful, centralized proof-of-work mining, DePIN nodes earn daily rewards based on the node type and stake. There are 5 different infrastructure node types with that have varying complexity and yields. DePIN nodes can also earn yield multipliers, up to 4x, for long term staking lockups, and node uptime.",
+          single_img: "/img/good_news/final_reveal/pkt-migration-4.webp",
+          single_mobile_order: true
+        },
+        {
+          text_direction: "text_left",
+          single_title: "PKT Migration",
+          single_descr: "Holders of PacketCrypt proof-of-work coins are eligible to be airdropped PKT on Base tokens. Simply paste each wallet address Private Key plus a Web3 wallet address into the provided Migration tool to generate a signature. Then paste the signature into PKT Migration dashboard tab. Eligible holders will receive 1/3rd of their tokens now, and 1/3 every 6 months. Anyone can swap PKT on Base into PacketCrypt coins via OTC, by using escrow.",
+          single_img: "/img/good_news/final_reveal/pkt-migration-5.webp",
+          single_mobile_order: true
+        },
+        {
+          text_direction: "text_right",
+          single_title: "Referral Rewards",
+          single_descr: "PKT has an affiliate program built into the protocol. Each connected wallet receives an affiliate code. If an individual stakes using an affiliate code they receive a 1% yield bonus and the affiliate code provider receives a 4% yield bonus. Each affiliate code provider also receives a 1% yield bonus 1 tier down from each intro. This becomes lucrative as more people use any individual’s affiliate code over time.",
+          single_img: "/img/good_news/final_reveal/pkt-migration-6.webp",
+          single_url: "https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview",
+          single_link: "View Dashboard",
+          external: true,
+          single_mobile_order: true
+        }
+      ]
+    };
+  },
   head() {
     return {
       title: "Project Good News | PKT Cash",
@@ -36,7 +88,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Announcement 7 of 7'
+          content: 'Final Reveal'
         },
         {
           hid: 'og:title',
@@ -46,12 +98,12 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: 'Announcement 7 of 7'
+          content: 'Final Reveal'
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: '/img/featured_meta/pktcash-goodnews.jpg'
+          content: '/img/featured_meta/pkt-goodnews-preview.jpg'
         }
       ],
       link: [
@@ -59,83 +111,31 @@ export default {
           rel: 'canonical',
           href: 'https://pkt.cash' + this.$route.path
         }
-      ]
+      ],
+      bodyAttrs: {
+        class: 'goodnews'
+      }
     };
   },
-  data() {
-    return {
-      targetDate: '2024-08-21T10:00:00',
-      timerOutput: {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-      },
-      ann_number: 'Announcement 7 of 7',
-      targetTimeZone: 'America/Los_Angeles',
-      timerInterval: null
-    };
-  },
-  methods: {
-    initializeTimer() {
-      const countdown = () => {
-        const targetDateTime = new Date(this.targetDate);
-        const now = new Date();
-        const nowInTargetTimeZone = new Date(now.toLocaleString('en-US', { timeZone: this.targetTimeZone }));
 
-        let timeDifference = targetDateTime.getTime() - nowInTargetTimeZone.getTime();
-
-        if (timeDifference <= 0) {
-          clearInterval(this.timerInterval);
-          this.handleCountdownCompletion();
-          return;
-        }
-
-        const millisecondsInOneSecond = 1000;
-        const millisecondsInOneMinute = millisecondsInOneSecond * 60;
-        const millisecondsInOneHour = millisecondsInOneMinute * 60;
-        const millisecondsInOneDay = millisecondsInOneHour * 24;
-
-        this.timerOutput.days = Math.floor(timeDifference / millisecondsInOneDay);
-        this.timerOutput.hours = Math.floor((timeDifference % millisecondsInOneDay) / millisecondsInOneHour);
-        this.timerOutput.minutes = Math.floor((timeDifference % millisecondsInOneHour) / millisecondsInOneMinute);
-        this.timerOutput.seconds = Math.floor((timeDifference % millisecondsInOneMinute) / millisecondsInOneSecond);
-      };
-      countdown();
-
-      this.timerInterval = setInterval(countdown, 1000);
-    },
-    handleCountdownCompletion() {
-      this.ann_number = 'Announcement 7 of 7';
-      this.targetDate = '2024-08-21T10:00:00';
-      this.initializeTimer();
-    }
-  },
-  mounted() {
-    this.initializeTimer();
-  },
-  beforeDestroy() {
-    clearInterval(this.timerInterval);
-  }
 };
 </script>
 
 <style lang="scss">
 .goodnews {
-  // overflow: hidden;
   & .c-header {
     & .nav__logo {
       background-image:url(/img/logo-new-dark.svg);
       background-repeat:no-repeat;
       background-size:contain;
       background-position:left center;
-      @include for-width(-small-lg) {
+      @include for-width(-tablet) {
         background:none;
       }
       & img {
         opacity:0;
         visibility:hidden;
-        @include for-width(-small-lg) {
+        @include for-width(-tablet) {
           opacity:1;
           visibility:visible;
         }
@@ -144,30 +144,26 @@ export default {
   }
 }
 .v-goodnews {
-  background-image:url(/img/goodnews-bg.webp);
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center center;
-  background-attachment: fixed;
-  width:100%;
-  min-height:100vh;
-  height:auto;
-  padding:rem(150) 0 rem(75);
-  @extend %df;
-  @extend %jcc;
-  @extend %fdc;
-  @extend %aic;
-  @include for-width(-desktop-medium) {
-    padding:rem(100) 0 rem(50);
-  }
-  @include for-width(-small-lg) {
-    background-image:url(/img/goodnews-bg-mobile.webp);
-    padding:rem(100) 0 rem(75);
-  }
+  background: #E3E3E8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position:relative;
   & .v-main-section {
+    background-image:url(/img/goodnews-bg.webp);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    background-attachment: fixed;
+    width:100%;
+    min-height:100vh;
+    height:auto;
+    @extend %df;
+    @extend %jcc;
+    @extend %fdc;
+    @extend %aic;
     @extend %t-center;
     @include for-width(-small-lg) {
-      margin-bottom:0;
+      background-image:url(/img/goodnews-bg-mobile.webp);
+      background-attachment: scroll;
     }
     &__heading {
       color:$black_blue;
@@ -205,131 +201,87 @@ export default {
     }
     &__subheading {
       color:$black_blue;
-      @extend %inter_medium;
-      font-size: rem(46);
-      line-height: rem(80);
-      @include for-width(-desktop-medium) {
-        font-size: rem(40);
-      }
+      @extend %h2-common;
+      margin:rem(10) 0 rem(50);
       @include for-width(-small-lg) {
-        font-size: rem(24);
-        line-height: rem(70);
+        font-size:rem(24);
+        line-height:rem(80);
+        margin:0 0 rem(70);
       }
     }
-    &__comingtitle {
+    &__img {
+      width:rem(515);
+      height:rem(90);
+      object-fit:contain;
+      object-position:center;
+      @include for-width(-desktop-medium) {
+        width:rem(415);
+        height:rem(80);
+      }
+      @include for-width(-small-lg) {
+        width:rem(265);
+        height:rem(50);
+      }
+    }
+  }
+  & .v-content-section {
+    padding-top:rem(80);
+    @include for-width(-small-lg) {
+      padding-top:rem(60);
+    }
+    &__heading {
+      @extend %h1-common;
+      padding-bottom:rem(50);
       color:$black_blue;
-      @extend %inter_medium;
-      font-size: rem(46);
-      line-height: rem(80);
-      padding-top:rem(50);
-      @include for-width(-desktop-medium) {
-        font-size: rem(40);
-      }
+      @extend %t-center;
       @include for-width(-small-lg) {
-        font-size: rem(24);
-        line-height: rem(70);
-        padding-top:rem(5);
+        font-size:rem(38);
+        line-height:rem(42);
+        max-width:rem(250);
+        margin:0 auto;
       }
     }
-    &__timer {
-      margin-top:rem(50);
-      color:$black_blue;
-      @include for-width(-small-lg) {
-        margin-top:rem(15);
-      }
-      &_el {
-        @extend %inter_bold;
-        @extend %dib;
-        vertical-align:top;
-        font-size: rem(64);
-        line-height: rem(64);
-        width:rem(90);
+    & .c-chess-block {
+      &_inner {
+        padding-top:rem(100);
         @include for-width(-small-lg) {
-          font-size: rem(36);
-          line-height: rem(36);
-          width:rem(54);
+          padding-top:rem(60);
         }
-      }
-      &_label {
-        @extend %inter_regular;
-        @extend %db;
-        font-size: rem(26);
-        line-height: rem(26);
-        padding-top:rem(20);
-        @include for-width(-small-lg) {
-          font-size: rem(14);
-          line-height: rem(14);
-          padding-top:rem(10);
+        &:first-child {
+          padding-top:0;
         }
-      }
-      &_div {
-        @extend %inter_bold;
-        @extend %dib;
-        vertical-align:top;
-        font-size: rem(64);
-        line-height: rem(64);
-        padding:0 rem(5);
-        @include for-width(-small-lg) {
-          font-size: rem(36);
-          line-height: rem(36);
+        &_single {
+          &_title {
+            color:$black_blue;
+          }
+          &_descr {
+            color:$black_blue;
+            word-break: auto-phrase;
+            text-wrap: pretty;
+          }
+          &_img {
+            @include for-width(-tablet) {
+              display:none;
+            }
+          }
         }
       }
     }
-    &__roadmap {
-      padding-top:rem(50);
-      @include for-width(-desktop-medium) {
-        padding-left: rem(40);
-        padding-right: rem(40);
-      }
-      @include for-width(-small-lg) {
-        padding:rem(40) rem(25) 0;
-      }
-      img {
-        width:rem(800);
-        height:rem(475);
+  }
+  & .v-join-section {
+    & .c-common-join {
+      &__title {
         @include for-width(-small-lg) {
-          width:100%;
-          height:auto;
+          color:$black_blue;
         }
       }
-    }
-    &__coming_soon {
-      padding-top:rem(25);
-      @include for-width(-desktop-medium) {
-        padding-left: rem(40);
-        padding-right: rem(40);
-      }
-      @include for-width(-small-lg) {
-        padding:0 rem(20) 0;
-      }
-      img {
-        width:rem(820);
-        height:rem(475);
-        @include for-width(-small-lg) {
-          width:100%;
-          height:auto;
+      &__links {
+        .c-common-button {
+          @include for-width(-small-lg) {
+            color:$black_blue;
+            border-color:$black_blue;
+          }
         }
-      }
-    }
-    &__coming_soon_2 {
-      @include for-width(-small-lg) {
-        padding-right:rem(25);
-      }
-      img {
-        width:rem(800);
-        height:rem(475);
-        border-radius:15px;
-        @include for-width(-small-lg) {
-          width:100%;
-          height:auto;
-          border-radius:rem(10);
-        }
-      }
-    }
-    &__coming_soon_3 {
-      padding-top:rem(45);
-      @include for-width(-small-lg) {
-        padding-top:rem(10);
       }
     }
   }
