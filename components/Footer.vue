@@ -127,6 +127,11 @@ export default {
           img: "/img/common/icons/instagram.svg",
         },
         {
+          name: "Telegram",
+          route_link: "https://telegram.me/pktcash",
+          img: "/img/common/icons/telegram.svg",
+        },
+        {
           name: "Twitter",
           route_link: "https://twitter.com/pktcash",
           img: "/img/common/icons/x.svg",
@@ -301,8 +306,14 @@ export default {
         justify-content: center;
       }
       @include for-width(-small-lg) {
-        padding:rem(25) 0 rem(10);
-        justify-content: flex-start;
+        padding:rem(25) 0 rem(20);
+        // justify-content: flex-start;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 0 rem(7);
+        max-width:100%;
       }
       & .c-footer__menu-text {
         width: 40px;
@@ -310,19 +321,22 @@ export default {
         line-height: 40px;
         @extend %db;
         @extend %t-center;
-        margin-right:rem(20);
+        margin-right:rem(10);
         background-color:rgba(255,255,255,.15);
         border-radius:rem(50);
         @include for-width(-laptop_small) {
           width: rem(36);
           height: rem(36);
           line-height: rem(36);
-          margin-right:rem(12);
+        }
+        @include for-width(-tablet) {
+          margin:0 rem(7);
         }
         @include for-width(-small-lg) {
-          width: 40px;
-          height: 40px;
-          line-height: 40px;
+          // width: 40px;
+          // height: 40px;
+          // line-height: 40px;
+          margin:0;
         }
         & img {
           width:24px;
