@@ -190,7 +190,7 @@ export default {
   },
   head() {
     return {
-      title: "PKT Cash - The Future of Internet Access",
+      title: "PKT Cash - Media Network of the Future",
       meta: [{ hid: "description", name: "description", content: "A decentralized physical infrastructure (DePIN) ecosystem supporting open internet access & powering the decentralized web" }],
       link: [
         {

@@ -598,12 +598,6 @@
   border-color:$main_blue_light;
   background-color:$main_blue_light;
   color:$white;
-  &:hover {
-    
-  }
-  &:focus {
-    
-  }
 }
 .c-common-button__dark_blue {
   border-color:$black_blue;
@@ -633,4 +627,8 @@
     color:$pink;
     background-color:$white;
   }
+}
+.c-common-button__blue {
+  border-color:$main_blue_light;
+  color:$main_blue_light;
 }

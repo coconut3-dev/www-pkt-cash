@@ -42,7 +42,7 @@ export const actions = {
       const difficulty = await this.$axios.$get(`${EXPLORER_API}/api/v1/PKT/pkt/chain/down/1`)
       const stats = await this.$axios.$get(`${EXPLORER_API}/api/v1/PKT/pkt/packetcrypt/stats/1/`)
       const pkt_price_fetch = await this.$axios.$get("https://pkt.cash/api/cmc-price")
-      const pkt_cp_logins_fetch = await this.$axios.$get("https://pkt.cash/api/community-stats/pktpal")
+      const pkt_cp_logins_fetch = await this.$axios.$get("https://pkt.cash/api/community-stats/pktpal") || '25930'
       const staked_pkt = await this.$axios.$get("https://pkt.cash/app_dot_pkt/api/v1/stats")
       console.log('load function')
       
@@ -83,7 +83,7 @@ export const actions = {
       commit('updateField', { path: 'bitsPerSecond', value: stats.results[0].bitsPerSecond })
       commit('updateField', { path: 'encryptionsPerSecond', value: stats.results[0].encryptionsPerSecond * 1000000 })
       commit('updateField', { path: 'pkt_price', value: pkt_price_fetch.data.PKT.quote.USD.price })
-      commit('updateField', { path: 'pkt_cp_logins', value: pkt_cp_logins_fetch[0].all_cp_logins })
+      commit('updateField', { path: 'pkt_cp_logins', value: pkt_cp_logins_fetch[0].all_cp_logins }) || '25930'
       commit('updateField', { path: 'staked_pkt', value: staked_pkt.lockbox_coins })
       this.loading = false;
     } catch (e) {
