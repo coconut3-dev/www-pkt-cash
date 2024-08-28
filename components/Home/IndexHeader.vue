@@ -9,7 +9,7 @@
     </div>
     <div class="c-index-header_data">
       <h3 class="c-index-header_data__title">Total Staked PKT</h3>
-      <p class="c-index-header_data__value blue">{{ staked_pkt | displayed_staked_total }} PKT</p>
+      <p class="c-index-header_data__value blue">{{ lockboxCoinsInMillions }}M PKT</p>
     </div>
     <div class="c-index-header_data">
       <h3 class="c-index-header_data__title">{{ $t("home_new.network_3") }}</h3>
@@ -20,6 +20,7 @@
 
 <script>
 import { mapFields } from "vuex-map-fields";
+import axios from 'axios';
 export default {
   name: "IndexHeader",
   computed: {
@@ -39,7 +40,23 @@ export default {
   data() {
     return {
       timeout: null,
+      lockboxCoinsInMillions: null,
     };
+  },
+  created() {
+    this.fetchLockboxCoins();
+  },
+  methods: {
+    async fetchLockboxCoins() {
+      try {
+        const response = await axios.get('https://pkt.cash/app_dot_pkt/api/v1/stats');
+        const lockboxCoins = response.data.lockbox_coins / 10 ** 18;
+        this.lockboxCoinsInMillions = (lockboxCoins / 10 ** 6).toFixed(2);
+      } catch (error) {
+        console.error('Error fetching lockbox coins:', error);
+        this.lockboxCoinsInMillions = '103.47';
+      }
+    },
   },
   filters: {
     displayed_pkt_price(value) {
@@ -65,15 +82,6 @@ export default {
     commafy(value) {
       return ("" + value).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
-    displayed_staked_total(value) {
-      try {
-        const coinsBigInt = BigInt(value);
-        const normalizedValue = coinsBigInt / (10n ** 18n);
-        return normalizedValue.toString();
-      } catch (error) {
-        return "1.724B";
-      }
-    }
   },
   mounted() {
     if (process.client) {
