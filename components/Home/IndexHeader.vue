@@ -9,7 +9,10 @@
     </div>
     <div class="c-index-header_data">
       <h3 class="c-index-header_data__title">Total Staked PKT</h3>
-      <p class="c-index-header_data__value blue">{{ lockboxCoinsInMillions }}M PKT</p>
+      <template>
+        <p class="c-index-header_data__value blue" v-if="load_stake">103.40M PKT</p>
+        <p class="c-index-header_data__value blue" v-else>{{ lockboxCoinsInMillions }}M PKT</p>
+      </template>
     </div>
     <div class="c-index-header_data">
       <h3 class="c-index-header_data__title">{{ $t("home_new.network_3") }}</h3>
@@ -31,7 +34,6 @@ export default {
       "pkt_price",
       "pkt_cp_logins",
       "loading",
-      "staked_pkt"
     ]),
     is_mobile() {
       return process.client && window.innerWidth < 1100;
@@ -40,6 +42,7 @@ export default {
   data() {
     return {
       timeout: null,
+      load_stake: true,
       lockboxCoinsInMillions: null,
     };
   },
@@ -52,6 +55,7 @@ export default {
         const response = await axios.get('https://pkt.cash/app_dot_pkt/api/v1/stats');
         const lockboxCoins = response.data.lockbox_coins / 10 ** 18;
         this.lockboxCoinsInMillions = (lockboxCoins / 10 ** 6).toFixed(2);
+        this.load_stake = false;
       } catch (error) {
         console.error('Error fetching lockbox coins:', error);
         this.lockboxCoinsInMillions = '103.47';
@@ -60,9 +64,7 @@ export default {
   },
   filters: {
     displayed_pkt_price(value) {
-      if (value > 0.01)
-        return (Number(value)).toFixed(2);
-      return (Number(value)).toFixed(4);
+      return (value / 10 ** 18).toFixed(4);
     },
     displayed_stats_data(value) {
       return (Number(value) / 0x40000000).toFixed(0);
