@@ -41,7 +41,7 @@ export const actions = {
       const difficulty = await this.$axios.$get(`${EXPLORER_API}/api/v1/PKT/pkt/chain/down/1`)
       const stats = await this.$axios.$get(`${EXPLORER_API}/api/v1/PKT/pkt/packetcrypt/stats/1/`)
       const pkt_price_fetch = await this.$axios.$get("https://app.pkt.cash/api/v1/price")
-      const pkt_cp_logins_fetch = await this.$axios.$get("https://pkt.cash/api/community-stats/pktpal") || '25930'
+      const pkt_cp_logins_fetch = await this.$axios.$get("https://pkt.cash/api/community-stats/pktpal")
       console.log('load function')
       
       commit('updateField', { path: 'already_mined', value: data.alreadyMined })
@@ -68,9 +68,9 @@ export const actions = {
       const stats = await this.$axios.$get(`${EXPLORER_API}/api/v1/PKT/pkt/packetcrypt/stats/1/`)
       const pkt_price_fetch = await this.$axios.$get("https://app.pkt.cash/api/v1/price")
       const pkt_cp_logins_fetch = await this.$axios.$get("https://pkt.cash/api/community-stats/pktpal")
-      console.log(data, '/stats/coins')
-      console.log(difficulty, '/chain/down/1')
-      console.log(stats, '/packetcrypt/stats/1/')
+      // console.log(data, '/stats/coins')
+      // console.log(difficulty, '/chain/down/1')
+      // console.log(stats, '/packetcrypt/stats/1/')
 
       commit('updateField', { path: 'already_mined', value: data.alreadyMined })
       commit('updateField', { path: 'reward', value: data.reward })
@@ -79,7 +79,7 @@ export const actions = {
       commit('updateField', { path: 'bitsPerSecond', value: stats.results[0].bitsPerSecond })
       commit('updateField', { path: 'encryptionsPerSecond', value: stats.results[0].encryptionsPerSecond * 1000000 })
       commit('updateField', { path: 'pkt_price', value: pkt_price_fetch.price_usdc })
-      commit('updateField', { path: 'pkt_cp_logins', value: pkt_cp_logins_fetch[0].all_cp_logins }) || '25930'
+      commit('updateField', { path: 'pkt_cp_logins', value: pkt_cp_logins_fetch[0].all_cp_logins })
       this.loading = false;
     } catch (e) {
       this.loading = false;

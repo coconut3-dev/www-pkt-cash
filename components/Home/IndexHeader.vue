@@ -28,9 +28,6 @@ export default {
   name: "IndexHeader",
   computed: {
     ...mapFields("pkt-analytics", [
-      "already_mined",
-      "bitsPerSecond",
-      "encryptionsPerSecond",
       "pkt_price",
       "pkt_cp_logins",
       "loading",
@@ -52,7 +49,7 @@ export default {
   methods: {
     async fetchLockboxCoins() {
       try {
-        const response = await axios.get('https://pkt.cash/app_dot_pkt/api/v1/stats');
+        const response = await axios.get('https://app.pkt.cash/api/v1/stats');
         const lockboxCoins = response.data.lockbox_coins / 10 ** 18;
         this.lockboxCoinsInMillions = (lockboxCoins / 10 ** 6).toFixed(2);
         this.load_stake = false;
