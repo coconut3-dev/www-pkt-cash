@@ -63,21 +63,6 @@ export default {
     displayed_pkt_price(value) {
       return (value / 10 ** 18).toFixed(4);
     },
-    displayed_stats_data(value) {
-      return (Number(value) / 0x40000000).toFixed(0);
-    },
-    displayed_enc(value) {
-      return Math.round(value * 100) / 100;
-    },
-    displayed_kb(value) {
-      if (value > 1 << 30)
-        return `${parseFloat(value / 1073741824).toFixed(2)} Gb/s`;
-      if (value > 1 << 20)
-        return `${parseFloat(value / 1048576).toFixed(2)} Mb/s`;
-      if (value > 1 << 10)
-        return `${parseFloat(value / 1048576).toFixed(2)} Kb/s`;
-      return `${value} bits/s`;
-    },
     commafy(value) {
       return ("" + value).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
