@@ -127,7 +127,7 @@ export default {
       ],
       solutions_img_list: [
         {
-          img_url: "/img/home/home-powered-1.svg",
+          img_url: "/img/home/base-logo.svg",
           single_alt: "Base",
           img_width: 92,
           img_height: 24
@@ -139,19 +139,19 @@ export default {
           img_height: 26
         },
         {
-          img_url: "/img/home/home-powered-3.svg",
+          img_url: "/img/home/akash-logo.svg",
           single_alt: "Akash",
           img_width: 132,
           img_height: 26
         },
         {
-          img_url: "/img/home/home-powered-4.svg",
+          img_url: "/img/home/uniswap-logo.svg",
           single_alt: "Uniswap",
           img_width: 140,
           img_height: 41
         },
         {
-          img_url: "/img/home/home-powered-5.svg",
+          img_url: "/img/home/anode-logo.svg",
           single_alt: "Anode",
           img_width: 88,
           img_height: 24
