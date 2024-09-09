@@ -2,7 +2,7 @@
 	<div class="c-images">
 		<template v-for="item of list">
 			<div class="c-images-single">
-				<img :src="item.img_url" :alt="item.single_alt" :width="item.img_width" :height="item.img_height" />
+				<img :src="item.img_url" :alt="item.single_alt" :width="item.img_width" :height="item.img_height" :style="item.style" />
 			</div>
 		</template>
 	</div>

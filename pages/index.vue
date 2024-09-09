@@ -127,10 +127,11 @@ export default {
       ],
       solutions_img_list: [
         {
-          img_url: "/img/home/base-logo.svg",
+          img_url: "/img/home/base-logo-pktcash.svg",
           single_alt: "Base",
           img_width: 92,
-          img_height: 24
+          img_height: 24,
+          style:"width: 110px;height: 24px;"
         },
         {
           img_url: "/img/home/home-powered-2.svg",
@@ -139,16 +140,18 @@ export default {
           img_height: 26
         },
         {
-          img_url: "/img/home/akash-logo.svg",
+          img_url: "/img/home/akash-logo-1.svg",
           single_alt: "Akash",
           img_width: 132,
-          img_height: 26
+          img_height: 26,
+          style:"width: 132px;height: 26px;"
         },
         {
-          img_url: "/img/home/uniswap-logo.svg",
+          img_url: "/img/home/uniswap-logo-1.svg",
           single_alt: "Uniswap",
           img_width: 140,
-          img_height: 41
+          img_height: 41,
+          style:"width: 140px;height: 41px;"
         },
         {
           img_url: "/img/home/anode-logo.svg",
