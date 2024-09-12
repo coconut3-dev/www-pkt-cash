@@ -169,7 +169,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: '/img/featured_meta/pkt-goodnews-preview.jpg'
+          content: '/PKT Logo.jpg'
         }
       ],
       link: [
