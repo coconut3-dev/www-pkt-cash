@@ -58,14 +58,14 @@ export default {
           company_descr: "A collection of free tools and resources",
           company_link: "https://pkt.watch",
         },
-        {
-          unique_class: "pkt_net",
-          company_img: "/img/ecosystem/company-overview-pktnet.webp",
-          company_logo_square: "/img/ecosystem/company-overview-logo-pktnet.svg",
-          company_title: "PKT.Net",
-          company_descr: "Building technology for PKT Network",
-          company_link: "https://pkt.net",
-        },
+        // {
+        //   unique_class: "pkt_net",
+        //   company_img: "/img/ecosystem/company-overview-pktnet.webp",
+        //   company_logo_square: "/img/ecosystem/company-overview-logo-pktnet.svg",
+        //   company_title: "PKT.Net",
+        //   company_descr: "Building technology for PKT Network",
+        //   company_link: "https://pkt.net",
+        // },
         {
           unique_class: "akash",
           company_img: "/img/ecosystem/company-overview-akash.webp",
@@ -116,9 +116,9 @@ export default {
       projects_partnerships:  [
         {
           projects_link: "https://www.allora.network",
-          img_url: "/img/ecosystem-zetahash.svg",
+          img_url: "/img/ecosystem-allora.svg",
           title:"Allora AI",
-          style: "background-color:#000000;",
+          style: "background-color:#FFFFFF;",
         },
         {
           projects_link: "https://akash.network/",
@@ -139,12 +139,12 @@ export default {
           style: "background-color:#C4C4C4;",
           img_style: "width:80px;",
         },
-        {
-          projects_link: "https://docs.pkt.cash/en/latest/mining/pool_setup_guide/",
-          img_url: "/img/ecosystem-zetahash.svg",
-          title:"Zetahash",
-          style: "background-color:#F43939;",
-        },
+        // {
+        //   projects_link: "https://docs.pkt.cash/en/latest/mining/pool_setup_guide/",
+        //   img_url: "/img/ecosystem-zetahash.svg",
+        //   title:"Zetahash",
+        //   style: "background-color:#F43939;",
+        // },
         {
           projects_link: "https://docs.pkt.cash/en/latest/mining/pool_setup_guide/",
           img_url: "/img/ecosystem-new-pkt-pool.svg",
