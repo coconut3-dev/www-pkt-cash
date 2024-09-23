@@ -7,12 +7,12 @@
     </section>
     <section class="v-top">
       <div class="container">
-        <h1 class="v-top__title">Own the media network powered by the people </h1>
-        <h5 class="v-top__subtitle white">Stake-to-earn from your unused internet</h5>
+        <h1 class="v-top__title">The Media Network of the Future</h1>
+        <h5 class="v-top__subtitle white">Earn up to 1.5% per day by staking PKT!</h5>
         <img src="/img/lead_funnel/pkt-base.webp" alt="PKT and Base" class="v-top__asset" />
         <div class="v-lead-common">
           <div class="v-lead-common__text">
-            <p class="white">PKT is a Stake-to-Earn protocol on Base. People earn from their unused internet, which builds the infrastructure needed to power the network. This income can then be used to cash-out or pay for content.</p>
+            <p class="white">PKT is a decentralized media network on Base that pays people to stake and host infrastructure for the network. <br />The audience-facing application offers a platform for content distributors—ranging from major players like Netflix and Amazon to smaller competitors and publishers—enabling them to reach global audiences through an experience similar to Apple TV using blockchain and mesh networking technology.</p>
             <a href="#join-community" class="c-common-button c-common-button__filled"><span>Join Community</span></a>
           </div>
           <div class="v-lead-common__img">
@@ -30,7 +30,7 @@
     <section class="v-defi v-lead-wrap">
       <div class="container">
         <h2 class="v-lead__h2">The most lucrative liquidity pool in DeFi</h2>
-        <h5 class="v-lead__h5">1,000,000 PKT per day in rewards</h5>
+        <h5 class="v-lead__h5">Up to 1.5% daily returns</h5>
         <div class="v-lead-common">
           <div class="v-lead-common__img">
             <img src="/img/lead_funnel/pkt-lead-2.webp" alt="The most lucrative liquidity pool in DeFi" class="desktop" />
@@ -154,7 +154,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Own the media network powered by the people'
+          content: 'Earn up to 1.5% per day by staking PKT!'
         },
         {
           hid: 'og:title',
@@ -164,7 +164,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: 'Own the media network powered by the people'
+          content: 'Earn up to 1.5% per day by staking PKT!'
         },
         {
           hid: 'og:image',
@@ -373,7 +373,7 @@ export default {
       @extend %h1-common;
       @extend %t-center;
       margin-bottom:rem(24);
-      max-width:rem(800);
+      max-width:rem(650);
       @include for-width(-tablet) {
         font-size: rem(56);
         line-height: rem(70);
