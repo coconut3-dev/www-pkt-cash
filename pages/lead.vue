@@ -484,6 +484,12 @@ export default {
     & .container {
       background: rgba(255, 255, 255, 0.08);
     }
+    & .v-lead__h5 {
+      @include for-width(-small-lg) {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
     & .v-lead-common {
       &__text {
         width:55%;
