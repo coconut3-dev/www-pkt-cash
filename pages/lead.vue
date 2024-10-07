@@ -12,17 +12,18 @@
         <img src="/img/lead_funnel/pkt-base.webp" alt="PKT and Base" class="v-top__asset" />
         <div class="v-lead-common">
           <div class="v-lead-common__text">
-            <p class="white">PKT is a decentralized media network on Base that pays people to stake and host infrastructure for the network. <br />The audience-facing application offers a platform for content distributors—ranging from major players like Netflix and Amazon to smaller competitors and publishers—enabling them to reach global audiences through an experience similar to Apple TV using blockchain and mesh networking technology.</p>
-            <a href="#join-community" class="c-common-button c-common-button__filled"><span>Join Community</span></a>
+            <p class="white">PKT is a decentralized media network on Base that pays people to stake and host infrastructure for the network.</p>
+            <p class="white">The audience-facing application offers a platform for content distributors—ranging from major players like Netflix and Amazon to smaller competitors and publishers—enabling them to reach global audiences through an experience similar to Apple TV using blockchain and mesh networking technology.</p>
           </div>
           <div class="v-lead-common__img">
-            <!-- <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
-            <gecko-coin-price-chart-widget locale="en" outlined="true" coin-id="pkt" initial-currency="usd" width="650" height="200" class="desktop"></gecko-coin-price-chart-widget>
-            <gecko-coin-price-chart-widget locale="en" outlined="true" coin-id="pkt" initial-currency="usd" width="250" height="200" class="mobile"></gecko-coin-price-chart-widget> -->
-            <iframe src="https://app.uniswap.org/swap?exactField=input&amp;outputCurrency=0x917f39bb33b2483dd19546b1e8d2f09ce481ee44&amp;inputCurrency=eth&amp;chain=base" height="400px" width="100%" style="border-radius: 16px;" class="desktop"></iframe>
+            <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
+            <gecko-coin-price-chart-widget locale="en" outlined="true" coin-id="pkt" initial-currency="usd" width="660" height="280"></gecko-coin-price-chart-widget>
+            <iframe src="https://app.uniswap.org/swap?exactField=input&amp;outputCurrency=0x917f39bb33b2483dd19546b1e8d2f09ce481ee44&amp;inputCurrency=eth&amp;chain=base" height="432px" width="100%" style="border-radius: 16px;" class="desktop"></iframe>
             <iframe src="https://app.uniswap.org/swap?exactField=input&amp;outputCurrency=0x917f39bb33b2483dd19546b1e8d2f09ce481ee44&amp;inputCurrency=eth&amp;chain=base" height="660px" width="100%" style="border-radius: 8px;" class="mobile"></iframe>
-            <!-- <img src="/img/lead_funnel/pkt-lead-1.webp" alt="Stake-to-earn from your unused internet" class="desktop" />
-            <img src="/img/lead_funnel/pkt-lead-1-mobile.webp" alt="Stake-to-earn from your unused internet" class="mobile" /> -->
+          </div>
+          <div class="v-lead-common__links">
+            <a href="#join-community" class="c-common-button c-common-button__filled"><span>Join Community</span></a>
+            <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__white_blue"><span>Stake PKT</span></a>
           </div>
         </div>
       </div>
@@ -40,7 +41,7 @@
             <p>By staking in the PKT Liquidity Pool on Uniswap, the PKT protocol pays out 1 million PKT per day divided amongst all participants. This is the most lucrative opportunity to earn.</p>
             <div class="v-lead-common__text_links">
               <a href="https://app.uniswap.org/swap?exactField=input&outputCurrency=0x917f39bb33b2483dd19546b1e8d2f09ce481ee44&inputCurrency=eth&chain=base" target="_blank" class="c-common-button c-common-button__filled"><span>Stake LP</span></a>
-              <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__blue"><span>Stake PKT</span></a>
+              <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__blue"><span>Stake now</span></a>
             </div>
           </div>
         </div>
@@ -415,28 +416,63 @@ export default {
       backdrop-filter: blur(12px);
       border-radius: rem(40);
       padding:rem(40);
+      width:100%;
+      @extend %db;
       @include for-width(-small-lg) {
-        padding:rem(28) rem(20) rem(20);
+        padding:rem(28) rem(10) rem(20);
       }
       &__text {
-        width:40%;
-        padding-right:rem(24);
-        @include for-width(-tablet) {
-          width:100%;
-          order:2;
-          padding-top:rem(35);
-          padding-right:0;
-          text-align:center;
+        text-align:center;
+        @include for-width(-laptop) {
+          max-width:rem(750);
+          margin:0 auto;
         }
-        @include for-width(-small-lg) {
-          padding-top:0;
+        & p {
+          &:first-child {
+            margin-bottom:rem(12);
+          }
         }
       }
       &__img {
-        width:60%;
+        @extend %df;
+        @extend %jcsb;
+        @extend %aic;
+        margin:rem(24) 0;
         @include for-width(-tablet) {
           width:100%;
-          order:1;
+        }
+        @include for-width(-small-lg) {
+          display:block;
+        }
+        & gecko-coin-price-chart-widget {
+          width:65%;
+          @include for-width(-laptop) {
+            width:62%;
+          }
+          @include for-width(-small-lg) {
+            width:100%;
+          }
+        }
+        & iframe {
+          width:35%;
+          max-height:rem(500);
+          @include for-width(-small-lg) {
+            width:100%;
+          }
+        }
+      }
+      &__links {
+        @extend %df;
+        @extend %jcc;
+        @extend %aic;
+        @include for-width(-small-lg) {
+          justify-content: space-between;
+        }
+        & .c-common-button {
+          margin: 0 rem(10);
+          @include for-width(-small-lg) {
+            margin: 0;
+          }
         }
       }
     }

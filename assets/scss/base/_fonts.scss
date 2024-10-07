@@ -628,6 +628,21 @@
     background-color:$white;
   }
 }
+.c-common-button__white_blue {
+  border-color:$white;
+  background-color:$white;
+  color:$main_blue_light;
+  &:hover {
+    border-color:$white;
+    color:$main_blue_light;
+    background-color:$white;
+  }
+  &:focus {
+    border-color:$white;
+    color:$main_blue_light;
+    background-color:$white;
+  }
+}
 .c-common-button__blue {
   border-color:$main_blue_light;
   color:$main_blue_light;
