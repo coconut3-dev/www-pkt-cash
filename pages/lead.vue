@@ -150,7 +150,7 @@ export default {
   },
   head() {
     return {
-      title: "PKT Lead Funnel | PKT Cash",
+      title: "PKT Cash",
       meta: [
         {
           hid: 'description',
@@ -160,7 +160,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: 'PKT Lead Funnel | PKT Cash'
+          content: 'PKT Cash'
         },
         {
           hid: 'og:description',
