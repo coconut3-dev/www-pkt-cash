@@ -196,6 +196,10 @@ export default {
           name: "header.whitepaper",
           route_link: "https://pkt.cash/PKT_Network_v1.0_2021.02.01.pdf",
           external: true,
+        },
+        {
+          name: "Terms of Service",
+          route_link: "/terms-of-service",
         }
       ],
       network_links: [
