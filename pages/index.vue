@@ -89,7 +89,7 @@ export default {
         },
         {
           single_title: "Global Networking",
-          single_descr: "All content is accessible globally peer-to-peer and through traditional browsers without geofencing.",
+          single_descr: "All content is accessible globally peer-to-peer and through traditional browsers for all.",
           color: "green_dot"
         }
       ],
