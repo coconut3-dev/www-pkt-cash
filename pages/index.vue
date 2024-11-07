@@ -133,12 +133,12 @@ export default {
           img_height: 24,
           style:"width: 110px;height: 24px;"
         },
-        {
-          img_url: "/img/home/home-powered-2.svg",
-          single_alt: "Coinbase",
-          img_width: 144,
-          img_height: 26
-        },
+        // {
+        //   img_url: "/img/home/home-powered-2.svg",
+        //   single_alt: "Coinbase",
+        //   img_width: 144,
+        //   img_height: 26
+        // },
         {
           img_url: "/img/home/akash-logo-1.svg",
           single_alt: "Akash",
@@ -312,7 +312,7 @@ export default {
         width:100%;
         border-radius: 20px;
         background-color:$black_blue_light;
-        padding:rem(15) rem(68) rem(12);
+        padding:rem(15) rem(125) rem(12);
         @include for-width(-tablet) {
           padding:rem(15) rem(15) rem(12);
         }
