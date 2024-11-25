@@ -34,7 +34,7 @@
             <img src="/img/lead_funnel/pkt-lead-2-mobile.webp" alt="The most lucrative liquidity pool in DeFi" class="mobile" />
           </div>
           <div class="v-rewards-common__text">
-            <p>When buying PKT and pairing it with an app on your computer which power the network, you get paid daily rewards. These rewards can be turned into cash, crypto or gift cards whenever you want or will be used to buy content on the network.</p>
+            <p>When buying PKT and pairing it with an app on your computer, which powers the network, you get paid daily rewards. These rewards can be turned into cash, crypto or gift cards whenever you want or will be used to buy content on the network.</p>
             <p>Join the community to learn how to power the network and get involved. Together we can change the entertainment business forever!</p>
             <div class="v-rewards-common__text_links">
               <a href="https://app.uniswap.org/explore/tokens/base/0x917F39Bb33B2483Dd19546b1E8D2f09ce481ee44" target="_blank" class="c-common-button c-common-button__filled"><span>Buy PKT</span></a>
