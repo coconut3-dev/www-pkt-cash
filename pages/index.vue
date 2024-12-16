@@ -8,8 +8,8 @@
           <a href="https://app.uniswap.org/swap?exactField=input&outputCurrency=0x917f39bb33b2483dd19546b1e8d2f09ce481ee44&inputCurrency=eth&chain=base" target="_blank" class="c-common-button c-common-button__filled">
             <span>Buy PKT</span>
           </a>
-          <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__bordered">
-            <span>Stake PKT</span>
+          <a href="https://hub.pkt.cash/" target="_blank" class="c-common-button c-common-button__bordered">
+            <span>PKT Hub</span>
           </a>
         </div>
       </div>

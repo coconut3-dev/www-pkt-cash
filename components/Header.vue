@@ -54,7 +54,7 @@
             </p>
           </div>
           <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__filled">
-            <span>Dashboard</span>
+            <span>Stake PKT</span>
           </a>
         </div>
         <div class="nav__menu_mobile">
@@ -112,7 +112,7 @@
                 </div>
               </li>
               <a href="https://pkt.cash/1ea983ba3453631d914755e7ad96840d/overview" target="_blank" class="c-common-button c-common-button__filled">
-                <span>Dashboard</span>
+                <span>Stake PKT</span>
               </a>
             </ul>
         </div>
