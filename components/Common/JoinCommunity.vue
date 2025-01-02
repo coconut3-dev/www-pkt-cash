@@ -3,7 +3,7 @@
     <div class="container">
       <h3 class="c-common-join__title">{{ $t("home.join_community_title") }}</h3>
       <div class="c-common-join__links">
-        <a class="c-common-button c-common-button__bordered" href="https://discord.gg/pktcash" target="_blank">
+        <a class="c-common-button c-common-button__bordered" href="https://discord.gg/pkt" target="_blank">
           <span>PKT Discord</span>
         </a>
         <a class="c-common-button c-common-button__bordered" href="https://x.com/pktcash" target="_blank">

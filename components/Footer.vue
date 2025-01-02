@@ -194,7 +194,7 @@ export default {
         },
         {
           name: "header.whitepaper",
-          route_link: "https://pkt.cash/PKT_Network_v1.0_2021.02.01.pdf",
+          route_link: "https://docsend.com/view/prnv2q3bifzd44rt",
           external: true,
         },
         {
