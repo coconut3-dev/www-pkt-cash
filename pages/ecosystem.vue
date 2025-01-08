@@ -79,7 +79,7 @@ export default {
         {
           single_title: "The future of streaming",
           single_descr: "BIA is a streaming platform that pays its audience to power the network. Audiences can then use their income pay for content. BIA uses the PKT Network for infrastructure and payments.",
-          single_url: "#",
+          single_url: "https://docs.pkt.cash/utility/bia/",
           single_link: "Learn more",
           single_img: "/img/ecosystem/ecosystem-network-bia-img.webp",
           external: true,

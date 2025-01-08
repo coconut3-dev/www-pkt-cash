@@ -89,7 +89,7 @@ export default {
         },
         {
           single_title: "Global Networking",
-          single_descr: "All content is accessible globally peer-to-peer and through traditional browsers for all.",
+          single_descr: "All websites in the network are accessible globally through traditional browsers without special software or geofencing.",
           color: "green_dot"
         }
       ],
@@ -182,8 +182,8 @@ export default {
           external: true
         },
         {
-          single_title: "Payments Transparency",
-          single_descr: "Built-in blockchain payments and smart contracts provide the revenue transparency and automated payment processing that is desperately needed in media distribution.",
+          single_title: "Decentralized Domains",
+          single_descr: "The network uses a blockchain-based domain name system called PKT DNS, which registers domain names that are accessible from all web browsers without requiring special software.",
           single_url: "https://docs.pkt.cash/utility",
           single_link: this.$t("common.learn_more"),
           external: true
