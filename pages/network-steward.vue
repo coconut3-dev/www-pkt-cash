@@ -5,11 +5,8 @@
       :title="this.$t('steward.steward_title')"
       text="The Network Steward is a wallet address that receives 20% of all daily yields to fund the ongoing development of the PKT Network. A new custodian of the Network Steward wallet is democratically elected weekly by proof-of-stake voting."
       :button_1="this.$t('steward.steward_button_1')"
-      :button_2="this.$t('steward.steward_button_2')"
       button_1_link="https://app.pkt.cash/network-steward/"
-      button_2_link="https://packetscan.io/address/pkt1q6hqsqhqdgqfd8t3xwgceulu7k9d9w5t2amath0qxyfjlvl3s3u4sjza2g2"
-      button_1_target="_blank"
-      button_2_target="_blank" />
+      button_1_target="_blank"  />
     </section>
     <!-- <section class="v-indicators-section">
       <div class="container">
