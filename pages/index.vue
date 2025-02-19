@@ -3,7 +3,7 @@
     <section class="v-top-section">
       <div class="container">
         <h1 class="v-top-section__heading">{{ $t("home_new.top_heading_1") }} <br />{{ $t("home_new.top_heading_2") }}</h1>
-        <p class="v-top-section__description">PKT is a media network built on Base and powered by the people. <br />Stake to earn PKT and get paid to power the network.</p>
+        <p class="v-top-section__description">Packet is an ecosystem is designed for global discovery across entertainment, gaming, music, and more using free-for-life domains.</p>
         <div class="v-top-section__links">
           <a href="https://app.uniswap.org/swap?exactField=input&outputCurrency=0x917f39bb33b2483dd19546b1e8d2f09ce481ee44&inputCurrency=eth&chain=base" target="_blank" class="c-common-button c-common-button__filled">
             <span>Buy PKT</span>
